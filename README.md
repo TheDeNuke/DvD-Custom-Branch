@@ -1,6 +1,8 @@
 # DvD-Custom-Branch
 This is a radically different branch of the Divergences of Darkness mod that stems off from the final version of PDM's DvD. However any systems from that version would likely be utterly unreconizable due to a rework of practically every single file in the entire mod.
 
+Original Github Link: https://github.com/Pergame35/Divergences
+
 Original Readme:
 
 A mod for Victoria II with Heart of Darkness Expansion that continues the legacy of Divergences : An Alter Vicky mod created by Kinniken
