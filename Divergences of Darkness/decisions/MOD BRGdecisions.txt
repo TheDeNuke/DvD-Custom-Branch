@@ -1,0 +1,827 @@
+political_decisions = {
+
+	pas_de_calais = { 
+	picture = Pas_de_Calais
+	potential = {
+			tag = DUA
+			ai = no
+			NOT = {
+				has_country_flag = pale_calais
+			}
+		}	
+		allow = {
+			is_greater_power = yes
+			NOT = { war = yes }
+			OR = {
+			owns = 400
+			government = absolute_monarchy
+	        government = fascist_dictatorship
+            government = proletarian_dictatorship
+	        government = presidential_dictatorship	
+            }
+			OR = {
+			owns = 400
+			has_global_flag = english_int 
+			has_global_flag = french_int 
+			has_country_flag = Anglois_accepted
+			}
+		}
+		
+		effect = {
+			prestige = 5
+			set_country_flag = pale_calais
+			400 = {
+				add_core = THIS
+			}
+			401 = {
+				add_core = THIS
+			}
+			399 = {
+				add_core = THIS
+			}
+			404 = { add_core = THIS }
+		}
+    }
+			
+	form_franche_comte = {
+		picture = apanage
+		potential = {
+			tag = DUA
+			NOT = {
+				has_country_flag = franchecomte
+			}
+		}	
+		allow = {
+			is_greater_power = yes
+			NOT = { war = yes }
+			OR = {
+			owns = 428
+			government = absolute_monarchy
+	        government = fascist_dictatorship
+            government = proletarian_dictatorship
+	        government = presidential_dictatorship	
+            }
+			OR = {
+			owns = 428
+			has_global_flag = english_int 
+			has_global_flag = french_int 
+			has_country_flag = Anglois_accepted
+			}
+		}
+		
+		effect = {
+			prestige = 5
+			set_country_flag = franchecomte
+			428 = {
+				add_core = THIS
+			}
+			429 = {
+				add_core = THIS
+			}
+			430 = {
+				add_core = THIS
+			}
+			431 = {
+				add_core = THIS
+			}
+			407 = {
+				add_core = THIS
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	question_of_champange = {
+		picture = apanage
+		potential = {
+			tag = BRG			
+			NOT = {	has_country_flag = fizzywine }	
+			NOT = { has_country_flag = treaty_of_neuchatel }
+		}	
+
+		allow = {
+			is_greater_power = yes
+			OR = {
+			DUA = {
+			OR = {
+			has_global_flag = english_int 
+			has_global_flag = french_int 
+			has_country_flag = Anglois_accepted
+			     }
+			}
+			FRA = { exists = yes }
+			}
+		}
+		
+		effect = {
+			prestige = 5
+			set_country_flag = fizzywine
+			any_country = {
+			limit = {
+			OR = {
+			tag = FRA
+			tag = DUA
+			}
+			owns = 403
+			}
+            country_event = 123123
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	annex_rhineland = {
+	    picture = rhineland
+		potential = {
+			tag = BRG	
+		    has_global_flag = RHI_vassal
+			NOT = {	has_global_flag = rhineland_has_revolted }
+            NOT = { has_country_flag = annex_the_rhine }			
+		}
+
+		allow = {
+		    OR = {
+			year = 1855
+		    state_n_government = 1 
+			}
+			OR = {
+			has_country_flag = RHI_annex_time
+			year = 1859
+			}
+		}
+		
+		effect = {
+		prestige = 5
+		clr_global_flag = RHI_vassal
+        set_country_flag = annex_the_rhine 
+		inherit = RHI
+	    }	
+    }		
+
+	treaty_of_neuchatel = {
+		potential = {
+			NOT = { owns = 406 }
+			NOT = { owns = 407 }
+			NOT = { OCC = { owns = 406 } }
+			NOT = { OCC = { owns = 407 } }
+			exists = DUA
+			tag = BRG
+			NOT = {
+				has_country_flag = treaty_of_neuchatel
+	            has_country_flag = south_taken_Illegal
+			}
+		}	
+		allow = {
+			NOT = { war = yes }
+		}
+		
+		effect = {
+			prestige = 10
+			badboy = -10
+			any_pop = {
+				militancy = -3
+			}
+			set_country_flag = treaty_of_neuchatel
+			428 = {
+				secede_province = DUA
+				add_core = DUA
+				remove_core = BRG
+			}
+			429 = {
+				secede_province = DUA
+				add_core = DUA
+				remove_core = BRG
+			}
+			430 = {
+				secede_province = DUA
+				add_core = DUA
+				remove_core = BRG
+			}
+			431 = {
+				secede_province = DUA
+				add_core = DUA
+				remove_core = BRG
+			}
+			407 = {
+				secede_province = DUA
+				add_core = DUA
+				remove_core = BRG
+			}
+			451 = {
+				secede_province = DUA
+				add_core = DUA
+				remove_core = BRG
+			}
+			452 = {
+				secede_province = DUA
+				add_core = DUA
+				remove_core = BRG
+			}
+			453 = {
+				secede_province = DUA
+				add_core = DUA
+				remove_core = BRG
+			}
+			454 = {
+				secede_province = DUA
+				add_core = DUA
+				remove_core = BRG
+			}
+			402 = {
+				secede_province = DUA
+				add_core = DUA
+				remove_core = BRG
+			}
+			any_owned = { 
+			limit = { is_core = GNV }
+			secede_province = GNV
+			remove_core = BRG
+				}
+			any_owned = { 
+			limit = { region = FRA_404 }
+			secede_province = DUA
+			remove_core = BRG
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	BRG_ai_manipulation = {
+	   picture = Savoie
+		potential = {
+			tag = BRG
+			ai = yes
+			NOT = {
+			has_country_flag = treaty_of_neuchatel
+			has_country_flag = BRG_manipulation
+			has_country_flag = savoya
+			}
+		}
+
+		allow = {
+			rank = 3
+			has_country_flag = fizzywine
+            all_core = { owned_by = THIS }
+			year = 1855
+			NOT = { war = yes }
+		}
+		
+		effect = {
+			prestige = 5
+			set_country_flag = BRG_manipulation
+			465 = {
+				add_core = BRG
+			}
+			466 = {
+				add_core = BRG
+			}
+			721 = {
+				add_core = BRG
+			}
+			609  = {
+				add_core = BRG
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+		
+	savoi_at_last = {
+		picture = Savoie
+		potential = {
+			tag = BRG
+			NOT = {
+				has_country_flag = treaty_of_neuchatel
+				has_country_flag = savoya
+			}
+		}	
+		allow = {
+			is_greater_power = yes
+			NOT = { war = yes }
+			owns = 465
+			owns = 466
+			owns = 721 
+			owns = 609 
+		}
+		
+		effect = {
+			prestige = 5
+			set_country_flag = savoya
+			465 = {
+				add_core = BRG
+				add_core = GNV
+				remove_core = SAR
+				remove_core = DUA
+				remove_core = ITA
+			}
+			466 = {
+				add_core = BRG
+				add_core = GNV
+				remove_core = SAR
+				remove_core = DUA
+				remove_core = ITA
+			}
+			721 = {
+				add_core = BRG
+				add_core = GNV
+				remove_core = SAR
+				remove_core = DUA
+				remove_core = ITA
+			}
+			609  = {
+				add_core = BRG
+				add_core = GNV
+				remove_core = SAR
+				remove_core = DUA
+				remove_core = ITA
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	savoi_at_last2 = {
+		potential = {
+			tag = GNV
+			NOT = {
+				has_country_flag = savoya2
+			}
+		}	
+		allow = {
+			NOT = { war = yes }
+			owns = 465
+			owns = 466
+		}
+		
+		effect = {
+			prestige = 5
+			set_country_flag = savoya2
+			465 = {
+				add_core = GNV
+				remove_core = SAR
+				remove_core = DUA
+				remove_core = ITA
+				remove_core = BRG
+			}
+			466 = {
+				add_core = GNV
+				remove_core = SAR
+				remove_core = DUA
+				remove_core = ITA
+				remove_core = BRG
+			}
+
+			607 = {
+				remove_core = BRG
+			}
+			608 = {
+				remove_core = BRG
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	form_lotharingia = {
+		potential = {
+			tag = BRG
+			NOT = {
+			has_country_flag = lothaaringia
+		    has_country_flag = treaty_of_neuchatel
+			government = proletarian_dictatorship
+			government = bourgeois_dictatorship
+			government = presidential_dictatorship
+			government = democracy
+			}
+		}	
+		allow = {
+			is_greater_power = yes
+			mass_politics = 1
+            has_country_flag = savoya
+			NOT = { war = yes }
+			BRG = {
+				all_core = {
+					owned_by = THIS
+				}
+			}
+			GER = { exists = no }
+			NET = { exists = no }
+		}
+		
+		effect = {
+			prestige = 25
+			set_country_flag = lothaaringia
+			FRA_404 = {
+				add_core = BRG
+			}
+			FRA_451 = {
+				add_core = BRG
+			}
+			PRU_575 = {
+				add_core = BRG
+			}
+			FRA_467 = {
+				add_core = BRG
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	fall_of_burgundy = {
+		potential = {
+			tag = BRG
+			has_global_flag = Burgundy_is_cape
+			NOT = { SAF = { exists = yes } }
+		}
+		allow = {
+			NOT = {
+				BRG = {
+					any_owned_province = {
+						continent = europe
+					}
+				}
+			}
+			is_greater_power = no
+			war = no
+		}
+		effect = {
+			change_tag = SAF
+			prestige = 10
+			add_accepted_culture = boer
+			any_owned = {
+				remove_core = BRG
+			}
+			any_country = {
+				any_owned = {
+					remove_core = BRG
+				}
+			}
+			any_owned = {
+				limit = {
+					continent = europe
+				}
+				remove_core = THIS
+			}
+			any_country = {
+				any_owned = {
+					limit = {
+						continent = europe
+					}
+					remove_core = THIS
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	move_to_namur = { 
+	
+		potential = { 
+		tag = BRG 
+		NOT = { owns = 381 }
+		owns = 392 
+		NOT = { has_country_flag = anvers_lost }
+		}
+		
+		allow = { 
+		NOT = { owns = 381 }
+		}
+		
+		effect = { 
+		set_country_flag = anvers_lost
+		capital = 392 
+		}
+	}
+	
+	move_back_anvers = { 
+		potential = { 
+			tag = BRG 
+			has_country_flag = anvers_lost
+		}
+	
+		allow = { 
+			owns = 381
+			owns = 390 
+		}
+	
+		effect = { 
+			clr_country_flag = anvers_lost 
+			capital = 390 
+		}
+		
+	}
+	
+	reclaim_flanders = { 
+		potential = { 
+		tag = NET 
+		exists = yes
+		NOT = { 387 = { is_core = NET } } 
+		NOT = { 393 = { is_core = NET } }
+		NOT = { has_country_flag = flanders_reclaimed_NET }
+		}
+		
+		allow = { 
+		all_core = { owned_by = THIS }
+		nationalism_n_imperialism = 1 
+		OR = { 
+		AND = { 
+			BRG = { is_greater_power = no }
+			is_secondary_power = yes 
+				}
+		AND = { 
+			BRG = { is_greater_power = yes }
+			is_greater_power = yes 
+				}
+			}
+		}
+		
+		effect = { 
+		set_country_flag = flanders_reclaimed_NET 
+		BUR_390 = { add_core = NET }
+		BEL_387 = { add_core = NET }
+		}	
+	}
+	
+	end_BRG_sea_access = { 
+		potential = { 
+		tag = NET 
+		exists = yes 
+		OR = { 
+		has_global_flag =  Wilhelmus
+		has_country_flag = flanders_reclaimed_NET
+		}
+		NOT = { has_country_flag = end_BRG_sea_access }
+		}
+		
+		allow = { 
+		all_core = { owned_by = THIS }
+		nationalism_n_imperialism = 1 
+		NOT = { FRA = { owns = 399 } }
+		NOT = { DUA = { owns = 399 } }
+		OR = { 
+		AND = { 
+			BRG = { is_greater_power = no }
+			is_secondary_power = yes 
+				}
+		AND = { 
+			BRG = { is_greater_power = yes }
+			is_greater_power = yes 
+				}
+			}
+		}
+		
+		effect = { 
+		set_country_flag = end_BRG_sea_access 
+		402 = { add_core = NET }
+		FRA_399 = { add_core = NET }
+		}
+	}
+	
+	dismantle_BRG_empire = { 
+		potential = { 
+		tag = NET 
+		BRG = { any_owned_province = { is_colonial = yes } } 
+		exists = yes 	
+		NOT = { has_country_flag = dismantle_BRG_empire }
+		}
+		
+		allow = { 
+		owns = 388
+		owns = 378
+		owns = 375
+		owns = 383
+		OR = {
+		owns = 399
+		FRA = { owns = 399 } 
+		DUA = { owns = 399 }
+		CHA = { owns = 399 }
+		}
+		OR = {
+		owns = 402
+		FRA = { owns = 402 } 
+		DUA = { owns = 402 }
+		CHA = { owns = 402 }
+		}
+		BRG = { NOT = { owns = 467 } }
+		OR = { 
+		AND = { 
+			BRG = { is_greater_power = no }
+			is_secondary_power = yes 
+				}
+		AND = { 
+			BRG = { is_greater_power = yes }
+			is_greater_power = yes 
+				}
+			}
+		}
+		
+		effect = { 
+		set_country_flag = dismantle_BRG_empire
+		BRG = { country_event = 653023 }
+		}
+	}
+	
+	reclaim_flanders_BRG = { 
+		potential = { 
+		tag = BRG 
+		exists = yes 
+		all_core = { owned_by = THIS }
+		has_country_flag = flanders_lost
+		NOT = { has_country_flag = flanders_reclaimed_BRG }
+		}
+		
+		allow = { 
+		is_secondary_power = yes
+        revolution_n_counterrevolution = 1 		
+	    OR = {
+	      government = fascist_dictatorship
+		  government = proletarian_dictatorship
+		  war_policy = jingoism
+		  is_greater_power = yes		  
+		 }
+		}
+		
+		effect = { 
+		set_country_flag = flanders_reclaimed_BRG 
+		BUR_390 = { add_core = BRG }
+		BEL_387 = { add_core = BRG }
+		}			
+	}
+	
+	
+	reclaim_NET = {
+		picture = apanage	
+		potential = { 
+		tag = BRG 
+		exists = yes 
+		all_core = { owned_by = THIS }
+		NET = { exists = yes }
+		has_country_flag = flanders_reclaimed_BRG
+		NOT = { has_country_flag = the_director_demands }
+		}
+		
+		allow = { 
+		is_secondary_power = yes
+	    government = fascist_dictatorship
+        NOT = { is_disarmed = yes }		
+		}
+		
+		effect = { 
+		badboy = 1
+		set_country_flag = the_director_demands
+		war = {
+			target = NET
+			attacker_goal = { casus_belli = conquest }
+			defender_goal = { casus_belli = status_quo }
+		     }        
+		}			
+	}
+	
+	dutch_flanders = { 
+		potential = { 
+			tag = NET  
+			has_country_flag = flanders_reclaimed 
+			NOT = { has_global_flag = flanders_renamed }
+		}
+		
+		allow = { 
+		all_core = { owned_by = THIS }
+		}
+		
+		effect = { 
+		387 = { change_province_name = "Brussel" }
+		388 = { change_province_name = "Brugge" }
+		389 = { change_province_name = "Ghent" }
+		390 = { change_province_name = "Antwerp" }
+		393 = { change_province_name = "Doornik"}
+		2636 = { change_province_name = "Dunkirk" }
+		set_global_flag = flanders_renamed
+		}
+	}
+	
+	burgundian_flanders = {
+	
+		potential = { 
+		has_global_flag = flanders_renamed
+		tag = BRG
+		}
+		
+		allow = { 
+		387 = { owned_by = THIS }
+		388 = { owned_by = THIS }
+		2636 = { owned_by = THIS }
+		}
+		
+		effect = { 
+		clr_global_flag = flanders_renamed
+		387 = { change_province_name = "Bruxelles" }
+		388 = { change_province_name = "Bruges" }
+		389 = { change_province_name = "Gand" }
+		390 = { change_province_name = "Anvers" }
+		393 = { change_province_name = "Tournai"}
+		2636 = { change_province_name = "Dunkerque" }
+		}
+	
+	}
+	
+	accept_rhenish_BRG = { 
+		potential = { 
+			tag = BRG 
+			NOT = { has_global_flag = rhineland_forever }
+			NOT = { has_country_flag = BRG_rhein }
+			NOT = { RHI = { exists = yes } }
+			NOT = { GER = { exists = yes } } 
+			}
+		
+		allow = { 
+			is_greater_power = yes 
+			all_core = { owned_by = THIS }
+			revolution_n_counterrevolution = 1 
+			}
+		
+		effect = { 
+			set_country_flag = BRG_rhein
+			add_accepted_culture = rheinish 
+		}
+	}
+	
+	# Ported from HPM
+	
+	end_the_javanese_sultanates = {
+		picture = map_java
+		potential = {
+			tag = BRG
+			JAV = { 
+				vassal_of = THIS 
+				exists = yes
+				civilized = no
+				}
+			NOT = { has_country_flag = javanese_integrated }
+		}
+		
+		allow = {
+			war = no
+			state_n_government = 1
+		}
+		
+		effect = {
+			set_country_flag = javanese_integrated
+			JAV = { tech_school = developing_tech_school country_event = 98252 }
+			badboy = 1
+		}
+		
+		ai_will_do = { 
+			factor = 1 
+			modifier = { factor = 0 badboy = 0.95 }
+		}
+	}
+
+	embrace_the_boer = {
+		picture = embrace_the_boer
+		potential = {
+			tag = NET
+			NOT = { has_country_flag = boer_accepted }
+			NOT = { has_country_flag = Boer_Dutch }
+			any_owned_province = { 
+			OR = {
+				is_core = SAF
+				is_core = BTV
+				}
+			}
+		}
+		
+		allow = {
+			war = no
+			money = 100000
+			any_owned_province = { has_pop_culture = boer }
+		}
+		
+		effect = {
+			set_country_flag = boer_accepted
+			treasury = -100000
+			add_accepted_culture = boer
+			any_pop = {
+				limit = { has_pop_culture = boer }
+				militancy = -7
+				consciousness = -4
+				money = 10
+			}
+		}
+		
+		ai_will_do = { factor = 1 }
+	}
+}

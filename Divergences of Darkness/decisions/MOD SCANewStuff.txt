@@ -1,0 +1,318 @@
+political_decisions = {
+	mend_the_fracture = {
+	picture = concede_finland
+
+	potential = { 
+	tag = SCA
+	has_global_flag = endGNBW		
+	NOT = { has_country_flag = SCA_Forever }
+	SCA = { exists = yes }
+	}
+	
+	allow = {
+		NOT = { exists = SWE }
+        is_greater_power = yes
+			SWE = {
+				all_core = {
+					OR = {
+						owned_by = THIS
+						owner = {
+							in_sphere = THIS
+					}
+				}
+			}
+		}
+		  DEN = {
+			  all_core = {
+				  OR = {
+					  owned_by = THIS
+				   owner = {
+					   in_sphere = THIS
+				   }
+			   }
+		   }
+	   }		
+   }
+	
+	effect = { 
+	prestige = 20
+	any_owned = { 
+	remove_core = SWE
+	}
+	any_owned = { 
+	remove_core = DEN
+	}
+	set_country_flag = SCA_Forever
+	}
+	ai_will_do = {
+	factor = 1
+	}
+}   
+
+	reform_SCA = {
+	picture = form_scandinavia
+	potential = {
+	        OR = {
+			tag = DEN
+			tag = SWE
+			tag = FIN
+			}
+			NOT = {	SCA = { exists = yes }	}
+			NOT = { has_country_flag = valid_SCA }
+	        has_global_flag = endGNBW	
+		}
+
+		allow = {
+			NOT = { war = yes }
+			NOT = { is_vassal = yes }
+			set_country_flag = valid_SCA
+			OR = {
+			is_secondary_power = yes
+			is_greater_power = yes
+			}
+			prestige = 50
+			SCA = {
+				all_core = {
+					OR = {
+						owned_by = THIS
+						owner = {
+							in_sphere = THIS
+						}
+					}
+				}
+			}
+		}
+		
+		effect = {
+			prestige = 20
+			change_tag = SCA
+			any_country = {
+				limit = {
+					NOT = {
+						is_greater_power = yes
+					}
+					is_culture_group = THIS
+					in_sphere = THIS
+				}
+				country_event = 11101
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	danelaw = {
+	    picture = British_islands
+		potential = {
+			tag = SCA
+			has_global_flag = french_int
+			has_country_flag = SCA_danelaw
+            OR = {
+			NTL = { exists = yes }
+			DUA = { any_owned_province = { is_core = NTL } }
+			}
+			NOT = { has_country_flag = eightsevenone }
+		}
+		
+		allow = {
+			war = no
+			is_vassal = no
+			SCO = { all_core = { owned_by = THIS } }
+			is_greater_power = yes 
+		}
+		
+		effect = {
+			set_country_flag = eightsevenone
+			NTL = { all_core = { add_core = SCA } }
+			any_country = {
+				limit = {
+					any_owned_province = { is_core = ENL }
+				}
+				relation = { who = THIS value = -200 }
+				leave_alliance = THIS
+			}
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	claim_ireland = {
+	    picture = British_islands
+		potential = {
+			tag = SCA
+			OR = {
+			has_global_flag = french_int
+			DUA = { has_country_flag = Anglois_accepted }
+			}
+			has_country_flag = SCA_danelaw
+			NOT = { has_country_flag = irish_SCA }
+		}
+		
+		allow = {
+			war = no
+			is_vassal = no
+			SCO = { all_core = { owned_by = THIS } }
+			NTL = { all_core = { owned_by = THIS } }
+			is_greater_power = yes 
+		}
+		
+		effect = {
+			set_country_flag = irish_SCA
+			IRE = { all_core = { add_core = SCA } }
+			any_country = {
+				limit = {
+					any_owned_province = { is_core = IRE }
+				}
+				relation = { who = THIS value = -200 }
+				leave_alliance = THIS
+			}
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	accept_the_scottish = {
+	    picture = British_islands
+		potential = {
+			tag = SCA
+			has_country_flag = scottish_failure
+			NOT = { accepted_culture = scottish }
+		}
+		
+		allow = {
+			war = no
+			is_vassal = no
+			SCO = { all_core = { owned_by = THIS } }
+			minorities_reform = protected
+			OR = {
+			government = hms_government
+			government = democracy
+			}
+			OR = {
+			vote_franschise = universal_weighted_voting
+			vote_franschise = universal_voting
+			}
+		}
+		
+		effect = {
+		    prestige = 10
+			clr_country_flag = scottish_failure
+            add_accepted_culture = scottish
+		}
+		
+		ai_will_do = {
+			factor = 1
+		  }
+	}
+	
+	annex_scotland = {
+	    picture = British_islands
+		potential = {
+			tag = DUA
+			has_global_flag = english_int
+			NOT = { SCA = { has_country_flag = SCO_decisions_held } }
+			SCO = { has_country_flag = SCO_recognized }
+			NOT = { has_country_flag = annexed_scotland }
+		}
+		
+		allow = {
+		   is_greater_power = yes 
+		   war = no
+		   SCO = { exists = yes }
+		   SCO = {
+				all_core = {
+						OR = {
+						owned_by = THIS
+						owner = {
+						    NOT = { vassal_of = SCA }
+							in_sphere = THIS
+						}
+					}
+				}
+			}
+		}
+		
+		effect = {
+		    prestige = 10
+			inherit = SCO
+		}
+		
+		ai_will_do = {
+			factor = 1
+		  }
+	}
+
+	SCO_recognized = {
+		potential = {
+			tag = SCO
+			NOT = { has_country_flag = SCO_recognized }
+		    SCA = { NOT = { has_country_flag = SCO_decisions_held } }
+			all_core = { owned_by = THIS }
+		}
+		
+		allow = {
+			war = no
+			is_vassal = no
+		}
+		
+		effect = {
+			set_country_flag = SCO_recognized
+			set_global_flag = SCO_loss
+			any_owned = {
+				limit = { is_core = THIS }
+				remove_core = SCA
+			}
+			any_country = {
+				limit = {
+					any_owned_province = { is_core = SCO }
+					NOT = { primary_culture = scottish }
+				}
+				relation = { who = THIS value = -100 }
+				leave_alliance = THIS
+			}
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	SCO_claim = {
+		potential = {
+			tag = SCA
+			OR = {
+			government = hms_government
+			government = prussian_constitutionalism
+			government = absolute_monarchy
+			government = fascist_dictatorship
+            government = proletarian_dictatorship
+			}
+			has_global_flag = SCO_loss 
+			is_greater_power = yes 
+			NOT = { ENG = { exists = yes } }		
+		}
+		
+		allow = {
+			war = no
+			is_vassal = no
+			SCO = { NOT = { is_greater_power = yes } }
+			all_core = { owned_by = THIS }
+			nationalism_n_imperialism = 1 
+		}
+		
+		effect = {
+			clr_global_flag = SCO_loss
+			badboy = 20
+			SCO = { all_core = { add_core = SCA } }
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+}

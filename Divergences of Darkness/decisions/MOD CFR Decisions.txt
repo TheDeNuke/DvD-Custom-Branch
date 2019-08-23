@@ -1,0 +1,526 @@
+political_decisions = {
+	
+		 integrate_FRM = {
+		    picture = reichstag
+			potential = {
+				tag = CFR
+				has_country_flag = CFR_locking
+	            NOT = { has_global_flag = CFR_completed }
+	            NOT = { has_country_flag = FRM_integration }
+			}
+
+			allow = {
+			OR = {
+			state_n_government = 1
+			is_greater_power = yes 
+			}
+	        has_country_flag = CFR_integration_permitted
+			}
+
+			effect = {
+			inherit = FRM
+			set_country_flag = FRM_integration
+            clr_country_flag = CFR_integration_permitted
+            country_event = { id = 123205 days = 1095 }
+			}
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		
+		 CFR_frankfurt_move = {
+		    picture = frankfurt_parliament
+			potential = {
+				tag = CFR
+				OR = {
+				has_global_flag = CFR_completed 
+				has_country_flag = CFR_locking
+				}
+	            NOT = { has_country_flag = FRM_capital }
+			}
+
+			allow = {
+			owns = 564
+			}
+
+			effect = {
+			prestige = 10
+            capital = 564
+			set_country_flag = FRM_capital
+			}
+			ai_will_do = {
+				factor = 1
+			}
+		}
+
+		 integrate_HES = {
+		    picture = reichstag
+			potential = {
+				tag = CFR
+				has_country_flag = CFR_locking
+	            NOT = { has_global_flag = CFR_completed }
+	            NOT = { has_country_flag = HES_integration }
+			}
+
+			allow = {
+			OR = {
+			state_n_government = 1
+			is_greater_power = yes 
+			}
+	        has_country_flag = CFR_integration_permitted
+			}
+
+			effect = {
+			inherit = HES
+			set_country_flag = HES_integration
+            clr_country_flag = CFR_integration_permitted
+            country_event = { id = 123205 days = 1095 }
+			}
+			ai_will_do = {
+				factor = 1
+			}
+		}		
+
+		integrate_WES = {
+		    picture = reichstag
+			potential = {
+				tag = CFR
+				has_country_flag = CFR_locking
+	            NOT = { has_global_flag = CFR_completed }
+	            NOT = { has_country_flag = WES_integration }
+			}
+
+			allow = {
+			OR = {
+		    nationalism_n_imperialism = 1 
+			is_greater_power = yes 
+			}
+	        has_country_flag = CFR_integration_permitted
+			}
+
+			effect = {
+			inherit = WES
+			set_country_flag = WES_integration
+            clr_country_flag = CFR_integration_permitted
+            country_event = { id = 123205 days = 1095 }
+			}
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		
+		integrate_NAS = {
+		    picture = reichstag
+			potential = {
+				tag = CFR
+				has_country_flag = CFR_locking
+	            NOT = { has_global_flag = CFR_completed }
+	            NOT = { has_country_flag = NAS_integration }
+			}
+
+			allow = {
+			OR = {
+		    nationalism_n_imperialism = 1 
+			is_greater_power = yes 
+			}
+	        has_country_flag = CFR_integration_permitted
+			}
+
+			effect = {
+			inherit = NAS
+			set_country_flag = NAS_integration
+            clr_country_flag = CFR_integration_permitted
+            country_event = { id = 123205 days = 1095 }
+			}
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		
+		integrate_BEG = {
+		    picture = reichstag
+			potential = {
+				tag = CFR
+				has_country_flag = CFR_locking
+	            NOT = { has_global_flag = CFR_completed }
+	            NOT = { has_country_flag = BEG_integration }
+			}
+
+			allow = {
+			OR = {
+		    revolution_n_counterrevolution = 1
+			is_greater_power = yes 
+			}
+	        has_country_flag = CFR_integration_permitted
+			}
+
+			effect = {
+			inherit = BEG
+			set_country_flag = BEG_integration
+            clr_country_flag = CFR_integration_permitted
+            country_event = { id = 123205 days = 1095 }
+			}
+			ai_will_do = {
+				factor = 1
+			}
+		}
+
+		integrate_MNR = {
+		    picture = reichstag
+			potential = {
+				tag = CFR
+				has_country_flag = CFR_locking
+	            NOT = { has_global_flag = CFR_completed }
+	            NOT = { has_country_flag = MNR_integration }
+			}
+
+			allow = {
+			OR = {
+		    revolution_n_counterrevolution = 1
+			is_greater_power = yes 
+			}
+	        has_country_flag = CFR_integration_permitted
+			}
+
+			effect = {
+			inherit = MNR
+			set_country_flag = MNR_integration
+            clr_country_flag = CFR_integration_permitted
+            country_event = { id = 123205 days = 1095 }
+			}
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		
+		integrate_LIP = {
+		    picture = reichstag
+			potential = {
+				tag = CFR
+				has_country_flag = CFR_locking
+	            NOT = { has_global_flag = CFR_completed }
+	            NOT = { has_country_flag = LIP_integration }
+			}
+
+			allow = {
+			OR = {
+		    mass_politics = 1
+			is_greater_power = yes 
+			}
+	        has_country_flag = CFR_integration_permitted
+			}
+
+			effect = {
+			inherit = LIP
+			set_country_flag = LIP_integration
+            clr_country_flag = CFR_integration_permitted
+            country_event = { id = 123205 days = 1095 }
+			}
+			ai_will_do = {
+				factor = 1
+			}
+		}
+
+		integrate_FRI = {
+		    picture = reichstag
+			potential = {
+				tag = CFR
+				has_country_flag = CFR_locking
+	            NOT = { has_global_flag = CFR_completed }
+	            NOT = { has_country_flag = FRI_integration }
+			}
+
+			allow = {
+			OR = {
+		    mass_politics = 1
+			is_greater_power = yes 
+			}
+	        has_country_flag = CFR_integration_permitted
+			}
+
+			effect = {
+			inherit = FRI
+			set_country_flag = FRI_integration
+            clr_country_flag = CFR_integration_permitted
+            country_event = { id = 123205 days = 1095 }
+			}
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		
+		final_centralization_CFR = {
+		    picture = german_confederation
+			potential = {
+				tag = CFR
+	            NOT = { has_global_flag = CFR_completed }
+				has_country_flag = CFR_locking            
+			}
+
+			allow = {
+            all_core = { owned_by = THIS }
+            has_country_flag = FRI_integration
+            has_country_flag = FRM_integration
+            has_country_flag = HES_integration
+            has_country_flag = MNR_integration
+            has_country_flag = NAS_integration
+            has_country_flag = LIP_integration
+            has_country_flag = BEG_integration	
+            has_country_flag = WES_integration				
+	        has_country_flag = CFR_integration_permitted
+			}
+
+			effect = {
+			country_event = 123214
+            prestige = 20
+			
+			}
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		
+		reclaim_treaty_BAV = {
+		    picture = frankfurt_parliament
+			potential = {
+				OR = {
+				tag = BAV
+				tag = SGF
+				}
+				has_global_flag = CFR_exists
+	            NOT = { has_country_flag = BAV_claim_north }  				
+			}
+
+			allow = {
+            nationalism_n_imperialism = 1 
+            is_secondary_power = yes
+			}
+
+			effect = {
+			prestige = 10
+            set_country_flag = BAV_claim_north 
+		    2560 = { add_core = THIS } 
+            596 = { add_core = THIS }
+            597 = { add_core = THIS }			
+			}
+
+			ai_will_do = {
+				factor = 1
+			}
+		}	
+		
+		claim_tirol_BAV = {
+		    picture = frankfurt_parliament
+			potential = {
+				tag = BAV
+				has_global_flag = CFR_exists
+	            NOT = { has_country_flag = BAV_claim_tirol }  				
+			}
+
+			allow = {
+            revolution_n_counterrevolution = 1
+			}
+
+			effect = {
+			prestige = 10
+            set_country_flag = BAV_claim_tirol 
+		    TIR = { all_core = { add_core = BAV } } 			
+			}
+
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		
+		BAV_constitutionalism = {
+		    picture = build_maximilianstrasse
+			potential = {
+				tag = BAV
+				OR = {
+				government = prussian_constitutionalism
+				government = absolute_monarchy
+				}
+	            NOT = { has_global_flag = BAV_const }  				
+			}
+
+			allow = {
+            has_global_flag = liberal_revolutions_should_now_fire
+			}
+
+			effect = {
+			prestige = 10
+            set_global_flag = BAV_const
+			government = hms_government
+		    ruling_party_ideology = liberal
+		    political_reform = universal_voting
+			political_reform = population_equal_weight
+			political_reform = yes_meeting
+			political_reform = free_press
+			political_reform = non_socialist
+			political_reform = secret_ballots
+		    any_pop = { 
+		    ideology = {
+				value = reactionary
+				factor = -0.20
+			    }
+		    } 
+		    any_pop = { 
+		    ideology = {
+				value = conservative
+				factor = 0.10
+			    }
+		    } 
+		    any_pop = { 
+		    ideology = {
+				value = liberal
+				factor = 0.30
+			    }
+		    } 	
+		    diplomatic_influence = { who = BOH value = -50 }
+		    relation = { who = BOH value = -50 }			
+		   }
+			ai_will_do = {
+				factor = 1
+			  }
+		}
+
+		expand_the_coast_CFR = {
+		    picture = frankfurt_parliament
+			potential = {
+				tag = CFR
+				has_global_flag = CFR_completed
+	            NOT = { has_country_flag = CFR_coastline }  				
+			}
+
+			allow = {
+                all_core = { owned_by = THIS }
+			}
+
+			effect = {
+            set_country_flag = CFR_coastline 
+			OLD = { all_core = { add_core = CFR } } 
+		    531 = { add_core = CFR } 
+            535 = { add_core = CFR }
+            539 = { add_core = CFR }			
+			}
+
+			ai_will_do = {
+				factor = 1
+			}
+		}		
+		
+		integrate_BAV = {
+		    picture = reichstag
+			potential = {
+				tag = HLR
+				has_country_flag = Bavarian_Protectorate
+	            NOT = { has_country_flag = BAV_integration }
+			}
+
+			allow = {
+			mass_politics = 1
+			}
+
+			effect = {
+			inherit = BAV
+			set_country_flag = BAV_integration
+            clr_country_flag = Bavarian_Protectorate
+			}
+			ai_will_do = {
+				factor = 1
+			}
+		}
+
+##### Confederation Treaty must be rendered null and void by either having them finish the centralization process or switch to a illegal government form #####
+#####  e.g. Fascist or Communist Dictatorship. Alternatively, if CAE is a illegal government form then it can also force its will onto the CFR #####
+##### HLR stops existing if its not a Monarchy. So it can just annex CFR by the simple fact of it being the GER tag #####
+		
+		intergrate_CFR = {
+		    picture = frankfurt_parliament
+			potential = {
+			    OR = {
+				tag = HLR 
+				tag = CAE
+				}
+				has_country_flag = CFR_hates_council
+	            NOT = { has_country_flag = BOH_eats_CFR }  				
+			}
+
+			allow = {
+			OR = {
+			has_global_flag = CFR_completed 
+			CFR = { government = fascist_dictatorship }
+			CFR = { government = proletarian_dictatorship }
+			CAE = { government = fascist_dictatorship }
+			CAE = { government = proletarian_dictatorship }
+			}
+			CFR = {
+				all_core = {
+					OR = {
+						owned_by = THIS
+						owner = {
+							in_sphere = THIS
+						  }
+					  }
+				  }
+			   }
+			}
+
+			effect = {
+			prestige = 10
+            clr_country_flag = CFR_hates_council
+            set_country_flag = BOH_eats_CFR
+	        PRU_572 = { add_core = THIS } 	#Rhineland
+	        HES_2560 = { add_core = THIS }	#Palatinate
+	        PRU_575 = { add_core = THIS }	#Nordrhein
+	        HES_566 = { add_core = THIS }	#Hessen
+	        PRU_581 = { add_core = THIS }	#Westphalia
+	        HAN_534 = { add_core = THIS }	#East Frisia
+            add_accepted_culture = rheinish 
+            any_country = {
+				limit = {
+					primary_culture = north_german
+					in_sphere = THIS
+					NOT = {
+					    AND = { 
+						tag = CFR 
+						ai = no
+						}
+						tag = THIS
+					}
+				}
+				annex_to = THIS
+			}	
+            any_country = {
+				limit = {
+					primary_culture = rheinish
+					in_sphere = THIS
+					NOT = {
+					    AND = { 
+						tag = CFR 
+						ai = no
+						}
+						tag = THIS
+					}
+				}
+				annex_to = THIS
+			}
+            # You are not keeping the south #
+			 any_owned = { 
+	         limit = { 
+	         is_core = BAD
+		     }
+	         secede_province = BAD
+	         }
+             any_owned = { 
+	         limit = { 
+	         is_core = WUR
+		     }
+	         secede_province = WUR
+	         }			   
+	      }
+		  ai_will_do = {
+		      factor = 1
+		  }
+      }		
+}

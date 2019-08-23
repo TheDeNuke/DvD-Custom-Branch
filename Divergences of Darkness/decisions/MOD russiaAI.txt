@@ -1,0 +1,303 @@
+political_decisions = {
+	create_rossian_empire = {
+			potential = {
+				NOT = { RUS = { exists = yes } }
+				ai = yes
+				is_culture_group = east_slavic
+				NOT = { has_country_flag = magna_rossia }
+			}	
+			allow = {
+				NOT = { war = yes }
+				NOT = { part_of_sphere = yes }
+				is_greater_power = yes
+				year = 1850
+				OR = {
+					AND = {
+						tag = MUS
+						NOV = {
+							OR = {
+								NOT = { rank = 20 }
+								NOT = { exists = yes }
+							}
+						}
+						RYA = {
+							OR = {
+								NOT = { rank = 20 }
+								NOT = { exists = yes }
+							}
+						}						
+						UKR = {
+							OR = {
+								NOT = { rank = 20 }
+								NOT = { exists = yes }
+							}
+						}
+						PSV = {
+							OR = {
+								NOT = { rank = 20 }
+								NOT = { exists = yes }
+							}
+						}
+						BLR = {
+							OR = {
+								NOT = { rank = 20 }
+								NOT = { exists = yes }
+							}
+						}
+					}
+
+					AND = {
+						tag = RYA
+						NOV = {
+							OR = {
+								NOT = { rank = 20 }
+								NOT = { exists = yes }
+							}
+						}
+						MUS = {
+							OR = {
+								NOT = { rank = 20 }
+								NOT = { exists = yes }
+							}
+						}						
+						UKR = {
+							OR = {
+								NOT = { rank = 20 }
+								NOT = { exists = yes }
+							}
+						}
+						PSV = {
+							OR = {
+								NOT = { rank = 20 }
+								NOT = { exists = yes }
+							}
+						}
+						BLR = {
+							OR = {
+								NOT = { rank = 20 }
+								NOT = { exists = yes }
+							}
+						}
+					}
+
+					AND = {
+						tag = NOV
+						MUS = {
+							OR = {
+								NOT = { rank = 20 }
+								NOT = { exists = yes }
+							}
+						}
+						RYA = {
+							OR = {
+								NOT = { rank = 20 }
+								NOT = { exists = yes }
+							}
+						}		
+						UKR = {
+							OR = {
+								NOT = { rank = 20 }
+								NOT = { exists = yes }
+							}
+						}
+						PSV = {
+							OR = {
+								NOT = { rank = 20 }
+								NOT = { exists = yes }
+							}
+						}
+						BLR = {
+							OR = {
+								NOT = { rank = 20 }
+								NOT = { exists = yes }
+							}
+						}
+					}
+				}		
+			}
+			effect = {
+				prestige = 30
+				any_country = {
+					limit = {
+						is_culture_group = east_slavic
+						NOT = { tag = THIS }
+					}
+					country_event = 32410
+				}
+				set_country_flag = magna_rossia
+			}
+			ai_will_do = {
+				factor = 1
+			}
+	}
+
+	mother_russia_calling = {
+			potential = {
+				NOT = { RUS = { exists = yes } }
+				ai = yes
+				is_culture_group = east_slavic
+				has_country_flag = magna_rossia
+			}	
+			allow = {
+				NOT = { war = yes }
+				NOT = { part_of_sphere = yes }
+				rank = 6
+				OR = {
+					AND = {
+						tag = MUS
+						NOV = {
+							OR = {
+								NOT = { rank = 20 }
+								NOT = { exists = yes }
+							}
+						}
+						RYA = {
+							OR = {
+								NOT = { rank = 20 }
+								NOT = { exists = yes }
+							}
+						}						
+						UKR = {
+							OR = {
+								NOT = { rank = 20 }
+								NOT = { exists = yes }
+							}
+						}
+						PSV = {
+							OR = {
+								NOT = { rank = 20 }
+								NOT = { exists = yes }
+							}
+						}
+						BLR = {
+							OR = {
+								NOT = { rank = 20 }
+								NOT = { exists = yes }
+							}
+						}
+					}
+
+					AND = {
+						tag = RYA
+						NOV = {
+							OR = {
+								NOT = { rank = 20 }
+								NOT = { exists = yes }
+							}
+						}
+						MUS = {
+							OR = {
+								NOT = { rank = 20 }
+								NOT = { exists = yes }
+							}
+						}						
+						UKR = {
+							OR = {
+								NOT = { rank = 20 }
+								NOT = { exists = yes }
+							}
+						}
+						PSV = {
+							OR = {
+								NOT = { rank = 20 }
+								NOT = { exists = yes }
+							}
+						}
+						BLR = {
+							OR = {
+								NOT = { rank = 20 }
+								NOT = { exists = yes }
+							}
+						}
+					}
+
+					AND = {
+						tag = NOV
+						MUS = {
+							OR = {
+								NOT = { rank = 20 }
+								NOT = { exists = yes }
+							}
+						}
+						RYA = {
+							OR = {
+								NOT = { rank = 20 }
+								NOT = { exists = yes }
+							}
+						}
+						UKR = {
+							OR = {
+								NOT = { rank = 20 }
+								NOT = { exists = yes }
+							}
+						}
+						PSV = {
+							OR = {
+								NOT = { rank = 20 }
+								NOT = { exists = yes }
+							}
+						}
+						BLR = {
+							OR = {
+								NOT = { rank = 20 }
+								NOT = { exists = yes }
+							}
+						}
+					}
+				}
+				OR = {
+					AND = {
+						tag = NOV
+						NOT = { MUS = { exists = yes } }
+						NOT = { RYA = { exists = yes } }
+					}
+					AND = {
+						tag = MUS
+						NOT = { NOV = { exists = yes } }
+						NOT = { RYA = { exists = yes } }
+					}
+					AND = {
+						tag = RYA
+						NOT = { NOV = { exists = yes } }
+						NOT = { MUS = { exists = yes } }
+					}
+					AND = {
+						NOT = {
+							tag = MUS
+							tag = RUS
+							tag = NOV
+							tag = RYA
+						}
+						is_culture_group = east_slavic
+						NOT = { MUS = { exists = yes } }
+						NOT = { NOV = { exists = yes } }
+						NOT = { RYA = { exists = yes } }
+					}
+				}
+			}
+			effect = {
+				prestige = 15
+				clr_country_flag = magna_rossia
+				change_tag = RUS
+				#Threatened Nations#
+				relation = { who = CIR value = -400 }
+				diplomatic_influence = { who = CIR value = -400 }
+				relation = { who = AZB value = -400 }
+				diplomatic_influence = { who = AZB value = -400 }
+				relation = { who = SIB value = -400 }
+				diplomatic_influence = { who = SIB value = -400 }
+				relation = { who = ASK value = -400 }
+				diplomatic_influence = { who = ASK value = -400 }
+				relation = { who = DAG value = -400 }
+				diplomatic_influence = { who = DAG value = -400 }	
+				relation = { who = TAR value = -400 }
+				diplomatic_influence = { who = TAR value = -400 }	
+				relation = { who = CRI value = -400 }
+				diplomatic_influence = { who = CRI value = -400 }
+				#Threatened Nations#
+			}
+			ai_will_do = {
+				factor = 1
+			}
+	}
+}

@@ -1,0 +1,794 @@
+political_decisions = {
+		form_russia = {
+			potential = {
+				is_culture_group = east_slavic	
+				
+				
+				NOT = {
+					exists = RUS
+				}
+			}
+		
+			allow = {
+				NOT = { war = yes }
+				prestige = 40
+				MUS = {
+					all_core = {
+						OR = {
+							owned_by = THIS
+							owner = {
+								in_sphere = THIS
+							}
+						}
+					}
+				}
+				RYA = {
+					all_core = {
+						OR = {
+							owned_by = THIS
+							owner = {
+								in_sphere = THIS
+							}
+						}
+					}
+				}
+				NOV = {
+					all_core = {
+						OR = {
+							owned_by = THIS
+							owner = {
+								in_sphere = THIS
+							}
+						}
+					}
+				}
+			}
+		
+			effect = {
+				prestige = 20
+				change_tag = RUS
+				add_accepted_culture = russian
+				add_accepted_culture = ugrian
+				#Threatened Nations#
+				relation = { who = CIR value = -400 }
+				diplomatic_influence = { who = CIR value = -400 }
+				relation = { who = AZB value = -400 }
+				diplomatic_influence = { who = AZB value = -400 }
+				relation = { who = SIB value = -400 }
+				diplomatic_influence = { who = SIB value = -400 }
+				relation = { who = ASK value = -400 }
+				diplomatic_influence = { who = ASK value = -400 }
+				relation = { who = DAG value = -400 }
+				diplomatic_influence = { who = DAG value = -400 }	
+				relation = { who = TAR value = -400 }
+				diplomatic_influence = { who = TAR value = -400 }	
+				relation = { who = CRI value = -400 }
+				diplomatic_influence = { who = CRI value = -400 }
+				#Threatened Nations#				
+				any_country = {
+					limit = {
+						is_culture_group = east_slavic
+						in_sphere = THIS
+					}
+					country_event = 11101
+				}
+			}
+			ai_will_do = {
+				factor = 1
+			}
+	}
+
+
+	mongolian_protectorate = {
+		potential = {
+			OR = { 
+			tag = RUS
+			tag = JAP 
+			}
+			is_greater_power = yes
+			MGL = {
+				exists = yes
+				is_vassal = no
+				neighbour = THIS
+				OR = {
+					in_sphere = THIS
+					part_of_sphere = no
+				}
+			}
+			NOT = { has_country_flag = mongolian_protectorate }
+		}
+		
+		allow = {
+			war = no
+			nationalism_n_imperialism = 1
+			MGL = {
+				war = no
+				NOT = { truce_with = THIS }
+				in_sphere = THIS
+			}
+		}
+		
+		effect = {
+			set_country_flag = mongolian_protectorate
+			MGL = { country_event = 80115 }
+		}
+	}
+
+	#New Russian focus event.
+	set_expansion_focus = {
+			potential = {
+				tag = RUS
+				NOT = { 
+						OR = {
+							has_country_flag = baltic_focus
+							has_country_flag = panslavic_focus
+							has_country_flag = southern_focus
+					}
+				}
+			}
+			allow = {
+			is_greater_power = yes 
+			
+			}
+			effect = {
+				prestige = 10
+				badboy = 5
+				country_event = 202201
+			}
+			ai_will_do = {
+				factor = 1
+			}
+	}
+#Next step: Moving the capital, once all relevant territory is reclaimed.
+	#St. Petersburg will be named after Mikhail I ("Mikhailgrad")
+	move_capital_to_nyenschantz = {
+		potential = {
+			tag = RUS
+			has_country_flag = baltic_focus
+			NOT = { has_country_flag = RUS_moved_capital }
+		}
+
+		#Must control all of Estonia and Karelia
+		allow = {
+			RUS_339 = { owned_by = THIS }
+			RUS_349 = { owned_by = THIS }
+		}
+
+		effect = {
+			prestige = 10
+			capital = 994
+			994 = {
+				    life_rating = 5
+				    change_province_name = "Mikhailgrad" 
+				    add_province_modifier = {
+				    	name = gateway_to_russia
+						duration = 7300
+	 				}  	  
+			}
+			set_country_flag = RUS_moved_capital 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Rostov retains its name.
+	move_capital_to_rostov = {
+		potential = {
+			tag = RUS
+			has_country_flag = southern_focus
+			NOT = { has_country_flag = RUS_moved_capital }
+		}
+
+		#Must control Crimea, Luhansk, and Rostov regions
+		allow = {
+			RUS_964 = { owned_by = THIS }
+			RUS_980 = { owned_by = THIS }
+			RUS_1048 = { owned_by = THIS }
+		}
+		effect = {
+			prestige = 10
+			capital = 979
+			979 = {
+				    life_rating = 5
+				    add_province_modifier = {
+				    	name = gateway_to_russia
+						duration = 7300
+	 				}      
+			}
+			set_country_flag = RUS_moved_capital 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+#Once you've moved the capital and picked up some tech, you can start accepting cultures.
+	integrate_ruthenian_culture = {
+		potential = {
+			tag = RUS
+			has_country_flag = panslavic_focus
+			NOT = { has_country_flag = ruthenian_culture }
+			NOT = { accepted_culture = ruthenian}
+		}
+		#Ruthenes have higher tech requirements and lower capitol movement requirements. 
+		allow = {
+			revolution_n_counterrevolution = 1 
+			biologism = 1 
+			#nationalism_n_imperialism = 1 
+		}
+		effect = {
+			prestige = 5
+			add_accepted_culture = ruthenian
+			set_country_flag = ruthenian_culture
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	#Steppe/Caucasus cultures
+	integrate_tatar_culture = {
+		potential = {
+			tag = RUS
+			has_country_flag = southern_focus
+			has_country_flag = RUS_moved_capital
+			NOT = { accepted_culture = tatar}
+			NOT = { has_country_flag = tatar_culture }
+		}
+		#Ruthenes have higher tech requirements and lower capitol movement requirements. 
+		allow = {
+			nationalism_n_imperialism = 1 
+		}
+		effect = {
+			prestige = 5
+			add_accepted_culture = tatar
+			set_country_flag = tatar_culture 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}	
+	integrate_astrakhani_culture = {
+		potential = {
+			tag = RUS
+			has_country_flag = southern_focus
+			has_country_flag = RUS_moved_capital
+			NOT = { has_country_flag = astrakhan_culture }
+		}
+		allow = {
+			nationalism_n_imperialism = 1
+			biologism = 1 
+		}
+		effect = {
+			prestige = 5
+			add_accepted_culture = astrakhani
+			set_country_flag = astrakhan_culture 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}	
+	integrate_georgian_culture = {
+		potential = {
+			tag = RUS
+			has_country_flag = southern_focus
+			has_country_flag = RUS_moved_capital
+			NOT = { accepted_culture = georgian}
+			NOT = { has_country_flag = georgian_culture }
+		}
+		#Georgians, being further away but Orthodox Christian, take a while.
+		allow = {
+			revolution_n_counterrevolution = 1 
+			biologism = 1 
+		}
+		effect = {
+			prestige = 5
+			add_accepted_culture = georgian
+			set_country_flag = georgian_culture
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}	
+	#Baltic cultures
+	integrate_estonian_culture = {
+		potential = {
+			tag = RUS
+			has_country_flag = baltic_focus
+			has_country_flag = RUS_moved_capital
+			NOT = { accepted_culture = estonian}
+			NOT = { has_country_flag = estonian_culture }
+		}
+		allow = {
+			nationalism_n_imperialism = 1 
+		}
+		effect = {
+			prestige = 5
+			add_accepted_culture = estonian
+			set_country_flag = estonian_culture
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}	
+	integrate_latvian_culture = {
+		potential = {
+			tag = RUS
+			has_country_flag = baltic_focus
+			has_country_flag = RUS_moved_capital
+			NOT = { has_country_flag = latvian_culture }
+		}
+		allow = {
+			nationalism_n_imperialism = 1 
+		}
+		effect = {
+			prestige = 5
+			add_accepted_culture = latvian
+			set_country_flag = latvian_culture
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}	
+	integrate_finnish_culture = {
+		potential = {
+			tag = RUS
+			has_country_flag = baltic_focus
+			has_country_flag = RUS_moved_capital
+			NOT = { has_country_flag = finnish_culture }
+		}
+		allow = {
+			revolution_n_counterrevolution = 1 
+			biologism = 1 
+		}
+		effect = {
+			add_accepted_culture = finnish
+			set_country_flag = finnish_culture
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}	
+
+	moscow_expansion_steppes = { 
+	picture = RUS_tsar
+	potential = { 
+	tag = MUS
+	NOT = { has_country_flag = steppes_conquest }
+	NOT = { TAR = { exists = yes }}
+	NOT = { RYA = { exists = yes }}
+	}
+	
+	allow = {
+	OR = { 
+		AND = { 
+		is_secondary_power = yes 
+		NOT = { SCA = { is_greater_power = yes } }
+			}
+		AND = { 
+		is_secondary_power = yes 
+		year = 1845 
+				}
+		is_greater_power = yes 
+			}
+		}
+	
+	effect = { 
+	set_country_flag = steppes_conquest
+	prestige = 15 
+	RUS_1034 = { add_core = THIS }
+	RUS_979 = { add_core = THIS }
+	RUS_980 = { add_core = THIS }
+		}
+	
+	}
+	
+	kill_muscovy = { 
+	picture = RUS_tsar
+	potential = { 
+	tag = RYA
+	exists = MUS
+	NOT = { has_country_flag = killing_muscovy }
+	}
+	
+	allow = {
+	year = 1850 
+	AND = { 
+	is_secondary_power = yes 
+	NOT = { MUS = { is_secondary_power = yes }	
+	      }
+       }
+	}
+	
+	effect = { 
+	set_country_flag = killing_muscovy
+	prestige = 25 
+	MUS = { all_core = { add_core = RYA  }   }
+		}	
+	}
+	
+	kill_ryazan = { 
+	picture = RUS_tsar
+	potential = { 
+	tag = MUS
+	exists = RYA
+	NOT = { has_country_flag = killing_ryazan }
+	}
+	
+	allow = {
+	year = 1850
+	AND = { 
+	is_secondary_power = yes 
+	NOT = { RYA = { is_secondary_power = yes }	
+	      }
+       }
+	}
+	
+	effect = { 
+	set_country_flag = killing_ryazan
+	prestige = 25 
+	RYA = { all_core = { add_core = MUS  }   }
+		}
+	}
+	
+	kill_novogrod = { 
+	picture = RUS_tsar
+	potential = { 
+	OR = {
+	tag = MUS
+	tag = RYA
+	}
+	exists = NOV
+	NOT = { has_global_flag = the_final_chaos_RUS }
+	}
+	
+	allow = {
+	year = 1860
+	OR = {
+	AND = { 
+	tag = RYA
+	is_secondary_power = yes 
+	NOT = { NOV = { is_secondary_power = yes }	}
+       }
+	AND = { 
+	tag = MUS
+	is_secondary_power = yes 
+	NOT = { NOV = { is_secondary_power = yes }	}
+        }
+	  }
+	}
+	
+	effect = { 
+	set_global_flag = the_final_chaos_RUS
+	badboy = 5
+	MUS = { prestige = 200 }
+	NOV = { prestige = 200 }
+	RYA = { prestige = 200 }
+	MUS = { all_core = { add_core = RYA  }   }
+	RYA = { all_core = { add_core = MUS  }   }
+	NOV = { all_core = { add_core = MUS  }   }
+	NOV = { all_core = { add_core = RYA  }   }
+	PSV = { all_core = { add_core = RYA  }   }
+	PSV = { all_core = { add_core = MUS  }   }
+	RYA = { all_core = { add_core = NOV  }   }
+	MUS = { all_core = { add_core = NOV  }   }
+		}
+	}
+
+	claim_crimea = {
+	picture = caucasus_viceroyalty
+		potential = {
+			tag = RUS
+			NOT = { has_country_flag = southern_focus }
+			NOT = { has_country_flag = crimea_river }
+		}
+		
+		allow = {
+			revolution_n_counterrevolution = 1 
+			blue_and_brown_water_schools = 1
+		}
+		effect = {
+	        RUS_964 = { add_core = THIS }
+			set_country_flag = crimea_river
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	integrate_kazakhstan = { #needs a revision
+		picture = unite_turkestan
+		potential = {
+			tag = RUS
+			NOT = { has_country_flag = kazakhstan_integrated }
+			has_country_flag = siberia
+			KZH = { civilized = no neighbour = THIS }
+		    NOT = { exists = TSS }
+			#NOT = { exists = KHI }
+			#NOT = { exists = BUK }
+			#NOT = { exists = KOK }
+		}
+		
+		allow = {
+		    OR = {
+			ai = yes
+			nationalism_n_imperialism = 1
+			}
+			is_sphere_leader_of = KZH
+		}
+		
+		effect = {
+			set_country_flag = kazakhstan_integrated
+			KZH = { tech_school = developing_tech_school }
+			inherit = KZH
+			badboy = 1
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				badboy = 0.98
+			}
+		}
+	}
+	
+	integrate_nogai = { #needs a revision
+		picture = unite_turkestan
+		potential = {
+			tag = RUS
+			NOT = { has_country_flag = nogai_integrated }
+			has_country_flag = siberia
+			NOG = { civilized = no neighbour = THIS }
+		    NOT = { exists = TSS }
+			#NOT = { exists = KHI }
+			#NOT = { exists = BUK }
+			#NOT = { exists = KOK }
+		}
+		
+		allow = {
+		    OR = {
+			ai = yes
+			nationalism_n_imperialism = 1
+			}
+			is_sphere_leader_of = NOG
+		}
+		
+		effect = {
+			set_country_flag = nogai_integrated
+			NOG = { tech_school = developing_tech_school }
+			inherit = NOG
+			badboy = 1
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				badboy = 0.98
+			}
+		}
+	}
+	
+	integrate_uriankhai = {
+		picture = uriankhai_colony
+		potential = {
+			tag = RUS
+			has_country_flag = siberia
+			NOT = { has_country_flag = tannu_integrated }
+			TNT = {	exists = yes }
+			NOT = { exists = TSS }
+		}
+		
+		allow = {
+		    OR = {
+			ai = yes
+			nationalism_n_imperialism = 1
+			}
+			war = no
+			OR = {
+				TNT = {
+					war = no
+					exists = yes
+					OR = {
+						in_sphere = THIS
+						part_of_sphere = no
+					}
+					OR = { 
+						vassal_of = THIS 
+						is_vassal = no
+						AND = {
+							mass_politics = 1
+							overlord = { is_greater_power = no capital_scope = { continent = asia } }
+						}
+					}
+				}
+			}
+		}
+		
+		effect = {
+			set_country_flag = tannu_integrated
+			
+			random_country = {
+				limit = { is_our_vassal = TNT }
+				release = TNT
+				casus_belli = { target = RUS type = liberate_country months = 60 }
+			}
+			
+			TNT = { tech_school = developing_tech_school }
+			inherit = TNT
+
+		}
+		ai_will_do = { factor = 1 }
+	}
+	
+	the_great_game_bukhara = {
+		picture = gtfo
+		potential = {
+			OR = {
+				government = absolute_monarchy
+				government = prussian_constitutionalism
+				government = hms_government
+			}
+			has_country_flag = siberia
+			has_global_flag = hindustan_conference
+			is_greater_power = yes
+			tag = RUS
+			exists = UZB
+			UZB = {
+				civilized = no
+				ai = yes
+			}
+		}
+		
+		allow = {
+			UZB = {
+				OR = {
+					in_sphere = RUS
+					vassal_of = RUS
+				}
+			}
+		}
+		
+		effect = {
+		    UZB = { tech_school = developing_tech_school }
+			UZB = { annex_to = THIS }
+		}
+	}
+	
+	the_great_game_askhabad = {
+		picture = gtfo
+		potential = {
+			OR = {
+				government = absolute_monarchy
+				government = prussian_constitutionalism
+				government = hms_government
+			}
+			has_country_flag = siberia
+			has_global_flag = hindustan_conference
+			is_greater_power = yes
+			tag = RUS
+			exists = AFS
+			AFS = {
+				civilized = no
+				ai = yes
+			}
+		}
+		
+		allow = {
+			AFS = {
+				OR = {
+					in_sphere = RUS
+					vassal_of = RUS
+				}
+			}
+		}
+		
+		effect = {
+		    AFS = { tech_school = developing_tech_school }
+			AFS = { annex_to = THIS }
+		}
+	}
+
+	the_great_game_kokand = {
+		picture = gtfo
+		potential = {
+			OR = {
+				government = absolute_monarchy
+				government = prussian_constitutionalism
+				government = hms_government
+			}
+			has_country_flag = siberia
+			has_global_flag = hindustan_conference
+			is_greater_power = yes
+			tag = RUS
+			exists = KOK
+			KOK = {
+				civilized = no
+				ai = yes
+			}
+		}
+		
+		allow = {
+			KOK = {
+				OR = {
+					in_sphere = RUS
+					vassal_of = RUS
+				}
+			}
+		}
+		
+		effect = {
+		    KOK = { tech_school = developing_tech_school }
+			KOK = { annex_to = THIS }
+		}
+	}
+
+	the_great_game_khiva = {
+		picture = gtfo
+		potential = {
+			OR = {
+				government = absolute_monarchy
+				government = prussian_constitutionalism
+				government = hms_government
+			}
+			has_country_flag = siberia
+			has_global_flag = hindustan_conference
+			is_greater_power = yes
+			tag = RUS
+			exists = TJK
+			TJK = {
+				civilized = no
+				ai = yes
+			}
+		}
+		
+		allow = {
+			TJK = {
+				OR = {
+					in_sphere = RUS
+					vassal_of = RUS
+				}
+			}
+		}
+		
+		effect = {
+		    TJK = { tech_school = developing_tech_school }
+			TJK = { annex_to = THIS }
+		}
+	}
+
+	establish_the_sovnarkom = {
+		picture = establish_the_sovnarkom
+		potential = {
+			tag = RUS
+			NOT = {
+				has_country_flag = big_brother_is_watching
+			}
+			government = proletarian_dictatorship
+		}
+		allow = {
+			mass_politics = 1
+		}
+		
+		effect = {
+			plurality = -10
+			any_pop = {
+				militancy = -4
+				consciousness = -2
+				ideology = {
+					value = socialist
+					factor = 0.1
+				}
+				
+				ideology = {
+					value = communist
+					factor = 0.1
+				}
+			}
+			prestige = 5
+			set_country_flag = big_brother_is_watching
+		}
+	}	
+}
