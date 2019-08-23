@@ -1,0 +1,605 @@
+country_event = {
+		
+	id = 191900 # Flight to Stockholm
+	
+	trigger = {
+		tag = SCA
+		NOT = { is_greater_power = yes }
+		NOT = { exists = SWE }
+		capital = 372
+		NOT = { owns = 333 }
+		NOT = { owns = 366 }
+		NOT = { owns = 371 }
+		OR = { 
+			owns = 345
+			owns = 269
+			owns = 313
+			owns = 322
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 1
+	}
+
+	title = "EVTNAME191900"
+	desc = "EVTDESC191900"
+	picture = "?"
+		
+	option = {
+		name = "EVTOPTA191900" # It is just temporal satback...
+		prestige = -20
+		capital = 313
+	}
+}
+
+# End of the Imperial Alliance Warning
+
+country_event = {
+		
+	id = 191913 
+    picture = "prussian_constitution"
+	
+	is_triggered_only = yes
+
+	title = "EVTNAME191913"
+	desc = "EVTDESC191913"
+		
+	option = {
+		name = "EVTOPTA191913"
+	    any_owned = { 
+	    limit = { 
+	    is_core = POM
+	    }
+	    secede_province = POM
+	    }
+		create_vassal = POM
+	    any_owned = { 
+	    limit = { 
+	    is_core = POM
+	    }
+	    secede_province = POM
+	    }
+        POM = {
+        government = hms_government
+        upper_house_composition = appointed
+        vote_franschise = universal_voting
+        public_meetings = yes_meeting
+        press_rights = free_press
+        trade_unions = no_trade_unions
+        voting_system = first_past_the_post
+        political_parties = non_secret_ballots
+	    ruling_party_ideology = conservative
+		prestige = -80
+	    }
+ 		set_country_flag = annex_POM_later
+	    relation = { who = BOH value = 300 }
+	    ai_chance = { 
+	    factor = 50 
+		} 
+	}
+	
+	option = {
+		name = "EVTOPTB191913"
+	    prestige = 5
+	    ai_chance = { 
+	    factor = 50  
+		} 
+	}
+}
+
+### The threat has passed
+
+country_event = {
+		
+	id = 191914
+	title = "EVTNAME191914"
+	desc = "EVTDESC191914"
+    picture = "prussian_constitution"
+	
+	trigger = {
+	tag = SCA
+	has_global_flag = liberal_revolutions_should_now_fire
+	POM = { is_vassal = yes }
+	has_country_flag = annex_POM_later
+	}
+	
+	mean_time_to_happen = {
+		months = 1
+	}
+		
+	option = {
+	name = "EVTOPTA191914"
+	prestige = 1
+    inherit = POM
+	}
+}
+
+
+# So, to destroy another static power that spends its game as a completely united industrial superpower even if it does get pulverized into the ground by both Russia and Bohemia. This one is a bit more tricky then the others due to a united scandavian culture.
+# The following must occur before it collapses:
+# Scotland must be lost.
+# North Germany must be lost.
+# Anything that resembles Baltic domination must be lost with the exception of Livonia (which is dealt with via a separate uprising)
+# It must not be a great power.
+
+# The collapse goes as such: After the complete decline of Scandinavia, the Swedish start to agitate regarding Danish domination over the State. Seeing that their obsession with Germany caused the ultimate decline of the state. 
+# A civil war starts after the Swedish declare that for the sake of Scandavian rights that they should rather dominate the union then the Danish.
+
+# Todo: Add Scandinavia formation decision for successor nations. Add Swedish core removal decision for Scandinavia. Add Denmark Tag. Add Sweden Tag. Add Localization. Add pictures.
+
+country_event = {
+		
+	id = 191901 # We failed
+	
+	trigger = {
+		tag = SCA
+		NOT = { is_greater_power = yes }
+		NOT = { has_global_flag = endGNBW }
+		NOT = { has_global_flag = endLWT }
+		NOT = { has_global_flag = gustav }
+		NOT = { has_global_flag = gustav_ii }
+		NOT = { has_global_flag = livonianshateyou }
+		NOT = { has_global_flag = livonianwartwo }
+		NOT = { has_global_flag = gustav_aldof }
+        NOT = { any_owned_province = { is_core = GER } }
+        NOT = { any_owned_province = { is_core = SCO } }		
+        NOT = { any_owned_province = { is_core = PRU } }
+        NOT = { any_owned_province = { is_core = NTL } }
+    }
+	
+	mean_time_to_happen = {
+		months = 1
+	}
+
+	title = "EVTNAME191901"
+	desc = "EVTDESC191901"
+	picture = "?"
+		
+	option = {
+		name = "EVTOPTA191901"
+		prestige = -25
+		set_global_flag = gustav
+
+	any_pop = {
+			limit = {
+				culture = scandinavian
+			}
+			militancy = 3
+		}
+
+	}
+}
+
+country_event = {
+		
+	id = 191902 # The Return of Sweden
+	
+	trigger = {
+		tag = SCA
+		has_global_flag = gustav
+	}
+
+	mean_time_to_happen = {
+		months = 24
+	}
+
+	title = "EVTNAME191902"
+	desc = "EVTDESC191902"
+	picture = "?"
+		
+	option = {
+		name = "EVTOPTA191902"
+		prestige = -25
+		clr_global_flag = gustav
+		set_global_flag = gustav_ii
+		set_global_flag = livonianshateyou 
+ 	    SWE_329 = { add_core = SWE }
+	    SWE_318 = { add_core = SWE }
+	    SWE_322 = { add_core = SWE }
+	    FIN = { all_core = { add_core = SWE }   }
+	    334 = { add_core = SWE }
+	    335 = { add_core = SWE }
+	    319 = { add_core = SWE }
+	    306 = { remove_core = SWE }
+	    307 = { remove_core = SWE }	
+		
+        add_country_modifier = { 
+	    name = calm_before_storm
+	    duration = -1
+	    }
+
+		
+	    any_pop = {
+			limit = {
+				culture = scandinavian
+			}
+			militancy = 4
+		}
+
+	    any_pop = {
+			limit = {
+				culture = estonian
+			}
+			militancy = 5
+		}	
+	
+	   any_pop = {
+			limit = {
+				culture = latvian	
+			}
+			militancy = 5
+		}	
+				
+	}
+}
+
+country_event = {
+		
+	id = 191903 # The Second Livonian War
+	
+	trigger = {
+		tag = SCA
+		has_global_flag = livonianshateyou
+		has_global_flag = gustav_aldof
+		NOT = { has_global_flag = livonianwartwo }
+		NOT = { exists = LAT }
+		any_owned_province = { is_core = LAT }
+    }
+	
+	mean_time_to_happen = {
+		days = 7
+	}
+
+	title = "EVTNAME191903"
+	desc = "EVTDESC191903"
+		
+	option = {
+		name = "EVTOPTA191903"
+		prestige = -25
+		clr_global_flag = livonianshateyou
+		set_global_flag = livonianwartwo
+
+	any_owned = { 
+	limit = { 
+	is_core = LAT
+		}
+	secede_province = LAT 
+	}
+
+	LAT = { government = democracy }	
+	LAT	= { country_event = 191905 }	
+
+	war = {
+			target = LAT 
+			attacker_goal = {
+				casus_belli = annex_core_country
+			}
+			defender_goal = {
+				casus_belli = status_quo
+			}
+		}
+	}
+}
+
+country_event = {
+		
+	id = 191904 # The Great Northern Brothers War
+	
+	trigger = {
+		tag = SCA
+		has_global_flag = gustav_ii
+		NOT = { has_global_flag = gustav_aldof }
+		NOT = { exists = SWE }
+    }
+	
+	mean_time_to_happen = {
+		months = 6
+	}
+
+	title = "EVTNAME191904"
+	desc = "EVTDESC191904"
+	major = yes
+		
+	option = {
+		name = "EVTOPTA191904"
+		prestige = -25
+		set_global_flag = gustav_aldof
+		clr_global_flag = gustav_ii
+	
+    remove_country_modifier = calm_before_storm
+		
+	any_owned = { 
+	limit = { 
+	is_core = SWE 
+		}
+	secede_province = SWE 
+	}
+
+	SWE = { government = democracy }	
+	SWE	= { country_event = 191905 }
+    SWE = { capital = 313 }	
+
+	war = {
+			target = SWE 
+			attacker_goal = {
+				casus_belli = annex_core_country
+			}
+			defender_goal = {
+				casus_belli = status_quo
+			}
+		}
+
+	any_country = { 
+	 limit = { 
+	  owns = 369
+      NOT = { tag = SCA }	
+	    } 
+	    country_event = 191912 
+	    }		
+	}
+}
+
+country_event = { 
+
+	id = 191905
+	title = "EVTNAME191905"
+	desc = "EVTDESC191905"
+	picture = "communist_riot"
+
+	is_triggered_only = yes
+	
+	option = {
+	name = "EVTOPTA191905"
+	treasury = 10000
+	ammunition = 1000
+	small_arms = 1000
+	artillery = 1000
+	canned_food = 1000
+	regular_clothes = 1000
+	add_country_modifier = {
+				name = taiping_draft
+				duration = 7300
+			}
+	}
+}
+
+country_event = {
+	id = 191912 #Kiel Intervention
+	title = "EVTNAME191912"
+	desc = "EVTDESC191912"
+	picture = "?"
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVTOPTA191912" #Kiel forever
+		war = {
+			target = SCA
+			attacker_goal = {
+				casus_belli = cut_down_to_size
+			}
+			defender_goal = {
+				casus_belli = status_quo
+			}
+		}
+		ai_chance = {
+			factor = 90
+			modifier = {
+				factor = 0
+				war = yes
+			}
+			modifier = {
+				factor = 0.5
+				war_exhaustion = 5
+			}
+		}		
+	}
+	option = {
+		name = "EVTOPTB191912" #Just a minute...
+		prestige = -10
+		ai_chance = {
+			factor = 10
+		}	
+	}
+}
+
+country_event = {
+		
+	id = 191906 # Scandinavia Prevails. Swedish Cores can only be removed via decision if Scandinavia owns the whole of Finland. So long as Finland is not part of Scandinavia then they cannot have the cores removed.
+	
+	trigger = {
+		tag = SCA
+		has_global_flag = gustav_aldof
+		NOT = { exists = SWE }
+    }
+	
+	mean_time_to_happen = {
+		days = 7
+	}
+
+	title = "EVTNAME191906"
+	desc = "EVTDESC191906"
+	picture = "?"
+		
+	option = {
+		name = "EVTOPTA191906"
+		prestige = 25
+		clr_global_flag = gustav_aldof
+		set_global_flag = endGNBW
+  }
+}
+
+country_event = {
+		
+	id = 191907 # Sweden Wins
+	
+	trigger = {
+		tag = SWE
+		has_global_flag = gustav_aldof
+    	war = no 
+    }
+	
+	mean_time_to_happen = {
+		days = 7
+	}
+
+	title = "EVTNAME191907"
+	desc = "EVTDESC191907"
+	picture = "?"
+		
+	option = {
+		name = "EVTOPTA191907"
+		prestige = 50
+		clr_global_flag = gustav_aldof
+		set_global_flag = endGNBW
+		
+	SCA = { country_event = 191908 }
+    }
+}
+
+country_event = {
+		
+	id = 191908 # The End of Scandinavia
+	
+	is_triggered_only = yes
+
+	title = "EVTNAME191908"
+	desc = "EVTDESC191908"
+	major = yes
+		
+	option = {
+		name = "EVTOPTA191908"
+		prestige = -100
+	    GER = { all_core = { remove_core = SCA }   }
+		NTL = { all_core = { remove_core = SCA }   }
+	    PRU = { all_core = { remove_core = SCA }   }
+	    SCO = { all_core = { remove_core = SCA }   }	
+		remove_accepted_culture = north_german
+        remove_accepted_culture = scottish 		
+		change_tag = DEN	
+		SWE = { all_core = { remove_core = DEN }   }	
+		set_global_flag = forcedSLWpeace
+    }
+}
+
+country_event = {
+		
+	id = 191909 # Livonia is Dead
+	
+	trigger = {
+		tag = SCA
+		has_global_flag = livonianwartwo
+		NOT = { exists = LAT }
+    }
+	
+	mean_time_to_happen = {
+		days = 7
+	}
+
+	title = "EVTNAME191904"
+	desc = "EVTDESC191904"
+	picture = "?"
+		
+	option = {
+		name = "EVTOPTA191904"
+		prestige = 25
+		clr_global_flag = livonianwartwo
+		set_global_flag = endSLW
+	}
+}
+
+country_event = {
+		
+	id = 191910 # Livonia Won without a forced peace. Somehow.
+	
+	trigger = {
+		tag = LAT
+		has_global_flag = livonianwartwo
+		NOT = { exists = SWE }
+		NOT = { war = yes }
+    }
+	
+	mean_time_to_happen = {
+		days = 7
+	}
+
+	title = "EVTNAME191904"
+	desc = "EVTDESC191904"
+	picture = "?"
+		
+	option = {
+		name = "EVTOPTA191904"
+		prestige = 50
+	    LAT = { all_core = { remove_core = DEN }   }
+	    LAT = { all_core = { remove_core = SCA }   }
+		clr_global_flag = livonianwartwo
+		set_global_flag = endSLW
+	}
+}
+
+country_event = {
+		
+	id = 191911 # Livonia forced peace.
+	
+	trigger = {
+		tag = LAT
+		has_global_flag = livonianwartwo
+		has_global_flag = forcedSLWpeace
+    }
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	title = "EVTNAME191904"
+	desc = "EVTDESC191904"
+	picture = "?"
+		
+	option = {
+		name = "EVTOPTA191904"
+		prestige = 25
+        end_war = DEN
+	    LAT = { all_core = { remove_core = DEN }   }
+	    LAT = { all_core = { remove_core = SCA }   }
+		clr_global_flag = forcedSLWpeace
+		clr_global_flag = livonianwartwo
+		set_global_flag = endSLW
+	}
+}
+
+##### Crisis forced SCA back into existence #####
+
+country_event = { 
+	id = 191915
+	title = "Illegal Crisis Release"
+	desc = "This should never happen."
+    picture = "partition_of_PLC"
+
+	trigger = {
+		tag = SCA
+		ai = yes
+		OR = {
+		exists = DEN
+		exists = SWE
+		}
+		NOT = { has_country_flag = valid_SCA }
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	option = { 
+	name = "You should not see this."
+	any_owned = { 
+	limit = { 
+	is_core = SWE
+		}
+	secede_province = SWE 
+	}
+	DEN = { inherit = THIS }
+	}
+}
+
+

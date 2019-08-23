@@ -1,0 +1,14 @@
+country_event = {
+	id = 123151 #The Fate of Switzerland
+	title = "EVTNAME123151"
+	desc = "EVTDESC123151"
+	picture = "?"
+	
+	is_triggered_only = yes
+	
+	option = {	
+	name = "EVTOPTA123151" #This is our fate
+	set_country_flag = SWI_neutral
+	add_country_modifier = { name = neutrality duration = -1 }
+	}
+}
