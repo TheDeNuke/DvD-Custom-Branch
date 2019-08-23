@@ -1,0 +1,428 @@
+country_event = { 
+
+	id = 465160
+	title = "CLM67.T"
+	desc = "CLM67.D"
+	picture = "blood_river"	
+	
+	major = yes
+
+	trigger = {
+	tag = CLM
+	NOT = { has_country_flag = panama_congress }
+    NOT = { has_global_flag = partial_peace }
+	NOT = { has_country_flag = CLMWarLSTRevolt }
+	}
+	
+	mean_time_to_happen = { 
+	months = 3
+	}
+	
+	option = { 
+	name = "465160.A"
+	prestige = 10
+	set_country_flag = CLMWarLSTRevolt
+
+	any_owned = { 
+	limit = { 
+	is_core = LST
+	NOT = { region = TEX_134 }
+	NOT = { province_id = 137 }
+	}
+	secede_province = LST
+	}
+	
+	LST = { 
+	government = democracy 
+	ruling_party_ideology = liberal
+	political_reform = universal_voting
+	political_reform = state_equal_weight
+	political_reform = yes_meeting
+	political_reform = free_press
+	political_reform = non_socialist
+	political_reform = secret_ballots
+	treasury = 10000
+	ammunition = 1000
+	small_arms = 1000
+	artillery = 1000
+	canned_food = 1000
+	regular_clothes = 1000
+	add_country_modifier = {
+				name = taiping_draft
+				duration = 1825
+			}
+	}
+
+	war = {
+			target = LST
+			attacker_goal = {
+				casus_belli = annex_core_country
+			}
+			defender_goal = {
+				casus_belli = status_quo
+			}
+		}
+	ai_chance = { 
+	factor = 30
+		 }
+    }
+
+	option = { 
+	name = "465160.B"
+	prestige = -10
+	set_country_flag = CLMWarLSTRevolt
+
+	any_owned = { 
+	limit = { 
+	is_core = LST
+	NOT = { region = TEX_134 }
+	NOT = { province_id = 137 }
+	}
+	secede_province = LST
+	}
+	
+	LST = { 
+	government = democracy 
+	ruling_party_ideology = liberal
+	political_reform = universal_voting
+	political_reform = state_equal_weight
+	political_reform = yes_meeting
+	political_reform = free_press
+	political_reform = non_socialist
+	political_reform = secret_ballots
+	treasury = 10000
+	ammunition = 1000
+	small_arms = 1000
+	artillery = 1000
+	canned_food = 1000
+	regular_clothes = 1000
+	}
+	
+	money = 100000
+	
+	set_country_flag = lusitania_con
+	war_exhaustion = -15
+
+	create_vassal = LST
+	
+	create_alliance = LST 
+	
+	any_owned = { 
+	limit = { 
+	is_core = LST
+	}
+	secede_province = LST
+	}
+	
+    relation = { who = LST value = 400 }
+	
+	set_country_flag = CLMDealLST
+		
+	ai_chance = { 
+	factor = 70
+		}
+	}	
+}
+
+country_event = { 
+
+	id = 465161
+	title = "CLM68.T"
+	desc = "CLM68.D"
+	picture = "blood_river"	
+
+	trigger = {
+	tag = CLM
+	has_country_flag = CLMWarLSTRevolt
+	NOT = { has_country_flag = panama_congress }
+    NOT = { has_global_flag = partial_peace }
+	NOT = { has_country_flag = INCAWarLSTRevolt }
+	}
+	
+	mean_time_to_happen = { 
+	months = 1
+	}
+	
+	option = { 
+	name = "465161.A"
+	set_country_flag = INCAWarLSTRevolt
+
+	any_owned = { 
+	limit = { 
+	is_core = QUI
+	}
+	secede_province = QUI
+	}	
+	
+	any_owned = { 
+	limit = { 
+	is_core = ARE
+	}
+	secede_province = ARE
+	}
+	
+	QUI = { 
+	government = democracy 
+	ruling_party_ideology = liberal
+	political_reform = universal_voting
+	political_reform = state_equal_weight
+	political_reform = yes_meeting
+	political_reform = free_press
+	political_reform = non_socialist
+	political_reform = secret_ballots
+	treasury = 10000
+	ammunition = 1000
+	small_arms = 1000
+	artillery = 1000
+	canned_food = 1000
+	regular_clothes = 1000
+	add_country_modifier = {
+				name = taiping_draft
+				duration = 1825
+			}
+	}
+	
+	ARE = { 
+	government = democracy 
+	ruling_party_ideology = liberal
+	political_reform = universal_voting
+	political_reform = state_equal_weight
+	political_reform = yes_meeting
+	political_reform = free_press
+	political_reform = non_socialist
+	political_reform = secret_ballots
+	treasury = 10000
+	ammunition = 1000
+	small_arms = 1000
+	artillery = 1000
+	canned_food = 1000
+	regular_clothes = 1000
+	add_country_modifier = {
+				name = taiping_draft
+				duration = 1825
+			}
+	}
+
+	war = {
+			target = QUI
+			attacker_goal = {
+				casus_belli = annex_core_country
+			}
+			defender_goal = {
+				casus_belli = status_quo
+			}
+		}
+	war = {
+			target = ARE
+			attacker_goal = {
+				casus_belli = annex_core_country
+			}
+			defender_goal = {
+				casus_belli = status_quo
+			}
+		}
+	ai_chance = { 
+	factor = 70
+		}
+    }	
+
+	option = { 
+	name = "465161.B"
+	set_country_flag = INCAWarLSTRevolt
+
+	any_owned = { 
+	limit = { 
+	is_core = QUI
+	}
+	secede_province = QUI
+	}
+	
+	any_owned = { 
+	limit = { 
+	is_core = ARE
+	}
+	secede_province = ARE
+	}
+	
+	QUI = { 
+	government = democracy 
+	ruling_party_ideology = liberal
+	political_reform = universal_voting
+	political_reform = state_equal_weight
+	political_reform = yes_meeting
+	political_reform = free_press
+	political_reform = non_socialist
+	political_reform = secret_ballots
+	treasury = 10000
+	ammunition = 1000
+	small_arms = 1000
+	artillery = 1000
+	canned_food = 1000
+	regular_clothes = 1000
+	}
+	
+	ARE = { 
+	government = democracy 
+	ruling_party_ideology = liberal
+	political_reform = universal_voting
+	political_reform = state_equal_weight
+	political_reform = yes_meeting
+	political_reform = free_press
+	political_reform = non_socialist
+	political_reform = secret_ballots
+	treasury = 10000
+	ammunition = 1000
+	small_arms = 1000
+	artillery = 1000
+	canned_food = 1000
+	regular_clothes = 1000
+	add_country_modifier = {
+				name = taiping_draft
+				duration = 1825
+			}
+	}
+	
+    money = 100000
+
+	create_vassal = QUI
+	
+	create_alliance = QUI
+
+	any_owned = { 
+	limit = { 
+	is_core = QUI
+	}
+	secede_province = QUI
+	}
+	
+    relation = { who = QUI value = 400 }
+	
+	set_country_flag = CLMDealQUI
+	
+	war = {
+			target = ARE
+			attacker_goal = {
+				casus_belli = annex_core_country
+			}
+			defender_goal = {
+				casus_belli = status_quo
+			}
+		}
+	ai_chance = { 
+	factor = 30
+		}
+    }		
+}
+
+country_event = { 
+
+	id = 465162
+
+	trigger = {
+	tag = CLM
+	ai = yes
+	war = yes
+	has_country_flag = INCAWarLSTRevolt
+	has_country_flag = CLMWarLSTRevolt
+	OR = {
+	exists = QUI
+	exists = LST
+	}
+	OR = {
+	QUI = { is_vassal = yes }
+	LST = { is_vassal = yes }	
+	}
+	NOT = { has_country_flag = panama_congress }
+	NOT = { has_country_flag = partial_peace }
+	}
+	
+	mean_time_to_happen = { 
+	months = 1
+	}
+	
+	option = { 
+	money = 500000
+    any_country = {
+	limit = {
+	tag = LST
+	war = no
+	is_vassal = yes
+	}
+	CLM = { inherit = LST }
+	}
+    any_country = {
+	limit = {
+	tag = QUI
+	war = no
+	is_vassal = yes
+	}
+	CLM = { inherit = QUI }
+	  }
+   }
+}	
+
+country_event = {
+
+	id = 465163
+
+	title = "CLM69.T"
+	desc = "CLM69.D"
+	picture = "La_Independencia_del_Perú"
+	
+	trigger = { 
+	tag = CLM 
+	has_global_flag = congress_of_panama
+    has_country_flag = CLMDealLST
+	NOT = { has_global_flag = congress_of_panama_over }
+	}
+	
+	fire_only_once = yes 
+	
+	mean_time_to_happen = { 
+	days = 2 
+	}
+	
+	option = { 
+	name = "465163.A"
+	clr_country_flag = CLMDealLST
+	RAP = {
+			change_variable = {
+				which = dismantlement_clm
+				value = 1
+			}
+		}
+	}
+}
+
+country_event = {
+
+	id = 465164
+
+	title = "CLM70.T"
+	desc = "CLM70.D"
+	picture = "La_Independencia_del_Perú"
+	
+	trigger = { 
+	tag = CLM 
+	has_global_flag = congress_of_panama
+    has_country_flag = CLMDealQUI
+	NOT = { has_global_flag = congress_of_panama_over }
+	}
+	
+	fire_only_once = yes 
+	
+	mean_time_to_happen = { 
+	days = 2 
+	}
+	
+	option = { 
+	name = "465164.A"
+	clr_country_flag = CLMDealQUI
+	RAP = {
+			change_variable = {
+				which = granadan_separatists
+				value = 1
+			}
+		}
+	}
+}

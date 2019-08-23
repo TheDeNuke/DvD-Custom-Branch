@@ -1,0 +1,251 @@
+# So, our best friend in being a overpowered bastard. There is literally nothing stopping Muscovy. Novogrod might as well be a non-factor because it will practically unite everything by 1840 and without the AI decisions being locked to 1860 it will just unite russia by basically 1842.
+# I want more flavor. Its time to bring back the Rurikids.
+# KAZ: Tartaria, Kazan and add cores to Perm. Also, 1017, 1011, 1012
+# After release add additional cores to the whole of Kursk
+# If they survive the Civil War they can "Claim Tartar Legacy" that adds claims to all Nogai provinces.
+# Finally if they take all cores they are permitted to form Russia
+
+
+# A very auspicious circumstance
+country_event = {
+	id = 812800
+	title = "MUS01.T"
+	desc = "MUS01.D"
+	picture = "russian_claims_on_holy_land"
+
+	trigger = {	
+	tag = MUS
+	NOT = { has_country_flag = claimingitall }
+	NOT = { has_global_flag = thefutureisnow }
+	NOT = { has_global_flag = thefutureisnot }
+    }
+	
+	mean_time_to_happen = { 
+	days = 7
+	}			
+			
+	option = {
+	name = "MUS01.A"
+    set_country_flag = claimingitall
+	set_country_flag = rurikids
+	prestige = 10
+	}
+}
+
+# A rather abrupt coup or The Return of the Rurikids
+country_event = {
+	id = 812801
+	title = "MUS02.T"
+	desc = "MUS02.D"
+	picture = "BOH_mob"
+
+	trigger = {	
+	tag = MUS
+	has_country_flag = rurikids
+    }
+	
+	mean_time_to_happen = { 
+	months = 1
+	}			
+			
+	option = {
+	name = "MUS02.A"
+    clr_country_flag = rurikids
+	set_country_flag = forkazan
+	prestige = -10
+	}
+}
+
+#They have retreated to Ryazan
+country_event = {
+	id = 812802
+	title = "MUS03.T"
+	desc = "MUS03.D"
+	picture = "krakow_uprising"
+
+	trigger = {	
+	tag = MUS
+	has_country_flag = forkazan
+	}
+
+	mean_time_to_happen = { 
+	months = 2
+	}			
+			
+	option = {
+	name = "MUS03.A"
+	 RUS_1037 = { add_core = RYA }
+	 RUS_1020 = { add_core = RYA }
+	 RUS_1026 = { add_core = RYA }
+     RUS_977 = { add_core = RYA }
+	 1016 = { add_core = RYA }
+	 1017 = { add_core = RYA }
+	 1011 = { add_core = RYA }
+	 1012 = { add_core = RYA }	
+	clr_country_flag = forkazan
+	set_country_flag = thisisverybadformuscovy
+	prestige = -10
+	}
+}
+
+
+
+#The Second Troubles
+country_event = {
+	id = 812803
+	title = "MUS04.T"
+	desc = "MUS04.D"
+	fire_only_once = yes 
+	
+	major = yes
+	
+	trigger = {
+	tag = MUS
+	war_with = NOV
+	# Expires in: #
+	NOT = { year = 1855 }
+    has_country_flag = thisisverybadformuscovy
+	}
+	
+	mean_time_to_happen = { 
+	days = 1
+	}
+	
+	option = { 
+	name = "MUS04.A"
+    clr_country_flag = thisisverybadformuscovy
+    set_global_flag =  coupsarebad
+	  
+    prestige = 15
+	
+	random_list = { 
+		50 = { RUS_1009 = { add_core = RYA } }
+		50 = { prestige = 1 }
+	}
+	
+	MUS = {
+	add_country_modifier = {
+				name = preparing_for_war
+				duration = 1095
+			}
+    }			
+	
+					
+    NOV = {
+	add_country_modifier = {
+				name = preparing_for_war
+				duration = 1095
+			}
+	add_country_modifier = {
+				name = taiping_draft
+				duration = 1095
+			}
+	}
+		
+	any_owned = { 
+	limit = { 
+	is_core = RYA
+		}
+	secede_province = RYA
+	}
+	
+	RYA = { 
+	capital = 1012
+	government = absolute_monarchy
+	political_reform = none_voting
+	political_reform = party_appointed
+	political_reform = no_meeting
+	political_reform = state_press
+	political_reform = no_trade_unions
+	political_reform = first_past_the_post
+	political_reform = underground_parties 
+	treasury = 10000
+	ammunition = 10000
+	small_arms = 10000
+	artillery = 10000
+	canned_food = 10000
+	regular_clothes = 10000
+	add_country_modifier = {
+				name = preparing_for_war
+				duration = 1095
+			}
+	add_country_modifier = {
+				name = taiping_draft
+				duration = 1095
+			}
+	}
+	
+	war = {
+			target = RYA
+			attacker_goal = {
+				casus_belli = civil_war
+			}
+			defender_goal = {
+				casus_belli = status_quo
+			}
+		}				
+	}
+}
+
+#
+
+country_event = { 
+
+	id = 812804
+	title = "MUS05.T"
+	desc = "MUS05.D"
+	picture = "rhapsody"
+	
+	trigger = { 
+	tag = MUS 
+    has_global_flag = coupsarebad
+	NOT = { exists = RYA }
+	war = no 
+	}
+		
+	mean_time_to_happen = { 
+	days = 1 }	
+	
+	option = { 
+	name = "MUS05.A"
+	prestige = 20 
+	clr_global_flag = coupsarebad 
+	set_global_flag = thefutureisnot
+	}
+}
+
+
+country_event = { 
+
+	id = 812805
+	title = "MUS06.T"
+	desc = "MUS06.D"
+	picture = "rhapsody"
+	
+	trigger = { 
+	tag = RYA 
+    has_global_flag = coupsarebad
+	war = no 
+	}
+		
+	mean_time_to_happen = { 
+	days = 1 }	
+	
+	option = { 
+	name = "MUS06.A"
+	prestige = 20	
+	MUS = { prestige = -20 }
+	RYA = { all_core = { remove_core = MUS } }
+	NOG = { all_core = { add_core = RYA } }
+	RUS_979 = { add_core = RYA }
+	RUS_980 = { add_core = RYA }
+	RUS_977 = { add_core = MUS }
+	1017 = { add_core = MUS }
+	1011 = { add_core = MUS }
+	1012 = { add_core = MUS }
+	
+	clr_global_flag = coupsarebad 
+	set_global_flag = thefutureisnow
+	}
+}
+

@@ -1,0 +1,206 @@
+# The Maelstrom - Used to simulate political chaos after a democratic revolution post-invention of fascism/mass politics.
+
+country_event = {
+		id = 7899900
+		title = "EVTNAME7899900"
+		desc = "EVTDESC7899900"
+		picture = "communist_crowd"
+		trigger = { 
+		NOT = { has_country_flag = no_maelstrom_for_now }
+        has_country_modifier = the_eye_of_the_storm
+		is_ideology_enabled = fascist
+		NOT = { OR = {
+		government = fascist_dictatorship
+		government = proletarian_dictatorship
+		             }
+			  }
+		}
+		
+		mean_time_to_happen = {
+		days = 1
+		}
+
+		option = {
+		name = "EVTOPTA7899900"
+		set_country_flag = maelstrom_eternal
+        remove_country_modifier = the_eye_of_the_storm
+		  add_country_modifier = {
+		    	name = the_maelstrom_wakes
+		    	duration = 1825
+		    }
+	    }
+   }
+
+country_event = {
+		id = 7899901
+		title = "EVTNAME7899901"
+		desc = "EVTDESC7899901"
+		picture = "communist_riot"
+		trigger = { 
+        has_country_modifier = the_eye_of_the_storm
+        has_country_flag = maelstrom_eternal
+		is_ideology_enabled = fascist
+		year = 1900
+		}
+		
+		mean_time_to_happen = {
+		days = 1
+		}
+
+		option = {
+		name = "EVTOPTA7899901"
+        remove_country_modifier = the_eye_of_the_storm
+		}
+	}	
+	
+country_event = { # Extremist Leader has arisen: Randomly triggers a Separatist, Fascist or Communist Charismatic leader event to trigger. Sets a country flag to prevent it firing more then once.
+		id = 7899902
+		title = "EVTNAME7899902"
+		desc = "EVTDESC7899902"
+		picture = "bad_badboy"
+		trigger = { 
+        has_country_flag = maelstrom_eternal
+	    NOT = { has_country_flag = maelstrom_extremeleader }
+		}
+		
+		mean_time_to_happen = {
+		months = 1
+		}
+
+		option = {
+		name = "EVTOPTA7899902"
+		set_country_flag = maelstrom_extremeleader
+		random_list = {
+			10 = { country_event = 555018 }
+			25 = { country_event = 555016 }
+			25 = { country_event = 555012 }
+			25 = { country_event = 555015 }
+			10 = { country_event = 555013 }
+		    }
+		}
+	}
+
+country_event = { # Foundations of Democracy have been eroded: Triggers a random democratic "Party Splinters" event. It can fire more then once and has a MTTH of 12 months.
+		id = 7899903
+		title = "EVTNAME7899903"
+		desc = "EVTDESC7899903"
+		picture = "liberals_org"
+		trigger = { 
+        has_country_flag = maelstrom_eternal
+	    NOT = { has_country_flag = maelstrom_brokenparty }
+		}
+		
+		mean_time_to_happen = {
+		months = 2
+		}
+
+		option = {
+		name = "EVTOPTA7899903"
+		set_country_flag = maelstrom_brokenparty
+		random_list = {
+			30 = { country_event = 555040 }
+			30 = { country_event = 555041 }
+			30 = { country_event = 555044 }
+			10 = { country_event = 555047 }
+		    }
+		}
+	}	
+	
+country_event = { #The End of the Maelstrom
+		id = 7899904
+		title = "EVTNAME7899904"
+		desc = "EVTDESC7899904"
+		picture = "banquet"
+		trigger = { 
+        has_country_flag = maelstrom_eternal
+        NOT = { has_country_modifier = the_maelstrom_wakes }
+		}
+		
+		mean_time_to_happen = {
+		days = 7
+		}
+
+		option = {
+		name = "EVTOPTA7899904"
+		add_country_modifier = {
+			name = the_eye_of_the_storm
+			duration = 1095
+		}
+		set_country_flag = no_maelstrom_for_now
+        clr_country_flag = maelstrom_eternal
+		clr_country_flag = maelstrom_brokenparty
+		clr_country_flag = maelstrom_extremeleader
+		any_pop = { 
+			militancy = -5 
+		}
+	}
+}	
+
+country_event = { #The Maelstrom Returns
+		id = 7899905
+		title = "EVTNAME7899905"
+		desc = "EVTDESC7899905"
+		picture = "communist_crowd"
+		trigger = { 
+        has_country_flag = no_maelstrom_for_now
+		}
+	
+		mean_time_to_happen = {
+		months = 120
+		modifier = {
+	    factor = 1.3
+		has_country_modifier = totalitarian_system	
+		}
+		modifier = {
+	    factor = 1.2
+	    has_global_flag = post_colonial_era_fired
+		}
+		modifier = {
+	    factor = 0.7
+		has_country_modifier = the_eye_of_the_storm
+		}
+		modifier = {
+	    factor = 0.7
+		war_exhaustion = 25
+		}
+		modifier = {
+	    factor = 0.7
+		war_exhaustion = 75
+		}
+		modifier = {
+	    factor = 0.8
+		OR = {
+		government = democracy
+		government = hms_government
+		     }
+	    }
+		modifier = {
+	    factor = 0.9
+		government = prussian_constitutionalism
+		    }
+	    modifier = {
+		factor = 0.9
+		war = yes
+			}
+		}
+
+		option = {
+		name = "EVTOPTA7899905"
+        clr_country_flag = no_maelstrom_for_now
+		any_pop = { 
+			militancy = 1
+		}
+	}
+}
+
+#Events that can trigger during Maelstrom:
+
+# 555013 - Charismatic Leader (anarcho_liberal) 10%
+# 555015 - Charismatic Leader (communist) 30%
+# 555016 - Charismatic Leader (fascist) 30%
+# 555018 - Charismatic Leader (separatist) 30%
+
+# 555040 - Party Splinter (conservative) 30%
+# 555041 - Party Splinter (liberal) 30%
+# 555044 - Party Splinter (socialist) 30%
+# 555047 - Party Splinter (social_liberal) 10%

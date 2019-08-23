@@ -1,0 +1,1142 @@
+
+###### Burgundian Chaos ######
+
+country_event = {
+	id = 653000
+	title = "BRG1.T"
+	desc = "BRG1.D"
+	picture = "Death_King"
+	
+	fire_only_once = yes 
+	
+	trigger = {
+	tag = BRG
+	year = 1855
+	NOT = { exists = NET }
+	NOT = { has_country_flag = prince_is_dead }
+	OR = {
+	      government = absolute_monarchy
+	      government = prussian_constitutionalism
+	      government = hms_government
+		 }
+	}
+
+	mean_time_to_happen = { 
+	days = 200
+	}
+	
+	option = { 
+	name = "653000.A"
+	set_country_flag = prince_is_dead
+	}
+}
+
+country_event = {
+	id = 653001
+	title = "BRG2.T"
+	desc = "BRG2.D"
+	
+	fire_only_once = yes 
+	
+	major = yes
+	
+	trigger = {
+	tag = BRG
+	year = 1861
+	NOT = { exists = NET }
+	has_country_flag = prince_is_dead
+	NOT = { has_country_flag = queen_is_dead }
+	OR = {
+	      government = absolute_monarchy
+	      government = prussian_constitutionalism
+	      government = hms_government
+		 }
+	}
+
+	mean_time_to_happen = { 
+	days = 365
+	}
+	
+	option = { 
+	name = "653001.A"
+	clr_country_flag = prince_is_dead
+	set_country_flag = queen_is_dead
+	set_country_flag = fuck_the_dutch
+	
+	prestige = -20
+	
+	any_pop = {
+			limit = {
+				culture = burgundian
+			}
+			militancy = 3
+		}
+		
+	any_pop = {
+			limit = {
+				culture = dutch
+			}
+			militancy = -3
+		}
+		
+	relation = {
+		   who = SCA
+		   value = -50
+		}
+	ai_chance = {  
+			factor = 70
+			}
+		}
+	
+	option = { 
+	name = "653001.B"
+	clr_country_flag = prince_is_dead
+	set_country_flag = queen_is_dead
+    set_country_flag = deadlock
+	
+	prestige = 20
+	
+	any_pop = {
+			limit = {
+				culture = burgundian
+			}
+			militancy = -3
+		}
+		
+	any_pop = {
+			limit = {
+				culture = dutch
+			}
+			militancy = 3
+		}
+	ai_chance = {  
+			factor = 15 
+			}
+		}	
+
+	option = { 
+	name = "653001.C"
+	clr_country_flag = prince_is_dead
+	set_country_flag = queen_is_dead	
+	set_country_flag = deadlock
+	
+	any_pop = {
+			limit = {
+				culture = burgundian
+			}
+			militancy = 3
+		}
+		
+	any_pop = {
+			limit = {
+				culture = dutch
+			}
+			militancy = 3
+		}
+		
+	relation = {
+		    who = SCA
+			value = 400
+		}
+	
+	ai_chance = {  
+			factor = 15
+			}
+		}
+}
+
+# Estates-General Deadlock
+
+country_event = {
+	id = 653002
+	title = "BRG3.T"
+	desc = "BRG3.D"
+	picture = "bad_badboy"
+	
+	fire_only_once = yes 
+	
+	trigger = {
+	tag = BRG
+	NOT = { exists = NET }
+	NOT = { has_global_flag = WilhelmusEnd }
+	NOT = { has_global_flag = Wilhelmus }
+	NOT = { has_country_flag = dutch_revolt_trigger }
+	has_country_flag = deadlock
+	OR = {
+	      government = absolute_monarchy
+	      government = prussian_constitutionalism
+	      government = hms_government
+		 }
+	}
+	
+	mean_time_to_happen = { 
+	days = 7
+	}
+	
+	option = { 
+	name = "653002.A"
+    set_country_flag = dutch_revolt_trigger
+	clr_country_flag = deadlock
+
+	any_pop = {
+			limit = {
+				culture = dutch
+			}
+			militancy = 1
+			consciousness  = 2
+		}
+
+	any_owned = {
+			 limit = { 
+				is_core = NET 
+			 }
+			 add_province_modifier = {
+		      name = nationalist_agitation
+			   duration = 3650
+			}
+		}
+	}
+}
+
+# BRG is in decline.
+
+country_event = {
+	id = 653003
+	title = "BRG4.T"
+	desc = "BRG4.D"
+	picture = "crisis_revolution_enabled"
+	
+	fire_only_once = yes 
+	
+	trigger = {
+	tag = BRG
+	NOT = { exists = NET }
+	NOT = { has_global_flag = WilhelmusEnd }
+	NOT = { has_global_flag = Wilhelmus }
+	NOT = { has_country_flag = dutch_revolt_trigger }
+	OR = {
+	      government = fascist_dictatorship
+		  government = proletarian_dictatorship
+		  government = presidential_dictatorship
+		  government = bourgeois_dictatorship
+          NOT = { is_greater_power = yes }
+		 }
+	}
+	
+	mean_time_to_happen = { 
+	days = 31
+	}
+	
+	option = { 
+	name = "653003.A"
+    set_country_flag = dutch_revolt_trigger
+
+	any_pop = {
+			limit = {
+				culture = dutch
+			}
+			militancy = 1
+			consciousness  = 2
+		}
+
+	any_owned = {
+			 limit = { 
+				is_core = NET 
+			 }
+			 add_province_modifier = {
+		      name = nationalist_agitation
+			   duration = 3650
+			}
+		}
+	}
+}
+
+# TOTAL REVOLUTION IN DUAL-MONARCHY
+
+country_event = {
+	id = 653011
+	title = "BRG12.T"
+	desc = "BRG12.D"
+	picture = "communist_riot"
+	
+	fire_only_once = yes 
+	
+	trigger = {
+	tag = BRG
+	NOT = { exists = NET }
+	NOT = { has_global_flag = WilhelmusEnd }
+	NOT = { has_global_flag = Wilhelmus }
+	NOT = { has_country_flag = dutch_revolt_trigger }
+    DUA = { has_country_flag = global_revolt }
+	}
+	
+	mean_time_to_happen = { 
+	days = 7
+	}
+	
+	option = { 
+	name = "653011.A"
+    set_country_flag = dutch_revolt_trigger
+
+	any_pop = {
+			limit = {
+				culture = dutch
+			}
+			militancy = 1
+			consciousness  = 2
+		}
+
+	any_owned = {
+			 limit = { 
+				is_core = NET 
+			 }
+			 add_province_modifier = {
+		      name = nationalist_agitation
+			   duration = 3650
+			}
+		}
+	}
+}
+
+# Dutch Revolt!
+
+country_event = {
+	id = 653004
+	title = "BRG5.T"
+	desc = "BRG5.D"
+	fire_only_once = yes 
+	
+	major = yes
+	
+	trigger = {
+	tag = BRG
+	NOT = { exists = NET }
+	has_country_flag = dutch_revolt_trigger
+	}
+	
+	mean_time_to_happen = { 
+	days = 31
+	}
+	
+	option = { 
+	name = "653004.A"
+    clr_country_flag = dutch_revolt_trigger
+    set_global_flag = Wilhelmus
+	
+	any_owned = { 
+	limit = { 
+	is_core = NET 
+		}
+	secede_province = NET 
+	}
+	
+	any_owned = { 
+	limit = { 
+	region = BUR_390 
+		}
+	secede_province = NET
+	}
+	
+	any_owned = { 
+	limit = { 
+	region = BEL_387
+		}
+	secede_province = NET 
+	}
+
+	NET = { government = presidential_dictatorship }
+	
+	NET	= { country_event = 653005 }
+
+	random_country = {
+			limit = { 
+			    tag = DUA
+				exists = DUA
+                any_neighbor_country = { tag = BRG }
+				NOT = { truce_with = BRG }
+			}
+	country_event = 653006 
+		}
+		
+	random_country = {
+			limit = { 
+			    tag = FRA
+				exists = FRA
+				any_neighbor_country = { tag = BRG }
+				NOT = { truce_with = BRG }
+			}
+	country_event = 653006 
+		}
+		
+	random_country = {
+			limit = { 
+			    tag = BOH
+				exists = BOH
+				any_neighbor_country = { tag = BRG }
+				NOT = { truce_with = BRG }
+			}
+	country_event = 653006 
+		}
+		
+	random_country = {
+			limit = { 
+			    tag = NGF
+				exists = NGF
+				any_neighbor_country = { tag = BRG }
+				NOT = { truce_with = BRG }
+			}
+	country_event = 653006 
+		}
+			
+	random_country = {
+			limit = { 
+			    tag = SGF
+			    exists = SGF
+				any_neighbor_country = { tag = BRG }
+				NOT = { truce_with = BRG }
+			}
+	country_event = 653006 
+		}
+		
+	random_country = {
+			limit = { 
+			    tag = GER
+				exists = GER
+				any_neighbor_country = { tag = BRG }
+				NOT = { truce_with = BRG }
+			}
+	country_event = 653006 
+		}
+		
+	random_country = {
+			limit = { 
+			    tag = CAE
+				exists = CAE
+				any_neighbor_country = { tag = BRG }
+				NOT = { truce_with = BRG }
+			}
+	country_event = 653006 
+		}
+	
+	random_country = {
+			limit = { 
+			    tag = HLR
+				exists = HLR
+				any_neighbor_country = { tag = BRG }
+				NOT = { truce_with = BRG }
+			}
+	country_event = 653006 
+		}	
+		
+	war = {
+			target = NET 
+			attacker_goal = {
+				casus_belli = annex_core_country
+			}
+		}		
+	}
+}
+
+country_event = { 
+
+	id = 653005
+	title = "BRG6.T"
+	desc = "BRG6.D"
+	picture = "communist_riot"
+
+	is_triggered_only = yes
+	
+	option = {
+	name = "653005.A"
+	set_country_flag = Wilhelmus_of_Germania
+	treasury = 10000
+	ammunition = 1000
+	small_arms = 1000
+	artillery = 1000
+	canned_food = 1000
+	regular_clothes = 1000
+	add_country_modifier = {
+				name = taiping_draft
+				duration = 7300
+			}
+	}
+}
+
+country_event = {
+
+	id = 653006
+	title = "BRG7.T"
+	desc = "BRG7.D"
+	picture = "Outsidepowers_BOH"
+	
+	is_triggered_only = yes
+	
+#	trigger = { 
+#	OR = {
+#		tag = DUA
+#		tag = BRG 
+#		tag = BOH
+#		tag = SGF
+#		tag = NGF
+#		tag = GER
+#		tag = HLR
+#		tag = CAE
+#		tag = FRA		
+#	}
+#	has_global_flag = Wilhelmus 
+#	NOT = { has_country_flag = 	BRG_Partition }
+#	NOT = { truce_with = BRG }
+#	}
+	
+#	mean_time_to_happen = { 
+#	days = 1 
+#	}
+	
+	option = { 
+	name = "653006.A"
+#	set_country_flag = BRG_Partition
+	casus_belli = {
+			target = BRG
+			type = cut_down_to_size
+			months = 60
+		}
+	war = {
+			target = BRG 
+			attacker_goal = {
+			casus_belli = cut_down_to_size
+			}
+		}
+	}
+}
+
+country_event = { 
+
+	id = 653007
+	title = "BRG8.T"
+	desc = "BRG8.D"
+	picture = "Bohemian_Nationalism"	
+	
+	trigger = { 
+	tag = NET
+	has_global_flag = Wilhelmus 
+	war = no 
+	}
+		
+	mean_time_to_happen = { 
+	days = 1 }	
+	
+	option = { 
+	name = "653007.A"
+	set_country_flag = flanders_reclaimed_NET
+	clr_global_flag = Wilhelmus
+	clr_country_flag = Wilhelmus_of_Germania
+	set_global_flag = WilhelmusEnd
+	NET = { all_core = { remove_core = BRG }   }
+	BUR_390 = { remove_core = BRG }
+	BEL_387 = { remove_core = BRG }
+	BUR_390 = { add_core = NET }
+	BEL_387 = { add_core = NET }
+	prestige = 50 
+	BRG = { country_event = 653008 }
+	country_event = 653010
+	}
+}
+
+country_event = { 
+
+	id = 653008
+	title = "BRG9.T"
+	desc = "BRG9.D"
+	picture = "crimean_war_defeat"
+	
+	is_triggered_only = yes
+	
+	option = {
+	name = "653008.A"
+	remove_accepted_culture = dutch
+	set_country_flag = flanders_lost
+	prestige = -50
+	}
+}
+
+country_event = { 
+
+	id = 653009
+	title = "BRG10.T"
+	desc = "BRG10.D"
+	picture = "rhapsody"
+	
+	trigger = { 
+	tag = BRG 
+	has_global_flag = Wilhelmus
+	owns = 375
+	war = no 
+		}
+		
+	mean_time_to_happen = { 
+	days = 1 }	
+	
+	option = { 
+	name = "653009.A"
+	prestige = 50 
+	clr_global_flag = Wilhelmus 
+	set_global_flag = WilhelmusEnd
+	}
+}
+
+country_event = { 
+	id = 653010
+	title = "BRG11.T"
+	desc = "BRG11.D"
+	picture = "chartists"	
+
+	is_triggered_only = yes
+	
+	option = {
+	name = "653010.A"
+				government = bourgeois_dictatorship
+				political_reform = none_voting
+				political_reform = party_appointed
+				political_reform = no_meeting
+				political_reform = state_press
+				political_reform = no_trade_unions
+				political_reform = first_past_the_post
+				political_reform = underground_parties
+				country_event = 800053
+			ai_chance = {  
+			factor = 50 }
+		}
+	option = { 
+	name = "653010.B"
+				government = hms_government
+				political_reform = state_equal_weight
+				political_reform = universal_weighted_voting
+				political_reform = yes_meeting
+				political_reform = censored_press
+				political_reform = no_trade_unions
+				political_reform = first_past_the_post
+				political_reform = non_secret_ballots
+		ai_chance = {  
+			factor = 50 }
+		}
+}
+
+
+###### Alternative Burgundian Chaos ######
+
+country_event = {
+	id = 653012
+	title = "BRG13.T"
+	desc = "BRG13.D"
+	picture = "bad_badboy"
+	
+	fire_only_once = yes 
+	
+	trigger = {
+	tag = BRG
+	NOT = { exists = LRR }
+	NOT = { has_global_flag = CharlemangeEnd }
+	NOT = { has_global_flag = Charlemange }
+	NOT = { has_country_flag = lorraine_revolt_trigger }
+	has_country_flag = fuck_the_dutch
+	OR = {
+	      government = absolute_monarchy
+	      government = prussian_constitutionalism
+	      government = hms_government
+		 }
+	}
+	
+	mean_time_to_happen = { 
+	days = 7
+	}
+	
+	option = { 
+	name = "653012.A"
+    set_country_flag = lorraine_revolt_trigger
+	clr_country_flag = fuck_the_dutch
+
+	any_pop = {
+			limit = {
+				culture = burgundian
+			}
+			militancy = 1
+			consciousness  = 2
+		}
+
+	any_owned = {
+			 limit = { 
+				is_core = LRR
+			 }
+			 add_province_modifier = {
+		      name = nationalist_agitation
+			   duration = 3650
+			}
+		}
+	}
+}
+
+# Lorraine Revolt!
+
+country_event = {
+	id = 653013
+	title = "BRG14.T"
+	desc = "BRG14.D"
+	fire_only_once = yes 
+	
+	major = yes
+	
+	trigger = {
+	tag = BRG
+	NOT = { exists = LRR }
+	has_country_flag = lorraine_revolt_trigger
+	}
+	
+	mean_time_to_happen = { 
+	days = 31
+	}
+	
+	option = { 
+	name = "653013.A"
+    clr_country_flag = lorraine_revolt_trigger
+    set_global_flag = Charlemange
+	
+	any_owned = { 
+	limit = { 
+	is_core = LRR
+		}
+	secede_province = LRR
+	}
+	
+	any_owned = { 
+	limit = { 
+	is_core = GNV
+		}
+	secede_province = GNV
+	}
+	
+	LRR = { 
+	government = absolute_monarchy
+	political_reform = none_voting
+	political_reform = party_appointed
+	political_reform = no_meeting
+	political_reform = state_press
+	political_reform = no_trade_unions
+	political_reform = first_past_the_post
+	political_reform = underground_parties 
+	}
+
+	GNV = { 
+	government = presidential_dictatorship
+	political_reform = none_voting
+	political_reform = party_appointed
+	political_reform = no_meeting
+	political_reform = state_press
+	political_reform = no_trade_unions
+	political_reform = first_past_the_post
+	political_reform = underground_parties 
+	}
+	
+	LRR	= { country_event = 653014 }
+
+	random_country = {
+			limit = { 
+			    tag = DUA
+				exists = DUA
+	            owns = 439
+				NOT = { owns = 430 }				
+				NOT = { truce_with = BRG }
+			}
+	country_event = 653015 
+		}
+		
+	random_country = {
+			limit = { 
+			    tag = FRA
+				exists = FRA				
+            	owns = 439 
+				NOT = { owns = 430 }
+				NOT = { truce_with = BRG }
+			}
+	country_event = 653015 
+		}
+			
+	war = {
+			target = LRR
+			attacker_goal = {
+				casus_belli = annex_core_country
+			}
+		}				
+	}
+}
+
+country_event = { 
+
+	id = 653014
+	title = "BRG15.T"
+	desc = "BRG15.D"
+	picture = "communist_riot"
+
+	is_triggered_only = yes
+	
+	option = {
+	name = "6530014.A"
+	set_country_flag = Charlie_is_back
+	treasury = 10000
+	ammunition = 1000
+	small_arms = 1000
+	artillery = 1000
+	canned_food = 1000
+	regular_clothes = 1000
+	add_country_modifier = {
+				name = taiping_draft
+				duration = 7300
+			}
+	}
+}
+
+country_event = { 
+
+	id = 653015
+	title = "BRG16.T"
+	desc = "BRG16.D"
+	picture = "communist_riot"
+
+	is_triggered_only = yes
+	
+	option = {
+	name = "653015.A"
+    set_country_flag = angloisnotforfree
+	BRG = {
+	set_country_flag = south_taken_Illegal
+	any_owned = { 
+	limit = { 
+	region = FRA_428
+		}
+	secede_province = THIS
+	    }
+	}
+
+	relation = {
+		   who = BRG
+		   value = -200
+	       }
+		   
+	ai_chance = {  
+			factor = 90
+			}
+	}	
+		
+	option = {
+	name = "653015.B"
+
+	relation = {
+		   who = BRG
+		   value = 50
+	       }
+	
+	ai_chance = {  
+			factor = 10
+			}
+    }	
+}
+
+country_event = { 
+
+	id = 653016
+	title = "BRG17.T"
+	desc = "BRG17.D"
+	picture = "Bohemian_Nationalism"	
+	
+	trigger = { 
+	tag = LRR
+	has_global_flag = Charlemange
+	NOT = { war = yes } 
+	}
+		
+	mean_time_to_happen = { 
+	days = 1 
+	}	
+	
+	option = { 
+	name = "653016.A"
+	clr_global_flag = Charlemange
+	clr_country_flag = Charlie_is_back
+	set_global_flag = CharlemangeEnd
+	prestige = 50 
+	BRG = { country_event = 653017 }
+	}
+}
+
+# The Implosion
+
+country_event = { 
+
+	id = 653017
+	title = "BRG18.T"
+	desc = "BRG18.D"
+	picture = "crimean_war_defeat"
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+	name = "653017.A"
+    government = presidential_dictatorship 
+	political_reform = none_voting
+	political_reform = party_appointed
+	political_reform = no_meeting
+	political_reform = state_press
+	political_reform = no_trade_unions
+	political_reform = first_past_the_post
+	political_reform = underground_parties 
+	country_event = 800050
+	NET = { all_core = { remove_core = BRG }   }
+	RHI = { all_core = { remove_core = BRG }   }
+	GNV = { all_core = { remove_core = BRG }   }
+	BRG = { all_core = { add_core = LRR }   }
+	country_event = 653003
+	prestige = -100
+	}
+}
+
+country_event = { 
+
+	id = 653018
+	title = "BRG19.T"
+	desc = "BRG19.D"
+	picture = "rhapsody"
+	
+	trigger = { 
+	tag = BRG 
+	has_global_flag = Charlemange
+	owns = 413
+	war = no 
+		}
+		
+	mean_time_to_happen = { 
+	days = 1 }	
+	
+	option = { 
+	name = "653018.A"
+	prestige = 50 
+	clr_global_flag = Charlemange
+	set_global_flag = CharlemangeEnd
+	country_event = 653019
+	}
+}
+
+country_event = { 
+
+	id = 653019
+	title = "BRG20.T"
+	desc = "BRG20.D"
+	picture = "neuchatel_canton"
+	
+	is_triggered_only = yes
+	
+	option = {
+	name = "653019.A"
+
+	war = {
+			target = GNV 
+			attacker_goal = {
+				casus_belli = annex_core_country
+			}
+		}		
+		   
+	ai_chance = {  
+			factor = 90
+			}
+	}	
+		
+	option = {
+	name = "653019.B"
+
+	relation = {
+		   who = GNV
+		   value = 400
+	       }	
+	GNV = { all_core = { remove_core = BRG }   }	
+	
+	ai_chance = {  
+			factor = 10
+			}
+    }	
+}
+
+country_event = { 
+
+	id = 653020
+	title = "BRG21.T"
+	desc = "BRG21.D"
+	picture = "rhapsody"
+	
+	trigger = { 
+	tag = BRG 
+	year = 1890
+	NOT = { has_country_flag = comete_issue_over }
+	NOT = { owns = 406 }
+	NOT = { owns = 407 }
+	}
+		
+	mean_time_to_happen = { 
+	days = 1 }	
+	
+	option = { 
+	name = "653020.A"
+	prestige = -10
+	set_country_flag = comete_issue_over
+	clr_country_flag = south_taken_illegal
+	}
+}
+
+country_event = { 
+
+	id = 653021
+	title = "BRG22.T"
+	desc = "BRG22.D"
+	picture = "storming_palace_communists"
+	
+	trigger = { 
+	tag = BRG 
+	NOT = { has_country_flag = BRG_is_dead }
+	NOT = { 
+	is_greater_power = yes
+	any_owned_province = { is_core = SAF }
+	any_owned_province = { is_core = LRR }
+    any_owned_province = { is_core = NET }
+    any_owned_province = { is_core = FRA }
+    any_owned_province = { is_core = DUA }
+    any_owned_province = { is_core = GNV }
+    any_owned_province = { is_core = RHI }
+    any_owned_province = { region = BUR_390 }
+    any_owned_province = { region = BEL_387 }
+	   }
+	}
+		
+	mean_time_to_happen = { 
+	days = 7
+	}	
+	
+	option = { 
+	name = "653021.A"
+	prestige = -100
+	set_country_flag = BRG_is_dead
+	NET = { all_core = { remove_core = BRG }   }
+	RHI = { all_core = { remove_core = BRG }   }
+	GNV = { all_core = { remove_core = BRG }   }
+	LRR = { all_core = { remove_core = BRG }   }
+	FRA = { all_core = { remove_core = BRG }   }
+	DUA = { all_core = { remove_core = BRG }   }
+	change_tag = FLA
+	BRG = { all_core = { remove_core = BRG }   }
+	capital = 395
+	}  
+}
+
+country_event = { 
+
+	id = 653022
+	title = "BRG22.T"
+	desc = "BRG22.D"
+	picture = "storming_palace_communists"
+	
+	trigger = { 
+	tag = BRG 
+    any_owned_province = { is_core = SAF }	
+	NOT = { has_country_flag = BRG_is_dead }
+	NOT = { 
+	is_greater_power = yes
+	any_owned_province = { is_core = LRR }
+    any_owned_province = { is_core = NET }
+    any_owned_province = { is_core = FRA }
+    any_owned_province = { is_core = DUA }
+    any_owned_province = { is_core = GNV }
+    any_owned_province = { is_core = RHI }
+    any_owned_province = { region = BUR_390 }
+    any_owned_province = { region = BEL_387 }
+	   }
+	}
+		
+	mean_time_to_happen = { 
+	days = 7
+	}	
+	
+	option = { 
+	name = "653021.A"
+	prestige = -100
+	set_country_flag = BRG_is_dead
+	NET = { all_core = { remove_core = BRG }   }
+	RHI = { all_core = { remove_core = BRG }   }
+	GNV = { all_core = { remove_core = BRG }   }
+	LRR = { all_core = { remove_core = BRG }   }
+	FRA = { all_core = { remove_core = BRG }   }
+	DUA = { all_core = { remove_core = BRG }   }
+	any_owned = { 
+	limit = { 
+	region = BEL_395
+	}
+	remove_core = BRG
+	secede_province = FLA
+	}
+	any_owned = { 
+	limit = { 
+	region = BEL_394
+	}
+	remove_core = BRG
+	secede_province = FLA
+	}
+	FLA = {	capital = 395 }
+    } 
+}	
+
+## NET taking over Burgundian Colonial Empire ###
+
+country_event = { 
+
+	id = 653023
+	title = "BRG34.T"
+	desc = "BRG34.D"
+	picture = "storming_palace_communists"
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = { 
+	name = "653023.A"
+	
+    prestige = -100
+	
+	any_owned = { 
+	    limit = { 
+		NOT = { is_core = BRG }
+	    NOT = { continent = europe }
+		}
+	    secede_province = FROM
+	} 
+	any_country = {
+	    limit = {
+	    overlord = { tag = BRG }
+        NOT = { capital_scope = { continent = europe } }
+		}
+		country_event = { id = 653024 days = 3 }
+       }
+   } 
+}   
+	
+country_event = { 
+
+	id = 653024
+	title = "BRG35.T"
+	desc = "BRG35.D"
+	picture = "crimean_war_defeat"
+	
+	is_triggered_only = yes
+	
+	option = { 
+	name = "653024.A"
+    FROM = { release_vassal = THIS }
+	}
+}  

@@ -1,0 +1,837 @@
+
+###### Burgundy Flavour ######
+
+country_event = {
+	id = 123122
+	title = "BRG01.T"
+	desc = "BRG01.D"
+	picture = "Burgundian_Cross"
+	
+	fire_only_once = yes 
+	
+	trigger = {
+	tag = BRG
+	NOT = { has_country_flag = welcome_to_BRG }
+	}
+
+	mean_time_to_happen = { 
+	days = 1
+	}
+	
+	option = { 
+	name = "123122.A"
+	set_country_flag = welcome_to_BRG
+	set_global_flag = RHI_vassal
+	prestige = 1
+	any_owned = {
+	limit = {
+	is_core = RHI
+	}
+	secede_province = RHI
+	   }	
+	create_vassal = RHI
+	any_owned = {
+	limit = {
+	is_core = RHI
+	}
+	secede_province = RHI
+	   }
+	RHI = { capital = 575 }
+	ai_chance = { 
+	factor = 100 
+		} 
+	}
+	
+	option = { 
+	name = "123122.B"
+	set_country_flag = welcome_to_BRG 
+	prestige = -1
+	any_owned = {
+	limit = {
+	is_core = RHI
+	}
+	secede_province = RHI
+	   }	
+	create_vassal = RHI
+	any_owned = {
+	limit = {
+	is_core = RHI
+	}
+	secede_province = RHI
+	   }
+	RHI = { capital = 575 }
+	change_tag_no_core_switch = RHI
+	ai_chance = { 
+	factor = 0
+		} 
+	}
+}
+
+country_event = {
+	id = 123123
+	title = "BRG02.T"
+	desc = "BRG02.D"
+	picture = "Burgundian_Cross"
+	
+	is_triggered_only = yes
+	
+	option = { 
+	name = "123123.A"
+	prestige = 10
+    FRA_404 = { add_core = CHA }
+	FRA_428 = { add_core = CHA }
+	FRA_399 = { add_core = CHA }
+	402 = { add_core = CHA }
+    FRA_404 = { add_core = BRG }
+	402 = { add_core = BRG }	
+	CHA = { capital = 403 }
+	ai_chance = { 
+	factor = 60
+		} 
+	}
+	
+	option = { 
+	name = "123123.B"
+	prestige = -10
+    FRA_404 = { add_core = CHA }
+	FRA_428 = { add_core = CHA }
+	FRA_399 = { add_core = CHA }
+	402 = { add_core = CHA }
+    FRA_404 = { add_core = BRG }
+	402 = { add_core = BRG }
+	any_owned = {
+	limit = {
+	is_core = BRG
+	}
+	remove_core = DUA
+	secede_province = BRG
+	   }	
+	CHA = { capital = 403 }
+	ai_chance = { 
+	factor = 10
+		} 
+	}
+	
+	option = { 
+	name = "123123.C"
+    FRA_404 = { add_core = CHA }
+	FRA_428 = { add_core = CHA }
+	FRA_399 = { add_core = CHA }
+	402 = { add_core = CHA }
+    FRA_404 = { add_core = BRG }
+	402 = { add_core = BRG }
+	any_owned = {
+	limit = {
+	is_core = CHA
+	}
+	secede_province = CHA
+	   }	
+	create_vassal = CHA
+	any_owned = {
+	limit = {
+	is_core = CHA
+	}
+	secede_province = CHA
+	   }
+	CHA = { capital = 403 }
+	ai_chance = { 
+	factor = 30
+		} 
+	}
+}
+
+country_event = {
+	id = 123124
+	title = "BRG03.T"
+	desc = "BRG03.D"
+	
+	trigger = {
+	tag = CHA
+	NOT = {	has_country_flag = cheeping_decision }
+	DUA = { exists = no }
+	}
+
+	mean_time_to_happen = { 
+	days = 7
+	}
+	
+	option = { 
+	name = "123124.A"
+	set_country_flag = cheeping_decision 
+	prestige = 1
+	any_country = {
+	limit = {
+	tag = BRG
+	ai = yes
+	}
+	BRG = { inherit = CHA }
+	}
+	any_country = {
+	limit = {
+	tag = BRG
+	ai = no
+	}
+	BRG = { country_event = 60130 }
+	}
+	ai_chance = { 
+	factor = 50
+	   }
+    }
+	
+	option = { 
+	name = "123124.B"
+	set_country_flag = cheeping_decision 
+	prestige = 1
+	any_country = {
+	limit = {
+	tag = FRA
+	ai = yes
+	}
+	FRA = { inherit = CHA }
+	}
+	any_country = {
+	limit = {
+	tag = FRA
+	ai = no
+	}
+	FRA = { country_event = 60130 }
+	}
+	ai_chance = { 
+	factor = 50
+	   }
+    }
+}
+
+country_event = {
+	id = 123125
+	title = "BRG04.T"
+	desc = "BRG04.D"
+	
+	trigger = {
+	tag = CHA
+	NOT = {	has_country_flag = cheeping_decision }
+	AND = {
+	is_vassal = no
+	DUA = { exists = yes }
+	   }
+	}
+
+	mean_time_to_happen = { 
+	days = 7
+	}
+	
+	option = { 
+	name = "123125.A"
+	set_country_flag = cheeping_decision 
+	prestige = 1
+	any_country = {
+	limit = {
+	tag = BRG
+	ai = yes
+	}
+	BRG = { inherit = CHA }
+	}
+	any_country = {
+	limit = {
+	tag = BRG
+	ai = no
+	}
+	BRG = { country_event = 60130 }
+	}
+	ai_chance = { 
+	factor = 50
+	   }
+    }
+	
+	option = { 
+	name = "123125.B"
+	set_country_flag = cheeping_decision 
+	prestige = 1
+	any_country = {
+	limit = {
+	tag = DUA
+	ai = yes
+	}
+	DUA = { inherit = CHA }
+	}
+	any_country = {
+	limit = {
+	tag = DUA
+	ai = no
+	}
+	DUA = { country_event = 60130 }
+	}
+	ai_chance = { 
+	factor = 50
+	   }
+    }
+}
+
+country_event = { 
+
+	id = 653026
+	title = "BRG23.T"
+	desc = "BRG23.D"
+	picture = "finnish_diet"
+
+	trigger = {
+	tag = BRG
+	has_global_flag = liberal_revolutions_should_now_fire
+    NOT = { has_country_flag = anne_is_a_bitch }	
+	RHI = { is_vassal = yes }
+	}
+	
+	mean_time_to_happen = { 
+	days = 31
+	}
+	
+	option = { 
+	name = "653026.A"
+	prestige = -1
+	set_country_flag = RHI_warning
+    set_country_flag = anne_is_a_bitch 	
+	add_country_modifier = { name = the_eye_of_the_storm duration = 3650 }
+	RHI = {
+	government = prussian_constitutionalism
+	political_reform = wealth_voting
+	political_reform = party_appointed
+	political_reform = no_meeting
+	political_reform = state_press
+	political_reform = no_trade_unions
+	political_reform = first_past_the_post
+	political_reform = underground_parties 
+	ruling_party_ideology = conservative
+	}
+	government = prussian_constitutionalism
+	political_reform = wealth_voting
+	political_reform = party_appointed
+	political_reform = no_meeting
+	political_reform = state_press
+	political_reform = no_trade_unions
+	political_reform = first_past_the_post
+	political_reform = underground_parties 
+	ruling_party_ideology = conservative
+	any_pop = { 
+		scaled_militancy = {
+			ideology = conservative
+			factor = -4
+		      }
+        }			  
+	any_pop = { 
+		scaled_militancy = {
+			ideology = reactionary
+			factor = -8
+		      }
+        }
+	}
+}
+
+country_event = { 
+
+	id = 653027
+	title = "BRG24.T"
+	desc = "BRG24.D"
+	picture = "chartists"
+
+	trigger = {
+	tag = BRG
+	has_country_flag = RHI_warning
+	}
+	
+	mean_time_to_happen = { 
+	days = 7
+	}
+	
+	option = { 
+	name = "653027.A"
+	prestige = 10
+	clr_country_flag = RHI_warning	
+	set_global_flag = rhineland_will_revolt
+	ai_chance = { 
+	factor = 70
+	modifier = {
+			factor = 10
+			RHI = { ai = no }
+			}
+	   }
+	}
+	
+	option = { 
+	name = "653027.B"
+	prestige = -10
+	remove_country_modifier = the_eye_of_the_storm
+	clr_country_flag = RHI_warning	
+	set_country_flag = RHI_annex_time
+    RHI = {
+    government = hms_government
+    upper_house_composition = appointed
+    vote_franschise = universal_voting
+    public_meetings = yes_meeting
+    press_rights = free_press
+    trade_unions = no_trade_unions
+    voting_system = first_past_the_post
+    political_parties = non_secret_ballots
+	ruling_party_ideology = liberal
+	}
+    government = hms_government
+    upper_house_composition = appointed
+    vote_franschise = universal_voting
+    public_meetings = yes_meeting
+    press_rights = free_press
+    trade_unions = no_trade_unions
+    voting_system = first_past_the_post
+    political_parties = non_secret_ballots
+	ruling_party_ideology = liberal
+	any_pop = { 
+		scaled_militancy = {
+			ideology = conservative
+			factor = 2
+		      }
+        }			  
+	any_pop = { 
+		scaled_militancy = {
+			ideology = reactionary
+			factor = 4
+		      }
+        }
+	any_pop = { 
+		scaled_militancy = {
+			ideology = liberal
+			factor = -10
+		      }
+        }
+	ai_chance = { 
+	factor = 30
+	   }
+	}
+}
+
+country_event = { 
+
+	id = 653028
+	title = "BRG25.T"
+	desc = "BRG25.D"
+	picture = "blood_river"	
+	
+	major = yes
+
+	trigger = {
+	tag = BRG
+	has_global_flag = rhineland_will_revolt
+	}
+	
+	mean_time_to_happen = { 
+	days = 14
+	}
+	
+	option = { 
+	name = "653028.A"
+	prestige = 10
+	set_global_flag = rhineland_has_revolted
+	clr_global_flag = rhineland_will_revolt
+    clr_global_flag = RHI_vassal
+    release_vassal = RHI
+	
+	RHI = { 
+	government = democracy 
+	ruling_party_ideology = liberal
+	political_reform = universal_voting
+	political_reform = state_equal_weight
+	political_reform = yes_meeting
+	political_reform = free_press
+	political_reform = non_socialist
+	political_reform = secret_ballots
+	treasury = 10000
+	ammunition = 1000
+	small_arms = 1000
+	artillery = 1000
+	canned_food = 1000
+	regular_clothes = 1000
+	add_country_modifier = {
+				name = taiping_draft
+				duration = 720
+			}
+	}
+
+	war = {
+			target = RHI
+			attacker_goal = {
+				casus_belli = annex_core_country
+			}
+			defender_goal = {
+				casus_belli = status_quo
+			}
+		}
+    }		
+}
+
+country_event = { 
+
+	id = 653029
+	title = "BRG26.T"
+	desc = "BRG26.D"
+	picture = "big_parade"	
+
+	trigger = {
+	tag = RHI
+	has_global_flag = rhineland_has_revolted
+    NOT = { BRG = { has_country_flag = BRG_rhein } } 
+	war = no
+	}
+	
+	mean_time_to_happen = { 
+    days = 7	
+    }
+	
+	option = { 
+	name = "653029.A"
+	prestige = 20	
+	BRG = { prestige = -20 }
+	RHI = { all_core = { remove_core = BRG } }
+	clr_global_flag = rhineland_has_revolted
+	set_global_flag = rhineland_forever
+	}
+}
+	
+country_event = { 
+
+	id = 653030
+	title = "BRG27.T"
+	desc = "BRG27.D"
+	picture = "big_parade"	
+
+	trigger = {
+	tag = RHI
+	has_global_flag = RHI_vassal
+    NOT = { is_vassal = yes }
+	war = no
+	}
+	
+	mean_time_to_happen = { 
+    days = 1	
+    }
+	
+	option = { 
+	name = "653030.A"
+	BRG = { create_vassal = RHI }
+	BRG = { any_owned = { 
+	limit = { 
+	is_core = RHI
+	}
+	secede_province = RHI
+	   }
+	}
+	ai_chance = { 
+	factor = 100
+	   }
+	}
+	
+	option = { 
+	name = "653030.B"
+	BRG = {
+	war = {
+			target = RHI
+			attacker_goal = {
+				casus_belli = make_puppet
+			}
+			defender_goal = {
+				casus_belli = status_quo
+			}
+		 }
+	  }
+	ai_chance = { 
+	factor = 0
+	     }
+   }
+}
+
+country_event = { 
+
+	id = 653031
+	title = "BRG28.T"
+	desc = "BRG28.D"
+	picture = "Assassination"	
+
+	trigger = {
+	tag = BRG
+	year = 1881
+	OR = {
+	      government = absolute_monarchy
+	      government = prussian_constitutionalism
+	      government = hms_government
+	}
+	revolution_n_counterrevolution = 1
+	has_global_flag = WilhelmusEnd
+	NOT = { has_country_flag = second_succession }
+	NOT = { exists = LRR }
+	NOT = { exists = NET }
+	war = no
+	}
+	
+	mean_time_to_happen = { 
+    months = 24
+    }
+	
+	option = { 
+	name = "653031.A"
+	set_country_flag = second_succession
+	set_country_flag = regency_is_now_possible
+	add_country_modifier = { name = regency_government duration = -1 }
+	}
+}
+
+country_event = { 
+
+	id = 653032
+	title = "BRG29.T"
+	desc = "BRG29.D"
+	picture = "Assassination"	
+
+	trigger = {
+	tag = BRG
+	year = 1881
+	OR = {
+	      government = absolute_monarchy
+	      government = prussian_constitutionalism
+	      government = hms_government
+	}
+	revolution_n_counterrevolution = 1
+	has_global_flag = CharlemangeEnd
+	NOT = { has_country_flag = second_succession }
+	NOT = { has_country_flag = second_succession_end }
+	NOT = { has_global_flag = WilhelmusEnd }
+	NOT = { exists = LRR }
+	NOT = { exists = NET }
+	war = no
+	}
+	
+	mean_time_to_happen = { 
+    months = 24
+    }
+	
+	option = { 
+	name = "653032.A"
+	set_country_flag = second_succession
+	set_country_flag = regency_is_now_possible
+	add_country_modifier = { name = regency_government duration = -1 }
+	}
+}
+
+country_event = { 
+
+	id = 653033
+	title = "BRG30.T"
+	desc = "BRG30.D"
+	picture = "speech_assembly"
+
+	major = yes
+	
+	trigger = {
+	tag = BRG
+	has_country_flag = second_succession
+	war = no
+	}
+
+	mean_time_to_happen = { 
+    months = 12	
+    }
+	
+	option = { 
+	name = "653033.A"
+	prestige = 10
+	remove_country_modifier = regency_government
+	clr_country_flag = second_succession
+	set_country_flag = second_succession_end
+	set_country_flag = potencial_communist_coup
+	ai_chance = { 
+	factor = 60
+	   }
+	}
+	
+	option = { 
+	name = "653033.B"
+	prestige = -10
+	remove_country_modifier = regency_government
+	government = democracy
+	clr_country_flag = second_succession
+	set_country_flag = second_succession_end
+	political_reform = universal_voting
+	political_reform = yes_meeting
+	political_reform = free_press
+	political_reform = secret_ballots
+	country_event = 800054
+	ai_chance = { 
+	factor = 40
+	   }
+	}
+}
+
+country_event = { 
+
+	id = 653034
+	title = "BRG31.T"
+	desc = "BRG31.D"
+	picture = "storming_palace_communists"
+	
+	trigger = {
+	tag = BRG
+	has_country_flag = potencial_communist_coup
+    any_owned_province = { is_core = RHI }
+    is_ideology_enabled = communist
+	war = no
+	}
+	
+	mean_time_to_happen = { 
+    days = 31	
+    }
+	
+	option = { 
+	name = "653034.A"
+	prestige = 20
+	clr_country_flag = potencial_communist_coup
+	set_global_flag = rhineland_will_revolt_two
+	ai_chance = { 
+	factor = 80
+	   }
+	}
+	
+	option = { 
+	name = "653034.B"
+	prestige = -30
+	clr_country_flag = potencial_communist_coup
+	ruling_party_ideology = communist
+	government = proletarian_dictatorship
+	political_reform = none_voting
+	political_reform = party_appointed
+	political_reform = no_meeting
+	political_reform = state_press
+	political_reform = state_controlled
+	political_reform = underground_parties
+	political_reform = nobody_gets_out
+	political_reform = mandatory_service
+	political_reform = protected
+	country_event = 800052
+	ai_chance = { 
+	factor = 20
+	   }
+	}
+}
+
+country_event = { 
+
+	id = 653035
+	title = "BRG32.T"
+	desc = "BRG32.D"
+	picture = "banquet"
+	
+	trigger = {
+	tag = BRG
+	has_country_flag = potencial_communist_coup
+	OR = {
+	NOT = { any_owned_province = { is_core = RHI } }
+    NOT = { is_ideology_enabled = communist }
+	}
+	war = no
+	}
+	
+	mean_time_to_happen = { 
+    days = 31	
+    }
+	
+	option = { 
+	name = "653035.A"
+	clr_country_flag = potencial_communist_coup
+    }
+}
+
+
+country_event = { 
+
+	id = 653036
+	title = "BRG33.T"
+	desc = "BRG33.D"
+	picture = "communist_congress"
+	
+	major = yes
+	
+	trigger = {
+	tag = BRG
+	has_global_flag = rhineland_will_revolt_two
+	}
+	
+	mean_time_to_happen = { 
+	months = 6
+	}
+	
+	option = { 
+	name = "653036.A"
+	clr_global_flag = rhineland_will_revolt_two
+	set_global_flag = rhineland_has_revolted
+	
+	any_owned = { 
+	limit = { 
+	is_core = RHI
+	}
+	secede_province = RHI
+	}
+    	
+	RHI = { 
+	ruling_party_ideology = communist
+	government = proletarian_dictatorship
+	political_reform = none_voting
+	political_reform = party_appointed
+	political_reform = no_meeting
+	political_reform = state_press
+	political_reform = state_controlled
+	political_reform = underground_parties
+	political_reform = nobody_gets_out
+	political_reform = mandatory_service
+	political_reform = protected
+	treasury = 10000
+	ammunition = 1000
+	small_arms = 1000
+	artillery = 1000
+	canned_food = 1000
+	regular_clothes = 1000
+	add_country_modifier = {
+				name = taiping_draft
+				duration = 720
+			}
+	}
+
+	war = {
+			target = RHI
+			attacker_goal = {
+				casus_belli = annex_core_country
+			}
+			defender_goal = {
+				casus_belli = status_quo
+			 }
+		  }
+       }		
+   }
+
+country_event = { 
+
+	id = 653037
+	title = "BRG05.T"
+	desc = "BRG05.D"
+	picture = "prussian_constitution"
+	
+	trigger = {
+	tag = BRG
+	NOT = { has_country_flag = imperial_alliance_end }
+	}
+	
+	mean_time_to_happen = { 
+	days = 14
+	}
+	
+	option = { 
+	name = "653037.A"
+	set_country_flag = imperial_alliance_end
+    relation = { who = SCA value = -400 }
+    leave_alliance = SCA
+	SCA = { country_event = 191913 }
+	}
+}

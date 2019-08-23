@@ -1,0 +1,866 @@
+# Dual Monarchy or Burgundy has triggered Saviour War via Decision
+country_event = {
+
+	id = 598007
+	
+	is_triggered_only = yes
+
+	title = "EVTNAME598007"
+	desc = "EVTDESC598007"
+	picture = "christian_religion"
+
+	option = {
+		name = "EVTOPTA598007"
+		set_country_flag = Savoysaviorofitaly
+
+		465 = {
+			secede_province = FROM
+			remove_core = SAR
+			remove_core = LOM
+			remove_core = ARI
+			remove_core = ITA
+			add_core = FROM
+			add_core = GNV
+		}
+		466 = {
+			secede_province = FROM
+			remove_core = SAR
+			remove_core = LOM
+			remove_core = ARI
+			remove_core = ITA
+			add_core = FROM
+			add_core = GNV
+		}
+		721 = {
+			secede_province = FROM
+			remove_core = SAR
+			remove_core = LOM
+			remove_core = ARI
+			remove_core = ITA
+			add_core = FROM
+			add_core = GNV
+			}
+		609  = {
+			secede_province = FROM
+			remove_core = SAR
+			remove_core = LOM
+			remove_core = ARI
+			remove_core = ITA
+			add_core = FROM
+			add_core = GNV
+			}	
+		add_accepted_culture = south_italian
+		change_tag = ITA
+		set_global_flag = saviorsofitalyunite
+		any_country = {
+			limit = {
+				OR = {
+					primary_culture = north_italian
+					primary_culture = south_italian
+					AND = {
+					tag = VEN
+					NOT = { any_owned_province = { is_core = GRE } }
+					}
+					tag = PAP
+					tag = SRD
+				}
+				exists = yes
+				NOT = { tag = THIS }
+			}
+			country_event = 598008
+		}
+		
+	}
+}
+
+# War of the Italian Saviour
+country_event = {
+
+	id = 598008
+	
+	is_triggered_only = yes
+
+	title = "EVTNAME598008"
+	desc = "EVTDESC598008"
+	picture = "christian_religion"
+	
+	option = {
+		name = "EVTOPTA598008" #Side with Monarchy
+		prestige = 5
+		set_country_flag = SAR_united_front
+		ai_chance = {
+			factor = 10
+			modifier = {
+				factor = 10
+				government = absolute_monarchy
+			}
+			modifier = {
+				factor = 10
+				government = prussian_constitutionalism
+			}
+			modifier = {
+				factor = 10
+				government = hms_government
+			}
+			modifier = {
+				factor = 10
+				government = theocracy
+			}
+			modifier = {
+				factor = 0.3
+				tag = VEN
+			}
+			modifier = {
+				factor = 0.2
+				rank = 20
+			}
+			modifier = {
+				factor = 0
+				rank = 16
+			}
+		}
+	}
+	option = {
+		name = "EVTOPTB598008" #Side with the Republic
+		prestige = 5
+		set_country_flag = TUS_united_front
+		any_owned = { 
+			limit = {
+				is_core = THIS 
+				}
+			add_core = TUS
+		}
+		ai_chance = {
+			factor = 10
+			modifier = {
+				factor = 10
+				government = democracy
+			}
+			modifier = {
+				factor = 10
+				government = presidential_dictatorship
+			}
+			modifier = {
+				factor = 10
+				government = bourgeois_dictatorship
+			}
+			modifier = {
+				factor = 0.3
+				tag = VEN
+			}
+			modifier = {
+				factor = 0.2
+				rank = 20
+			}
+			modifier = {
+				factor = 0
+				rank = 16
+			}
+		}
+	}
+	option = {
+		name = "EVTOPTC598008" #Is there a option to stay neutral?
+		prestige = -5
+		set_country_flag = neutrality_is_bad
+		ai_chance = {
+			factor = 10
+			modifier = {
+				factor = 10
+				government = merchant_republic
+			}
+			modifier = {
+				factor = 10
+				government = fascist_dictatorship
+			}
+			modifier = {
+				factor = 10
+				government = proletarian_dictatorship
+			}
+			modifier = {
+			   factor = 20
+			   war = yes 
+			}
+			modifier = {
+				factor = 7
+				tag = VEN
+			}
+			modifier = {
+				factor = 7
+				rank = 20
+			}
+			modifier = {
+				factor = 10
+				rank = 16
+			}
+		}
+	}
+}
+
+# War of the Italian Saviour - Tuscany is unable to help and Sicily either is not a democracy or does not exist.
+country_event = {
+
+	id = 598009
+	title = "EVTNAME598009"
+	desc = "EVTDESC598009"
+	picture = "christian_religion"
+	
+	trigger = {
+    has_country_flag = TUS_united_front
+	VEN = { NOT = { has_country_flag = etruria_of_italy } }
+	SIC = { NOT = { AND = { OR = {
+	government = democracy
+	government = presidential_dictatorship
+	government = bourgeois_dictatorship
+	          }
+	exists = yes
+	        }
+	    }	
+	}
+	TUS = { NOT = { AND = { OR = {
+	government = democracy
+	government = presidential_dictatorship
+	government = bourgeois_dictatorship
+	          }
+	exists = yes
+	        }
+	      }	
+	   }
+	}
+	
+	mean_time_to_happen =  {
+		days = 2
+	}
+	
+	option = {
+		name = "EVTOPTA598009" #Oh No
+		prestige = 5
+		clr_country_flag = TUS_united_front
+	}
+}
+
+# War of the Italian Saviour - Tuscany does not start a war due to not being democratic and Sicily does not exist or is not democratic. Italy annexes all willing other nations.
+country_event = {
+
+	id = 598010
+	title = "EVTNAME598010"
+	desc = "EVTDESC598010"
+	picture = "christian_religion"
+	
+	trigger = {
+    tag = ITA
+	VEN = { NOT = { has_country_flag = etruria_of_italy } }
+    has_global_flag = saviorsofitalyunite
+	has_country_flag = Savoysaviorofitaly
+	SIC = { NOT = { AND = { OR = {
+	government = democracy
+	government = presidential_dictatorship
+	government = bourgeois_dictatorship
+	          }
+	exists = yes
+	        }
+	    }	
+	}
+	TUS = { NOT = { AND = { OR = {
+	government = democracy
+	government = presidential_dictatorship
+	government = bourgeois_dictatorship
+	          }
+	exists = yes
+	        }
+	      }	
+	   }
+	}
+	
+	mean_time_to_happen =  {
+		days = 31
+	}
+	
+	option = {
+		name = "EVTOPTA598009" #Italy is almost unified.
+		prestige = 20
+		clr_country_flag = Savoysaviorofitaly
+		clr_global_flag = saviorsofitalyunite
+		any_country = {
+			limit = {
+				has_country_flag = SAR_united_front
+				NOT = {
+					tag = THIS
+				}
+			}
+			annex_to = THIS
+		}
+		any_country = {
+			limit = {
+				has_country_flag = neutrality_is_bad
+				NOT = {
+					tag = THIS
+				}
+			}
+			clr_country_flag = neutrality_is_bad
+		}
+	}
+}
+
+# War of the Italian Saviour - Tuscany fails to be the savior but democratic Sicily exists and takes the Democratic Faction.
+country_event = {
+
+	id = 598011
+	title = "EVTNAME598011"
+	desc = "EVTDESC598011"
+	picture = "christian_religion"
+	
+	trigger = {
+	has_country_flag = TUS_united_front
+	TUS = { NOT = { AND = { OR = {
+	government = democracy
+	government = presidential_dictatorship
+	government = bourgeois_dictatorship
+	          }
+	exists = yes
+	        }
+	      }	
+	   }
+	SIC = { AND = { OR = {
+	government = democracy
+	government = presidential_dictatorship
+	government = bourgeois_dictatorship
+	          }
+	exists = yes
+	        }
+	     }	
+	}
+	
+	mean_time_to_happen =  {
+		days = 2
+	}
+	
+	option = {
+		name = "EVTOPTA598011" #Parthenopea shall save Italy
+		prestige = 20
+		any_owned = { 
+			limit = {
+				is_core = THIS
+				}
+			remove_core = TUS
+		}
+		any_owned = { 
+			limit = {
+				is_core = THIS 
+				}
+			add_core = SIC
+		}
+	}
+}
+
+# War of the Italian Saviour - Tuscany and Sicily fail to be the saviours but democratic its 1910 and Venice exists so he takes the Democratic Faction.
+country_event = {
+
+	id = 598023
+	title = "EVTNAME598023"
+	desc = "EVTDESC598023"
+	picture = "christian_religion"
+	
+	trigger = {
+	has_country_flag = TUS_united_front
+	SIC = { NOT = { AND = { OR = {
+	government = democracy
+	government = presidential_dictatorship
+	government = bourgeois_dictatorship
+	           }
+	exists = yes
+	       }
+	   }	
+	}
+	TUS = { NOT = { AND = { OR = {
+	government = democracy
+	government = presidential_dictatorship
+	government = bourgeois_dictatorship
+	           }
+	exists = yes
+	       }
+	   }	
+	}
+	VEN = { AND = { OR = {
+	government = democracy
+	government = merchant_republic
+	government = presidential_dictatorship
+	government = bourgeois_dictatorship
+	          }
+	exists = yes
+	       }
+	   }	
+	}
+	
+	mean_time_to_happen =  {
+		days = 2
+	}
+	
+	option = {
+		name = "EVTOPTA598023" #Venice? VENICE?
+		prestige = 20
+		any_owned = { 
+			limit = {
+				is_core = THIS
+				}
+			remove_core = TUS
+		}
+		any_owned = { 
+			limit = {
+				is_core = THIS 
+				}
+			add_core = VEN
+		}
+	}
+}
+
+# War of the Italian Saviour - THE WAR BEGINS (Sicily).
+country_event = {
+
+	id = 598012
+	title = "EVTNAME598012"
+	desc = "EVTDESC598012"
+	picture = "christian_religion"
+	
+	major = yes
+	
+	trigger = {
+	tag = SIC
+    has_global_flag = saviorsofitalyunite
+	SIC = { AND = { OR = {
+	government = democracy
+	government = presidential_dictatorship
+	government = bourgeois_dictatorship
+	        }
+	exists = yes
+	    }
+	}	
+	TUS = { NOT = { AND = { OR = {
+	government = democracy
+	government = presidential_dictatorship
+	government = bourgeois_dictatorship
+	          }
+	exists = yes
+	        }
+	      }	
+	   }
+	}
+	
+	mean_time_to_happen =  {
+		days = 10
+	}
+	
+	option = {
+		name = "EVTOPTA598012" #This is the final stand of Republicanism in Italy.
+		add_country_modifier = { name = taiping_draft duration = 1200 }
+		clr_global_flag = saviorsofitalyunite
+        set_country_flag = unifier_of_italy
+		prestige = 20
+		any_country = {
+			limit = {
+				has_country_flag = TUS_united_front
+				NOT = {
+					tag = THIS
+				}
+			}
+			annex_to = THIS
+		}
+		any_country = {
+			limit = {
+				has_country_flag = SAR_united_front
+				NOT = {
+					tag = THIS
+				}
+			}
+			annex_to = ITA
+		}		
+		any_country = {
+			limit = {
+				has_country_flag = neutrality_is_bad
+				NOT = {
+					tag = THIS
+				}
+			}
+			country_event = 598015
+		}
+        war = {
+			target = ITA
+			attacker_goal = {
+				casus_belli = civil_war
+			}
+			defender_goal = {
+				casus_belli = civil_war
+			    }
+            }
+	}
+}
+
+# War of the Italian Saviour - THE WAR BEGINS (Tuscany).
+country_event = {
+	id = 598013
+	title = "EVTNAME598013"
+	desc = "EVTDESC598013"
+	picture = "christian_religion"
+	
+	major = yes
+	
+	trigger = {
+	tag = TUS
+	has_global_flag = saviorsofitalyunite
+	TUS = { AND = { OR = {
+	government = democracy
+	government = presidential_dictatorship
+	government = bourgeois_dictatorship
+	          }
+	exists = yes
+	        }
+	    }	
+	}
+	
+	mean_time_to_happen =  {
+		days = 10
+	}
+	
+	option = {
+		name = "EVTOPTA598013" #This is the final stand of Republicanism in Italy.
+		add_country_modifier = { name = taiping_draft duration = 1200 }
+        clr_global_flag = saviorsofitalyunite
+		set_country_flag = unifier_of_italy
+		prestige = 20
+		any_country = {
+			limit = {
+				has_country_flag = TUS_united_front
+				NOT = {
+					tag = THIS
+				}
+			}
+			annex_to = THIS
+		}
+		any_country = {
+			limit = {
+				has_country_flag = SAR_united_front
+				NOT = {
+					tag = THIS
+				}
+			}
+			annex_to = ITA
+		}		
+		any_country = {
+			limit = {
+				has_country_flag = neutrality_is_bad
+				NOT = {
+					tag = THIS
+				}
+			}
+			country_event = 598016
+		}
+        war = {
+			target = ITA
+			attacker_goal = {
+				casus_belli = civil_war
+			}
+			defender_goal = {
+				casus_belli = civil_war
+			    }
+            }
+	}
+}
+
+# War of the Italian Saviour - THE WAR BEGINS (Venice).
+country_event = {
+	id = 598022
+	title = "EVTNAME598022"
+	desc = "EVTDESC598022"
+	picture = "christian_religion"
+	
+	major = yes
+	
+	trigger = {
+	tag = VEN
+	has_global_flag = saviorsofitalyunite
+	SIC = { NOT = { AND = { OR = {
+	government = democracy
+	government = presidential_dictatorship
+	government = bourgeois_dictatorship
+	           }
+	exists = yes
+	       }
+	   }	
+	}
+	TUS = { NOT = { AND = { OR = {
+	government = democracy
+	government = presidential_dictatorship
+	government = bourgeois_dictatorship
+	           }
+	exists = yes
+	       }
+	   }	
+	}
+
+	}
+	
+	mean_time_to_happen =  {
+		days = 10
+	}
+	
+	option = {
+		name = "EVTOPTA598013" #This is the final stand of Republicanism in Italy.
+		add_country_modifier = { name = taiping_draft duration = 1200 }
+        clr_global_flag = saviorsofitalyunite
+		set_country_flag = unifier_of_italy
+		prestige = 20
+		any_country = {
+			limit = {
+				has_country_flag = TUS_united_front
+				NOT = {
+					tag = THIS
+				}
+			}
+			annex_to = THIS
+		}
+		any_country = {
+			limit = {
+				has_country_flag = SAR_united_front
+				NOT = {
+					tag = THIS
+				}
+			}
+			annex_to = ITA
+		}		
+		any_country = {
+			limit = {
+				has_country_flag = neutrality_is_bad
+				NOT = {
+					tag = THIS
+				}
+			}
+			country_event = 598021
+		}
+        war = {
+			target = ITA
+			attacker_goal = {
+				casus_belli = civil_war
+			}
+			defender_goal = {
+				casus_belli = civil_war
+			    }
+            }
+	}
+}
+
+# War of the Italian Saviour - Italy does not exist
+
+country_event = {
+	id = 598019
+	title = "EVTNAME598019"
+	desc = "EVTDESC598019"
+	picture = "christian_religion"
+	
+	trigger = {
+	OR = {
+	tag = TUS
+	tag = SIC
+	tag = VEN
+	}
+	has_country_flag = etruria_of_italy	
+	ITA = { NOT = { has_country_flag = Savoysaviorofitaly } }
+	NOT = { exists = ITA }
+	}
+	
+	mean_time_to_happen =  {
+		days = 7
+	}
+	
+	option = {
+		name = "EVTOPTA598019" #This crown shall unite italy.
+		prestige = 1
+        clr_country_flag = etruria_of_italy	
+        end_war = ITA
+        inherit = ITA
+	}
+}
+
+
+# War of the Italian Saviour - The Iron Crown
+country_event = {
+	id = 598014
+	title = "EVTNAME598014"
+	desc = "EVTDESC598014"
+	picture = "christian_religion"
+	
+    is_triggered_only = yes
+	
+	option = {
+		name = "EVTOPTA598014" #This crown shall unite italy.
+		prestige = 20
+	    set_country_flag = Savoysaviorofitaly
+		change_tag = ITA
+	}
+}
+
+# War of the Italian Saviour - The Manifesto
+country_event = {
+	id = 598017
+	title = "EVTNAME598017"
+	desc = "EVTDESC598017"
+	picture = "christian_religion"
+	
+    is_triggered_only = yes
+	
+	option = {
+		name = "EVTOPTA598017" #Its time to choose.
+		prestige = 10
+		any_country = {
+			limit = {
+				OR = {
+					primary_culture = north_italian
+					primary_culture = south_italian
+					tag = PAP
+					tag = SRD
+					AND = {
+					tag = VEN
+					NOT = { any_owned_province = { is_core = GRE } }
+					}
+				}
+				exists = yes
+				NOT = { tag = THIS }
+			}
+			country_event = 598008
+		}
+	}
+}
+
+# War of the Italian Saviour - Sicilian Interjection
+country_event = {
+	id = 598018
+	title = "EVTNAME598017"
+	desc = "EVTDESC598017"
+	picture = "christian_religion"
+	
+    is_triggered_only = yes
+	
+	option = {
+		name = "EVTOPTA598017" #Its time to choose.
+		prestige = 10
+		add_accepted_culture = north_italian
+		any_country = {
+			limit = {
+				OR = {
+					primary_culture = north_italian
+					primary_culture = south_italian
+					tag = PAP
+					tag = SRD
+					AND = {
+					tag = VEN
+					NOT = { any_owned_province = { is_core = GRE } }
+					}
+				}
+				exists = yes
+				NOT = { tag = THIS }
+			}
+			country_event = 598008
+		}
+	}
+}
+
+# War of the Italian Saviour - The Last Resort
+country_event = {
+	id = 598020
+	title = "EVTNAME598020"
+	desc = "EVTDESC598020"
+	picture = "christian_religion"
+	
+    is_triggered_only = yes
+	
+	option = {
+		name = "EVTOPTA598020" #Its time to choose.
+		prestige = 10
+		add_accepted_culture = north_italian
+		any_country = {
+		    limit = {
+			tag = TUS
+			vassal_of = ARA
+			}
+		ARA = { inherit = TUS }
+		}
+		any_country = {
+		    limit = {
+			tag = SIC
+			vassal_of = ARA
+			}
+		ARA = { inherit = SIC }
+		}
+		any_country = {
+			limit = {
+				OR = {
+					primary_culture = north_italian
+					primary_culture = south_italian
+					tag = PAP
+					tag = SRD
+				}
+				exists = yes
+				NOT = { tag = THIS }
+			}
+			country_event = 598008
+		}
+	}
+}
+
+# War of the Italian Saviour - Fuck You Neutrals (Sicily Iteration)
+country_event = {
+	id = 598015
+	title = "EVTNAME598015"
+	desc = "EVTDESC598015"
+	picture = "christian_religion"
+	
+    is_triggered_only = yes
+	
+	option = {
+		name = "EVTOPTA598015" 
+		any_owned = { 
+			limit = {
+				is_core = THIS 
+				}
+			add_core = SIC
+		}
+	}
+}
+
+# War of the Italian Saviour - Fuck You Neutrals (Tuscany Iteration)
+country_event = {
+	id = 598016
+	title = "EVTNAME598016"
+	desc = "EVTDESC598016"
+	picture = "christian_religion"
+	
+    is_triggered_only = yes
+	
+	option = {
+		name = "EVTOPTA598016" 
+		any_owned = { 
+			limit = {
+				is_core = THIS 
+				}
+			add_core = TUS
+		}
+	}
+}
+
+# War of the Italian Saviour - Fuck You Neutrals (Venice Iteration)
+country_event = {
+	id = 598021
+	title = "EVTNAME598021"
+	desc = "EVTDESC598021"
+	picture = "christian_religion"
+	
+    is_triggered_only = yes
+	
+	option = {
+		name = "EVTOPTA598021" 
+		any_owned = { 
+			limit = {
+				is_core = THIS 
+				}
+			add_core = VEN
+		}
+	}
+}

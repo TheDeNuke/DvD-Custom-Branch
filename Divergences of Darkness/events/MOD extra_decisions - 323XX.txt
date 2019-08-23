@@ -1,0 +1,292 @@
+	country_event = {
+		id = 32301
+		title = "EVTNAME32301"
+		desc = "EVTDESC32301"
+		picture = "Administration"
+		
+		trigger = {
+				not = { government = proletarian_dictatorship }
+				not = { government = prussian_constitutionalism }
+				not = { government = hms_government }				
+				mass_politics = 1
+				civilized = yes
+				upper_house = { ideology = communist value = 0.3 }
+				ruling_party_ideology = communist
+		}
+
+		mean_time_to_happen = {
+				months = 1
+		}
+
+		option = {
+		name = "EVTOPTA32301"
+		random_owned = {
+			limit = { owner = { has_country_modifier = regency_government } }
+			owner = { remove_country_modifier = regency_government }
+		}
+		government = proletarian_dictatorship
+		political_reform = none_voting
+		political_reform = party_appointed
+		political_reform = no_meeting
+		political_reform = state_press
+		political_reform = state_controlled
+		political_reform = underground_parties
+		political_reform = nobody_gets_out
+		political_reform = mandatory_service
+		political_reform = protected
+		political_reform = no_slavery
+		social_reform = good_minimum_wage
+		social_reform = eight_hours
+		social_reform = good_subsidies
+		social_reform = good_pensions
+		social_reform = good_health_care
+		clr_country_flag = tory_election_win
+		clr_country_flag = socialist_election_win
+		clr_country_flag = liberal_election_win
+		clr_country_flag = communist_election_win
+		clr_country_flag = fascist_election_win
+		clr_country_flag = reactionary_election_win
+		clr_country_flag = anarcho_liberal_election_win
+		clr_country_flag = social_liberal_election_win
+		country_event = 800052
+		}
+	}	
+	
+	country_event = {
+		id = 32302
+		title = "EVTNAME32302"
+		desc = "EVTDESC32302"
+		picture = "Administration"
+		
+		trigger = {
+				not = { government = fascist_dictatorship }
+				not = { government = prussian_constitutionalism }
+				not = { government = hms_government }				
+				mass_politics = 1
+				civilized = yes
+				upper_house = { ideology = fascist value = 0.3 }
+				ruling_party_ideology = fascist
+		}
+
+		mean_time_to_happen = {
+				months = 1
+		}
+
+		option = {
+		name = "EVTOPTA32301" 
+		random_owned = {
+			limit = { owner = { has_country_modifier = regency_government } }
+			owner = { remove_country_modifier = regency_government }
+		}
+		government = fascist_dictatorship
+		political_reform = none_voting
+		political_reform = party_appointed
+		political_reform = no_meeting
+		political_reform = state_press
+		political_reform = state_controlled
+		political_reform = underground_parties
+		political_reform = nobody_gets_out
+		political_reform = mandatory_service
+		political_reform = oppression
+		clr_country_flag = tory_election_win
+		clr_country_flag = socialist_election_win
+		clr_country_flag = liberal_election_win
+		clr_country_flag = communist_election_win
+		clr_country_flag = fascist_election_win
+		clr_country_flag = reactionary_election_win
+		clr_country_flag = anarcho_liberal_election_win
+		clr_country_flag = social_liberal_election_win
+		plurality = -25
+		country_event = 800051
+		}
+	}	
+	
+	country_event = {
+		id = 32303
+		title = "EVTNAME32303"
+		desc = "EVTDESC32303"
+		picture = "Administration"
+		
+		trigger = {
+				not = { government = bourgeois_dictatorship }
+				not = { government = prussian_constitutionalism }
+				not = { government = hms_government }				
+				state_n_government = 1
+				civilized = yes
+				upper_house = { ideology = anarcho_liberal value = 0.2 }
+				ruling_party_ideology = anarcho_liberal
+		}
+		
+		mean_time_to_happen = {
+				months = 1
+		}
+
+		option = {
+		name = "EVTOPTA32301"
+		random_owned = {
+			limit = { owner = { has_country_modifier = regency_government } }
+			owner = { remove_country_modifier = regency_government }
+		}
+		government = bourgeois_dictatorship
+		political_reform = none_voting
+		political_reform = party_appointed
+		political_reform = yes_meeting
+		political_reform = free_press
+		political_reform = all_trade_unions
+		political_reform = underground_parties
+		political_reform = naturalization
+		political_reform = no_draft
+		political_reform = protected
+		social_reform = no_minimum_wage
+		social_reform = no_work_hour_limit
+		social_reform = no_safety
+		social_reform = no_subsidies
+		social_reform = no_pensions
+		social_reform = no_health_care
+		any_owned = {
+			remove_province_modifier = anarcho_liberal_stronghold
+		}
+		country_event = 800053
+		}
+	}		
+	
+	country_event = {
+		id = 32304
+		title = "EVTNAME32304"
+		desc = "EVTDESC32304"
+		picture = "Administration"
+		trigger = { 
+				NOT = { government = presidential_dictatorship }
+		        NOT = { government = prussian_constitutionalism }
+				NOT = { government = absolute_monarchy }
+				NOT = { government = hms_government }	
+				civilized = yes
+				upper_house = { ideology = reactionary value = 0.3 }
+		        state_n_government = 1
+				ruling_party_ideology = reactionary
+		}
+		
+
+		mean_time_to_happen = {
+				months = 1
+		}
+
+		option = {
+		name = "EVTOPTA32301"
+		random_owned = {
+			limit = { owner = { has_country_modifier = regency_government } }
+			owner = { remove_country_modifier = regency_government }
+		}
+		government = presidential_dictatorship
+		political_reform = none_voting
+		political_reform = party_appointed
+		political_reform = no_meeting
+		political_reform = state_press
+		political_reform = state_controlled
+		political_reform = underground_parties
+		political_reform = mandatory_service
+		clr_country_flag = tory_election_win
+		clr_country_flag = socialist_election_win
+		clr_country_flag = liberal_election_win
+		clr_country_flag = communist_election_win
+		clr_country_flag = fascist_election_win
+		clr_country_flag = reactionary_election_win
+		clr_country_flag = anarcho_liberal_election_win
+		clr_country_flag = social_liberal_election_win
+		country_event = 800050
+		}
+	}	
+	
+country_event = {
+	id = 32305
+	title = "EVTNAME32305"
+	desc = "EVTDESC32305"
+	picture = "border_ruffians"
+	trigger = { 
+	exists = yes
+	NOT = { is_substate = yes }
+	NOT = { is_vassal = yes }
+	part_of_sphere = yes
+	sphere_owner = {
+	any_core = { owned_by = THIS }
+	is_greater_power = yes
+	war = no
+	is_disarmed = no
+		  }
+	}
+
+	mean_time_to_happen = {
+	months = 24
+	}
+		
+	option = {
+	name = "That's not good."
+	sphere_owner = {
+			country_event = 32306
+		}
+	}
+}
+		
+country_event = {
+	id = 32306
+	title = "EVTNAME32306"
+	desc = "EVTDESC32306"
+	picture = "deliberation"
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "Declare War - Now"
+		leave_alliance = FROM
+		random_country = {
+			limit = {
+				tag = FROM
+				vassal_of = THIS
+			}
+			THIS = { release_vassal = FROM }
+		}
+        relation = {
+			who = FROM
+			value = -400
+		}
+		diplomatic_influence = {
+			who = FROM
+			value = -200
+		}
+		casus_belli = {
+			target = FROM
+			type = cut_down_to_size
+			months = 12
+		}
+		casus_belli = {
+			target = FROM
+			type = annex_core_country
+			months = 12
+		}
+		war = {
+			target = FROM
+			attacker_goal = {
+				casus_belli = cut_down_to_size
+			}
+		}
+	ai_chance = {
+	factor = 100
+	     }	
+    }
+
+	option = {
+		name = "Can't we. You know... talk it out?"
+		prestige = -10
+        relation = {
+			who = FROM
+			value = -400
+		}
+		diplomatic_influence = {
+			who = FROM
+			value = -200
+		}
+	    ai_chance = {
+		factor = 0
+		}		
+    }
+}
