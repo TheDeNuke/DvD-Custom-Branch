@@ -347,6 +347,10 @@ political_decisions = {
 		}
 		ai_will_do = {
 			factor = 1
+	        modifier = { 
+		    factor = 0 
+		    owns = 744
+			}
 		}
 	}
 	
@@ -418,6 +422,7 @@ political_decisions = {
 	OR = { 
 	government = absolute_monarchy
 	government = prussian_constitutionalism
+	government = hms_government
 	}
 	LUC = { exists = yes }
 	NOT = { war = yes }
@@ -445,7 +450,7 @@ political_decisions = {
 	factor = 1 
 	modifier = { 
 		factor = 0 
-		NOT = { year = 1848 }
+		NOT = { year = 1846 }
 			}
 		}
 	}

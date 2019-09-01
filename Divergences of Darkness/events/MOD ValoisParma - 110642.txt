@@ -382,3 +382,30 @@ country_event = {
 	set_country_flag = farnese_dead
 	}
 }
+
+country_event = {
+	id = 110653
+	title = "This is a AI Only Event"
+	desc = "You should not see this"
+	picture = "disease"
+
+	trigger = {
+		tag = PRV
+		NOT = { has_country_flag = AI_tus_core }
+		NOT = { exists = TUS }
+		any_owned_province = { is_core = TUS }
+	    ai = yes	
+	}
+
+	mean_time_to_happen = {
+		days = 7
+	}
+
+	option = {
+	name = "More cores for glorious Tuscany"
+	set_country_flag = AI_tus_core
+	add_accepted_culture = north_italian
+	TUS = { all_core = { add_core = PRV } }
+	LUC = { all_core = { remove_core = PRV } }	
+	}
+}

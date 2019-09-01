@@ -71,6 +71,10 @@ political_decisions = {
 					OR = { 
 						primary_culture = south_italian
 						primary_culture = north_italian
+						AND = {
+						tag = PRV
+						has_country_flag = AI_tus_core
+						}
 					}
 					NOT = {
 						tag = THIS

@@ -72,11 +72,21 @@ country_event = {
 			}
 			country_event = 110604
 		}
+		any_country = {
+		limit = {
+		tag = PRV
+		ai = yes
+		}
+		add_country_modifier = {
+			name = taiping_draft
+			duration = 720
+		    }
+	    }	
 		LOM = { country_event = 110605 }
 		PAP = { country_event = 110606 }
 		PRV = { country_event = 110607 }
 		ai_chance = {
-			factor = 90
+			factor = 99
 		}
 	}
 
@@ -84,7 +94,7 @@ country_event = {
 		name = "110603.B"
 		PRV = { country_event = 110608 }
 		ai_chance = {
-			factor = 10
+			factor = 1
 		}
 	}
 }
@@ -105,6 +115,10 @@ country_event = {
 				factor = 0
 				vassal_of = PRV
 			}
+			modifier = {
+				factor = 0.7
+				PRV = { ai = yes }
+			}
 		}
 	}
 
@@ -115,6 +129,10 @@ country_event = {
 		relation = { who = PRV value = 100 }
 		ai_chance = {
 			factor = 10
+			modifier = {
+				factor = 2
+				PRV = { ai = yes }
+			}
 		}
 	}
 }
