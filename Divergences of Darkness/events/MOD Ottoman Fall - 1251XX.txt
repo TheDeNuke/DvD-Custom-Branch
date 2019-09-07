@@ -10,7 +10,7 @@ country_event = {
 	major = yes
 	
     option = { 
-	name = "We shall liberalize and accept european cultures"
+	name = "Continue the Reforms"
 	add_accepted_culture = greek
     political_reform = wealth_weighted_voting
     political_reform = state_equal_weight
@@ -24,13 +24,42 @@ country_event = {
 			limit = {
 				has_pop_culture = greek
 			}
-			militancy = -2
+			militancy = -4
 			consciousness = 2
+			ideology = { factor = 0.10 value = liberal } 
+			ideology = { factor = -0.30 value = separatist } 	
 		}	
+	any_pop = {
+			limit = {
+				has_pop_culture = serbian
+			}
+			militancy = -4
+			consciousness = 2
+			ideology = { factor = 0.10 value = liberal } 
+			ideology = { factor = -0.30 value = separatist } 
+		}
+	any_pop = {
+			limit = {
+				has_pop_culture = bulgarian
+			}
+			militancy = -4
+			consciousness = 2
+			ideology = { factor = 0.10 value = liberal } 
+			ideology = { factor = -0.30 value = separatist } 
+		}
+	any_pop = {
+			limit = {
+				has_pop_culture = romanian
+			}
+			militancy = -4
+			consciousness = 2
+			ideology = { factor = 0.10 value = liberal } 
+			ideology = { factor = -0.30 value = separatist } 
+		}
 	}
 
-option = { 
-	name = "There is only one god and his name is Allah"
+    option = { 
+	name = "Reverse the Reforms"
 	add_accepted_culture = mashriqi
 	add_accepted_culture = bedouin
 	add_accepted_culture = misri
@@ -46,11 +75,55 @@ option = {
 	set_country_flag = TUR_MIDEAST
 	set_country_flag = TUR_ANK_P
 	any_pop = {
+ 			limit = { has_pop_culture = greek } 
+			ideology = { factor = 0.10 value = liberal } 
+			ideology = { factor = 0.40 value = separatist } 				
+			militancy = 4 
+	}
+	any_pop = {
+ 			limit = { has_pop_culture = serbian } 
+			ideology = { factor = 0.10 value = liberal } 
+			ideology = { factor = 0.40 value = separatist } 				
+			militancy = 4 
+	}
+	any_pop = {
+ 			limit = { has_pop_culture = bulgarian } 	
+			ideology = { factor = 0.10 value = liberal } 
+			ideology = { factor = 0.40 value = separatist } 	
+			militancy = 4 
+	}
+	any_pop = {
+ 			limit = { has_pop_culture = romanian } 	
+			ideology = { factor = 0.10 value = liberal } 
+			ideology = { factor = 0.40 value = separatist } 			
+			militancy = 4 
+	}
+	any_pop = {
 			limit = {
 				has_pop_culture = mashriqi
 			}
-			militancy = -2
-			consciousness = 2
+			militancy = -8
+			ideology = { factor = -0.10 value = liberal } 
+			ideology = { factor = -0.30 value = separatist } 	
+			ideology = { factor = 0.20 value = reactionary } 
+	   }
+	any_pop = {
+			limit = {
+				has_pop_culture = bedouin
+			}
+			militancy = -8
+			ideology = { factor = -0.10 value = liberal } 
+			ideology = { factor = -0.30 value = separatist } 
+			ideology = { factor = 0.20 value = reactionary } 			
+	   }
+	any_pop = {
+			limit = {
+				has_pop_culture = misri
+			}
+			militancy = -8
+			ideology = { factor = -0.10 value = liberal } 
+			ideology = { factor = -0.30 value = separatist } 	
+			ideology = { factor = 0.20 value = reactionary } 
 	   }
    }	
 }
@@ -250,21 +323,27 @@ country_event = {
 		any_pop = { 
 			limit = { has_pop_culture = turkish }
 			ideology = { factor = 0.25 value = reactionary } 	
-			militancy = 1.5 
+			militancy = 3
 		}
 
 		any_pop = {
  			limit = { has_pop_culture = albanian } 	
+			ideology = { factor = 0.05 value = liberal } 
+			ideology = { factor = 0.20 value = separatist } 
 			militancy = 4 
 		}
 
 		any_pop = {
  			limit = { has_pop_culture = serb } 	
+			ideology = { factor = 0.05 value = liberal } 
+			ideology = { factor = 0.20 value = separatist } 
 			militancy = 4 
 		}
 
 		any_pop = {
- 			limit = { has_pop_culture = bosniak } 	
+ 			limit = { has_pop_culture = bosniak } 
+            ideology = { factor = 0.05 value = liberal } 
+            ideology = { factor = 0.20 value = separatist } 			
 			militancy = 4 
 		}
 	}
@@ -290,9 +369,13 @@ country_event = {
 	
 	option = {
 		name = "EVTOPTA125111"
-        war_exhaustion = -15		
+        war_exhaustion = -20		
 		set_country_flag = albaniaTUR
 		prestige = 1
+		any_pop = { 
+			limit = { has_pop_culture = turkish }
+			militancy = -2
+		}
 	}
 }
 
@@ -335,7 +418,11 @@ country_event = {
 		}
 		add_country_modifier = {
 				name = CLM_fight
-				duration = 1825
+				duration = 720
+		}
+		add_country_modifier = {
+				name = taiping_draft
+				duration = 365
 		}
 		TUR = { country_event = 125104 }
 		casus_belli = {
@@ -456,9 +543,6 @@ country_event = {
 				who = MOL
 				value = -200
 		}
-		TUR_805 = {
-			remove_core = THIS
-		}
 		TUR_806 = {
 			remove_core = THIS
 		}
@@ -485,21 +569,27 @@ country_event = {
 		any_pop = { 
 			limit = { has_pop_culture = turkish }
 			ideology = { factor = 0.25 value = reactionary } 	
-			militancy = 1.5 
+			militancy = 3
 		}
 
 		any_pop = {
- 			limit = { has_pop_culture = greek } 	
+ 			limit = { has_pop_culture = greek } 
+			ideology = { factor = 0.05 value = liberal } 
+			ideology = { factor = 0.20 value = separatist } 			
 			militancy = 4 
 		}
 
 		any_pop = {
  			limit = { has_pop_culture = bulgarian } 	
+			ideology = { factor = 0.05 value = liberal } 
+			ideology = { factor = 0.20 value = separatist } 
 			militancy = 4 
 		}
 
 		any_pop = {
  			limit = { has_pop_culture = romanian } 	
+			ideology = { factor = 0.05 value = liberal } 
+			ideology = { factor = 0.20 value = separatist } 
 			militancy = 4 
 		}
 	}
@@ -540,9 +630,6 @@ country_event = {
 				who = CRI
 				value = -200
 		}
-		TUR_805 = {
-			remove_core = THIS
-		}
 		TUR_806 = {
 			remove_core = THIS
 		}
@@ -572,14 +659,10 @@ country_event = {
 		}
 		TUR_810 = {
 			remove_core = THIS
-		}
-		TUR_809 = {
-			remove_core = THIS
-		}
-		
+		}		
 
 		any_pop = { 
-			militancy = 2
+			militancy = 1
 		}
 
 		any_pop = { 
@@ -589,17 +672,23 @@ country_event = {
 		}
 
 		any_pop = {
- 			limit = { has_pop_culture = greek } 	
+ 			limit = { has_pop_culture = greek } 
+			ideology = { factor = 0.05 value = liberal } 
+			ideology = { factor = 0.20 value = separatist } 				
 			militancy = 4 
 		}
 
 		any_pop = {
  			limit = { has_pop_culture = bulgarian } 	
+			ideology = { factor = 0.05 value = liberal } 
+			ideology = { factor = 0.20 value = separatist } 	
 			militancy = 4 
 		}
 
 		any_pop = {
  			limit = { has_pop_culture = romanian } 	
+			ideology = { factor = 0.05 value = liberal } 
+			ideology = { factor = 0.20 value = separatist } 	
 			militancy = 4 
 		}
 	}
@@ -628,7 +717,11 @@ country_event = {
 		
 		set_country_flag = macedoniaTUR
 		set_country_flag = TURinMAC
-		war_exhaustion = -15 
+		war_exhaustion = -20
+		any_pop = { 
+			limit = { has_pop_culture = turkish }
+			militancy = -2
+		}		
 		prestige = 1
 	}
 }
@@ -794,22 +887,26 @@ country_event = {
 		# You just lost a large chunk of central turkish lands. You are a idiot.
 
 		any_pop = { 
-			militancy = 4 
+			militancy = 2 
 		}
 
 		any_pop = { 
 			limit = { has_pop_culture = turkish }
-			ideology = { factor = 0.25 value = reactionary } 	
+			ideology = { factor = 0.30 value = reactionary } 	
 			militancy = 6 
 		}
 
 		any_pop = {
- 			limit = { has_pop_culture = kurdish } 	
+ 			limit = { has_pop_culture = kurdish } 
+			ideology = { factor = 0.10 value = liberal } 
+			ideology = { factor = 0.30 value = separatist } 			
 			militancy = 6 
 		}
 
 		any_pop = {
  			limit = { has_pop_culture = armenian } 	
+			ideology = { factor = 0.10 value = liberal } 
+			ideology = { factor = 0.30 value = separatist } 
 			militancy = 6
 		}
 	}
@@ -855,7 +952,11 @@ country_event = {
 		name = "EVTOPTA125120"
 		
 		set_country_flag = kurdistanTUR
-		war_exhaustion = -15		
+		war_exhaustion = -20
+		any_pop = { 
+			limit = { has_pop_culture = turkish }
+			militancy = -2
+		}		
 		prestige = 1
 	}
 }
@@ -978,7 +1079,7 @@ country_event = {
 		}
 
 		any_pop = { 
-			militancy = 2 
+			militancy = 1 
 		}
 
 		any_pop = { 
@@ -988,13 +1089,17 @@ country_event = {
 		}
 
 		any_pop = {
- 			limit = { has_pop_culture = misri } 	
-			militancy = 5 
+ 			limit = { has_pop_culture = misri } 
+			ideology = { factor = 0.05 value = liberal } 
+			ideology = { factor = 0.20 value = separatist }
+			militancy = 4 
 		}
 
 		any_pop = {
  			limit = { has_pop_culture = bedouin } 	
-			militancy = 5 
+			ideology = { factor = 0.05 value = liberal } 
+			ideology = { factor = 0.20 value = separatist }
+			militancy = 4 
 		}
 	}
 }
@@ -1069,28 +1174,34 @@ country_event = {
 		}
 
 		any_pop = { 
-			militancy = 2 
+			militancy = 1 
 		}
 
 		any_pop = { 
 			limit = { has_pop_culture = turkish }
 			ideology = { factor = 0.25 value = reactionary } 	
-			militancy = 3 
+			militancy = 4 
 		}
 
 		any_pop = {
- 			limit = { has_pop_culture = misri } 	
-			militancy = 5 
+ 			limit = { has_pop_culture = misri } 
+			ideology = { factor = 0.05 value = liberal } 
+			ideology = { factor = 0.20 value = separatist }			
+			militancy = 6 
 		}
 
 		any_pop = {
- 			limit = { has_pop_culture = bedouin } 	
-			militancy = 5 
+ 			limit = { has_pop_culture = bedouin } 
+			ideology = { factor = 0.05 value = liberal } 
+			ideology = { factor = 0.20 value = separatist }			
+			militancy = 6 
 		}
 
 		any_pop = {
  			limit = { has_pop_culture = mashriqi } 	
-			militancy = 5 
+			ideology = { factor = 0.05 value = liberal } 
+			ideology = { factor = 0.20 value = separatist }
+			militancy = 6 
 		}
 	}
 }
@@ -1117,8 +1228,12 @@ country_event = {
 		name = "EVTOPTA125124"
 		
 		set_country_flag = egyptTUR
-		war_exhaustion = -15
+		war_exhaustion = -20
 		prestige = 1
+		any_pop = { 
+			limit = { has_pop_culture = turkish }
+			militancy = -3
+		}	
 		HDJ = { country_event = 11101 }
 	}
 }
@@ -1258,7 +1373,7 @@ country_event = {
 		EGY_915 = {
 			controlled_by = REB
 		}
-		NOT = { has_country_flag = levantTUR }
+		NOT = { has_country_flag = levantTUR }		
 		NOT = { has_global_flag = fartheewell }
 	}
 	
@@ -1270,6 +1385,7 @@ country_event = {
 		name = "EVTOPTA125129"
 		prestige = -5
 		set_country_flag = levantTUR
+		set_country_flag = kurdistanTURloss
 		any_owned = {
 			limit = {
 				is_core = SYR
@@ -1292,9 +1408,10 @@ country_event = {
 		EGY_921 = {
 			remove_core = THIS
 		}
+		IRQ = { all_core = { remove_core = TUR } }
 
 		any_pop = { 
-			militancy = 4 
+			militancy = 2
 		}
 		
 		# You basically lost half the empire in a single go. The fury is inevitable.
@@ -1302,22 +1419,28 @@ country_event = {
 		any_pop = { 
 			limit = { has_pop_culture = turkish }
 			ideology = { factor = 0.25 value = reactionary } 	
-			militancy = 6
+			militancy = 4
 		}
 
 		any_pop = {
  			limit = { has_pop_culture = mashriqi } 	
+			ideology = { factor = 0.05 value = liberal } 
+			ideology = { factor = 0.20 value = separatist }
 			militancy = 4 
 		}
 
 		any_pop = {
- 			limit = { has_pop_culture = bedouin } 	
+ 			limit = { has_pop_culture = bedouin }
+			ideology = { factor = 0.05 value = liberal } 
+			ideology = { factor = 0.20 value = separatist }			
 			militancy = 4 
 		}
 
 		any_pop = {
- 			limit = { has_pop_culture = misri } 	
-			militancy = 3
+ 			limit = { has_pop_culture = misri }
+			ideology = { factor = 0.05 value = liberal } 
+			ideology = { factor = 0.20 value = separatist }			
+			militancy = 4
 		}
 	}
 }
@@ -1361,7 +1484,11 @@ country_event = {
 		name = "EVTOPTA125130"
 		
 		set_country_flag = levantTUR
-		war_exhaustion = -15
+		war_exhaustion = -20
+		any_pop = { 
+			limit = { has_pop_culture = turkish }
+			militancy = -2
+		}	
 		prestige = 1
 	}
 }
@@ -1453,13 +1580,10 @@ country_event = {
 		
 		any_pop = { 
 			limit = { has_pop_culture = turkish }
-			ideology = { factor = 0.25 value = conservative } 	
+			ideology = { factor = 0.30 value = conservative } 	
+			ideology = { factor = 0.10 value = liberal } 	
+			ideology = { factor = -0.20 value = reactionary } 
 			militancy = -10
-		}
-		
-		any_pop = { 
-			limit = { has_pop_culture = turkish }
-			ideology = { factor = 0.10 value = reactionary } 	
 		}
 		
  	   add_country_modifier = {
@@ -1490,6 +1614,10 @@ country_event = {
 #		}
 	}
 }
+
+# Total Collapse
+
+# The End of the Ottoman Empire
 
 country_event = {
 	
@@ -1627,10 +1755,6 @@ country_event = {
 		name = the_eye_of_the_storm
 			duration = 720
 	   }
-	   
-	   # The "Conference of Ankara" Event Chain - 100 percent chance of a intervention for Democracy #
-	   
-	   #ARA = { country_event = { id = 125165 days = 5 } }
 	}
 }
 
@@ -1764,7 +1888,7 @@ country_event = {
 	trigger = {
 		tag = TUR
 		government = presidential_dictatorship
-		year = 1839 
+		year = 1838 
 		war = no
 		TUR_860 = {
 			NOT = { controlled_by = REB }
@@ -1791,7 +1915,19 @@ country_event = {
 	option = {
 		name = "EVTOPTA125132"
 		
-		set_global_flag = fartheewell
+	   set_global_flag = fartheewell
+	   set_country_flag = phanariote_rule
+		
+	   government = absolute_monarchy
+	   political_reform = none_voting
+	   political_reform = party_appointed
+	   political_reform = no_meeting
+	   political_reform = state_press
+	   political_reform = no_trade_unions
+	   political_reform = first_past_the_post
+	   political_reform = underground_parties 
+	   ruling_party_ideology = reactionary
+		
 		war_exhaustion = -90
 		prestige = -3
 		
@@ -1891,10 +2027,6 @@ country_event = {
 		HDJ_1151 = {
 			remove_core = THIS
 		}	
-	   
-	   # The "Conference of Ankara" Event Chain # 50 percent chance of a intervention for Dictatorship #
-	   
-	   #ARA = { country_event = { id = 125165 days = 5 } }
 	}
 }
 
@@ -1924,8 +2056,16 @@ country_event = {
 
 	option = {
 		name = "EVTOPTA125133"
-		war_exhaustion = -15
-        any_pop = { militancy = 5 }		
+		war_exhaustion = -60
+		add_country_modifier = {
+				name = taiping_draft
+				duration = 720
+		}
+	    add_country_modifier = {
+				name = CLM_fight
+				duration = 124
+		}
+        any_pop = { militancy = -5 }			
 		any_pop = {
 		limit = { culture = turkish }
 			scaled_militancy = {
@@ -1936,6 +2076,11 @@ country_event = {
 				factor = -5
 				ideology = conservative
 			}
+		}
+		any_pop = { 
+			limit = { has_pop_culture = turkish }
+			ideology = { factor = 0.20 value = reactionary } 	
+			ideology = { factor = -0.20 value = liberal } 	
 		}
 #		; PURGING LIBERALS TO SLOW DOWN JACOBINS
 #		any_pop = {	
@@ -1951,16 +2096,18 @@ country_event = {
 #				value = liberal
 #				factor = -0.15
 #			}	
-#		}
+#		}	
 		
 		prestige = -3
 		government = presidential_dictatorship
-		political_reform = none_voting
-		political_reform = party_appointed
-		political_reform = no_meeting
-		political_reform = state_press
-		political_reform = no_trade_unions
-		political_reform = underground_parties
+	    political_reform = none_voting
+	    political_reform = party_appointed
+	    political_reform = no_meeting
+	    political_reform = state_press
+    	political_reform = no_trade_unions
+ 	    political_reform = first_past_the_post
+	    political_reform = underground_parties 
+	    ruling_party_ideology = reactionary
 	}
 }
 

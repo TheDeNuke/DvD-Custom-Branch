@@ -13,8 +13,11 @@ country_event = {
 	picture = "ottoman"
 
 	trigger = {
-		NOT = { has_global_flag = berlin_congress_held }	
+		NOT = { has_global_flag = berlin_congress_held }
+        OR = {		
 		year = 1870
+		TUR = { has_country_flag = ottomans_to_turks }
+		}
 		is_greater_power = yes
 		capital_scope = { continent = europe }
 		NOT = {
@@ -1106,12 +1109,18 @@ country_event = {
 			capital = 815
 		}
 		
-		any_owned = { 
-	    limit = { 
-	    region = TUR_809
+		random_owned = {
+			limit = {
+				province_id = 815
+				owned_by = TUR
+				exists = MAC
+			}
+			state_scope = {
+				any_owned = {
+					secede_province = MAC
+				}
+			}
 		}
-	    secede_province = MAC
-	    } 
 		
 		# Release Bosnia
 		random_owned = {

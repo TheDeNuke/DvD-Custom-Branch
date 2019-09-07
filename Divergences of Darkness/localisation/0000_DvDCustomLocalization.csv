@@ -148,6 +148,22 @@ EVTOPTB333041;$FROMCOUNTRY$ can go to hell.;;;;;;;;;;;;x,,,,,,,,,,,,,,,,,,,,
 EVTNAME11003;Regency Council Dissolved;;;;;;;;;;;;x,,,,,,,,,,,,,,,,,,,,
 EVTDESC11003;$COUNTRY$ still had a active regency council due to a inability of the new government to dissolve it for a short period of time. However, a small effort has been put forward by the new government to dissolve this regency council and now $COUNTRY$ does not have to deal with it any more.;;;;;;;;;;;;x,,,,,,,,,,,,,,,,,,,,
 EVTOPTA11003;$COUNTRY$ is now free from the Regency.;;;;;;;;;;;;x,,,,,,,,,,,,,,,,,,,,
+##### New Ottoman Localization ####;;;;;;;;;;;;;;x,,,,,,,,
+janissary_rule;Phanariote Rule;;;;;;;;;;;;;
+janissary_rule_desc;The Phanariote Society has seized power over the state and installed a brutal dictatorship.;;;;;;;;;;;;;
+janissary_system;Phanariote System;;;;;;;;;;;;;
+janissary_system;The Phanariote System is designed by the ruling class of the Ottoman Empire to crush all dissent against their regime. However, this system does not seem as stable as one might expect at first glance.;;;;;;;;;;;;;
+EVTNAME125131;Sunset over Rebellions;;;;;;;;;;;;;
+EVTDESC125131;The Ottoman Civil War lasted for more than 30 years. And now it is over. We have saved what we could, but the damage has been made. Will the Empire find its place under the sun again?;;;;;;;;;;;;;
+EVTOPTA125131;Farewell, you traitors!;;;;;;;;;;;;;
+EVTNAME125132;The New Ottoman Empire;;;;;;;;;;;;;
+EVTDESC125132;The Phanariote Societies have brought peace to the Ottoman Empire after decades of war and have established systems to ensure that the Ottoman Sultan will be unable to effectively further enact any reforms that directly damage the influence of these societies. However, sacrifices for stability must be made and the ability for the Ottoman Empire to reconquer any lands lost in the Civil War would now be rendered impossible though the means of reforms that are implicitly racist against the minority groups that has ensured the downfall of the Empire. Some say that these same reforms may also cause instability within the remaining territory inside the Porte but these claims have ultimately been dismissed...;;;;;;;;;;;;;
+EVTOPTA125132;For new Ottomania!;;;;;;;;;;;;;
+EVTNAME125133;All Power in Istanbul;;;;;;;;;;;;;
+EVTDESC125133;WARNING: THIS LOCKS RECONQUEST DECISIONS. With the complete success of the Phanariote Societies in the Ottoman Empire. It seems that they are ready to establish their new political systems and ensure the future stability of the Ottoman Empire regardless of the potential aggression between minority groups that that this could create. For now the Sultan would be locked away inside his palace until the society has officially brought peace to the Ottoman Empire and the Army of Faith shall destroy all enemies to the Ottoman State! Huzzah!;;;;;;;;;;;;;
+EVTOPTA125133;Long live the Sultan!;;;;;;;;;;;;;
+TURREB.T;Defeat of the Phanariotes;;;;;;;;;;;;;
+TURREB.D;The Phanariote Societies that have torn this Empire to pieces in the past couple of decades have finally been utterly defeated! Unable to capitalize on their successful Anatolian uprising their movement has been routed and cities are each day welcoming us as their new saviours. The main leaders have been captured and beheaded, their heads thrown into the Bosporus. We have captured their arsenals and supplies to help for the war effort It is likely we won’t see another rebellion soon : most of the populations are weary and only want peace after decades of war. It is time to finish the still ongoing wars for the better or the worse and let the peoples of our empire rest at least.;;;;;;;;;;;;;
 ##### More Olympics ####;;;;;;;;;;;;;;x,,,,,,,,
 ##### This was not fun at all. Still, at least the Olympics should continue until 1944 at least. The game continues until 1950 but I'll cancel support at the beginning of 1946. ####;;;;;;;;;;;;;;x,,,,,,,,
 EVTNAME23442;Shall we host the Eleventh Olympic Games?;Devons-nous accueillir les 10ème Jeux olympiques ?;Sollen wir die zehnten Olympischen Spiele ausrichten?;;¿Deberíamos ser anfitriones de los décimos Juegos Olímpicos?;;;;;;;;;x;;;;
@@ -1609,7 +1625,7 @@ INDO16.D;As per treaty stipulation, the Kingdom of Champa has been created from 
 INDO16.A;Affirmative;;;;;;;;;;;;;;x,,,,,,,,
 ##### Ottoman Reconquest #####;;;;;;;;;;;;;;x,,,,,,,,
 10TUR.T;The Tanzimat Reforms;;;;;;;;;;;;;;x,,,,,,,,
-10TUR.D;With the conclusion of the Jannisary Wars, the Ottoman Empire is now forced to make a decision. Should it see though the Tanzimat Reforms and expand headfirst into the Balkans or should it utterly ignore the Tanzimat Reforms, Europe and its liberal way and expand into the middle east.;;;;;;;;;;;;;x,,,,,,,, 
+10TUR.D;With the conclusion of the Ottoman Civil Wars and the survival of the present government, the Ottoman Empire is now forced to make a decision. Should it continue the Tanzimat Reforms and expand head-first into the Balkans or should it instead completely reverse the previous reforms for the purpose of ensuring that the Ottoman Empire maintains its stability in the Middle East.;;;;;;;;;;;;;x,,,,,,,, 
 11TUR.T;Failure in the West;;;;;;;;;;;;;;x,,,,,,,,
 11TUR.D;For whatever reason we have completely lost control over the Balkans and must now admit that our focus is in the east rather then the west.;;;;;;;;;;;;;x,,,,,,,, 
 turkish_levant_title;Reclaim the Levant;;;;;;;;;;;;;;x,,,,,,,,

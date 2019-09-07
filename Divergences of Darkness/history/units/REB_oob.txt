@@ -44,6 +44,12 @@ army = {
 		type = regular
 		home = 889
 	}
+	
+	regiment = {
+		name= "2. Bostancy-yy Hassa"
+		type = regular
+		home = 889
+	}
 
 	regiment = {
 		name= "3. Bostancy-yy Hassa"
@@ -62,13 +68,13 @@ army = {
 		home = 889
 	}
 	regiment = {
-		name= "1. Bostancy-yy Hassa"
-		type = regular
+		name= "4. Bostancy-yy Hassa"
+		type = hussar
 		home = 889
 	}
 	regiment = {
-		name= "1. Bostancy-yy Hassa"
-		type = regular
+		name= "4. Bostancy-yy Hassa"
+		type = hussar
 		home = 889
 	}
 
@@ -100,6 +106,18 @@ army = {
 		type = infantry
 		home = 904
 	}
+	regiment = {
+		name= "1. Bostancy-yy Hassa"
+		type = hussar
+		home = 904
+	}
+	
+	regiment = {
+		name= "1. Bostancy-yy Hassa"
+		type = hussar
+		home = 904
+	}
+	
 	regiment = {
 		name= "1. Bostancy-yy Hassa"
 		type = hussar
@@ -162,14 +180,7 @@ army = {
 		name= "2. Bostancy-yy Hassa"
 		type = regular
 		home = 869
-	}
-
-	regiment = {
-		name= "3. Bostancy-yy Hassa"
-		type = regular
-		home = 875
-	}
-
+	}	
 	regiment = {
 		name= "4. Bostancy-yy Hassa"
 		type = regular
@@ -202,9 +213,9 @@ army = {
 		type = regular
 		home = 867
 	}
-	
+
 	regiment = {
-		name = "2. Bostancy-yy Hassa"
+		name = "3. Bostancy-yy Hassa"
 		type = regular
 		home = 867
 	}
@@ -216,11 +227,16 @@ army = {
 	}
 	
 	regiment = {
-		name = "1. Bostancy-yy Hassa"
+		name = "3. Bostancy-yy Hassa"
 		type = regular
-		home = 868
+		home = 867
 	}
 	
+	regiment = {
+		name = "3. Bostancy-yy Hassa"
+		type = regular
+		home = 867
+	}	
 	regiment = {
 		name = "2. Bostancy-yy Hassa"
 		type = regular
