@@ -175,6 +175,9 @@ political_decisions = {
 			}
 		}
 		allow = {
+		 OR = {
+		 is_greater_power = yes
+		 AND = {
 		 923 = {
                 OR = {
                     owned_by = THIS
@@ -239,11 +242,13 @@ political_decisions = {
                         }
                         owner = {
                             vassal_of = THIS
-                        }
-                    }
-                }
-            }
-            PER = {  
+                           }
+                       }
+                   }
+               }
+			}
+		 }
+         PER = {  
                 all_core = {
                     OR = {
                         owned_by = THIS
@@ -340,6 +345,7 @@ political_decisions = {
 	picture = persia_map
 	potential = { 
 	tag = ZND 
+	NOT = { has_country_flag = the_persian_showdown }
 	ZND = { exists = yes }
 	QAJ = { exists = yes }
 	NOT = { truce_with = QAJ }
@@ -378,9 +384,9 @@ political_decisions = {
 	OR = { tag = QAJ
 	tag = ZND 
 	}
+	NOT = { has_country_flag = the_persian_showdown }
 	ZND = { exists = yes }
 	QAJ = { exists = yes }
-	NOT = { has_country_flag = the_persian_showdown }
 	NOT = { exists = IRQ }
 	}
 	
@@ -423,6 +429,7 @@ political_decisions = {
 	OR = { tag = QAJ
 	tag = ZND 
 	}
+	NOT = { has_country_flag = the_persian_showdown }
 	ZND = { exists = yes }
 	QAJ = { exists = yes }
 	NOT = { has_country_flag = legacy_timur }
@@ -468,6 +475,7 @@ political_decisions = {
 	OR = { tag = QAJ
 	tag = ZND 
 	}
+	NOT = { has_country_flag = the_persian_showdown }
 	QAJ = { exists = yes }
 	NOT = { truce_with = QAJ }
 	NOT = { has_country_flag = legacy_timur }

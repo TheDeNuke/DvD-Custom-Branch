@@ -1676,6 +1676,10 @@ country_event = {
 		any_pop = { scaled_militancy = { factor = 5  ideology = reactionary } }
 		any_pop = { scaled_militancy = { factor = 1  ideology = conservative } }
 		any_pop = { scaled_militancy = { factor = -10  ideology = liberal } }
+		
+		911 = { remove_core = TUR }
+		
+		910 = { remove_core = TUR }
 
 		any_country = {
 			limit = {
@@ -1798,6 +1802,10 @@ country_event = {
 		remove_accepted_culture = azerbaijani
 		remove_accepted_culture = greek
 		remove_accepted_culture = romanian
+		
+		911 = { remove_core = TUR }
+		
+		910 = { remove_core = TUR }
 
 		any_country = {
 			limit = {
