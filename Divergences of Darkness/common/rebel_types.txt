@@ -4060,7 +4060,7 @@ socialist_rebels = {
 			owner = { prestige_factor = -0.25 }
 		}
 		plurality = -25
-		country_event = 800056
+		country_event = 810056
 	}
 }
 

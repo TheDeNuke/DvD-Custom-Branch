@@ -94,7 +94,6 @@ political_decisions = {
 	ARI = { all_core = { remove_core = THIS } }
 	FRA_467 = { add_core = FRA }
 	FRA_461 = { add_core = FRA }
-	FRA_1700 = { add_core = FRA }
 	add_accepted_culture = provencal 
 	set_country_flag = occitania_reclaime
 		}	

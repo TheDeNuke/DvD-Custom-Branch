@@ -1426,6 +1426,7 @@ province_event = {
 			civilized = yes
 			is_vassal = no
 			NOT = { citizenship_policy = full_citizenship }
+			NOT = { minorities_reform = protected }
 		}
 	}
 	
@@ -1606,7 +1607,10 @@ country_event = {
 	
 	trigger = {
         exists = yes
+		OR = { 
 		minorities_reform = protected
+		citizenship_policy = full_citizenship
+		}
 		war = no
 		any_owned_province = { has_province_modifier = national_assimilation }
 	}
@@ -1726,6 +1730,7 @@ province_event = {
 			civilized = yes
 			war = no
 			NOT = { minorities_reform = protected }
+			NOT = { citizenship_policy = full_citizenship }
 		}
 	}
 	
@@ -1926,6 +1931,7 @@ province_event = {
 			civilized = yes
 			war = no
 			NOT = { minorities_reform = protected }
+			NOT = { citizenship_policy = full_citizenship }
 		}
 	}
 	
@@ -2039,6 +2045,7 @@ province_event = {
 			civilized = yes
 			war = no
 			NOT = { minorities_reform = protected }
+			NOT = { citizenship_policy = full_citizenship }
 		}
 	}
 	
@@ -2145,6 +2152,7 @@ province_event = {
 			war = no
 			NOT = {
 				minorities_reform = protected
+			    citizenship_policy = full_citizenship
 				badboy = 0.92
 			}
 		}
