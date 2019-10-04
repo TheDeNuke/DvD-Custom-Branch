@@ -13,13 +13,13 @@ country_event = {
 	NOT = { has_country_flag = PNJ_revolt }
 	OR = {
 	has_country_flag = PNJ_trigger
-	year = 1858
+	year = 1870
 	}
 	NOT = { has_country_flag = PNJ_capital }
 	}
 	
 	mean_time_to_happen = { 
-	months = 45 
+	months = 60 
 	modifier = {
 	factor = 0.05
 	has_country_flag = PNJ_trigger
@@ -41,6 +41,10 @@ country_event = {
 				name = taiping_draft
 				duration = 1000
 			}
+	add_country_modifier = {
+				name = CLM_fight
+				duration = 365
+	}
 		}
 	war = { 
 	target = PNJ 
@@ -174,7 +178,7 @@ country_event = {
 	}			
 	set_country_flag = PNJ_trigger
 	ai_chance = { 
-	factor = 100
+	factor = 70
 	   }
 	}
 	
@@ -182,7 +186,7 @@ country_event = {
 	name = "The Indian dream is preferable to a bloodbath."
 	set_country_flag = AFGindian_dream
 	ai_chance = { 
-	factor = 0
+	factor = 30
 	   }
 	}
 }
