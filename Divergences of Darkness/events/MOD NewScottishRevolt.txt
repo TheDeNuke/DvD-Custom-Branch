@@ -313,6 +313,7 @@ country_event = {
 	NOT = { has_country_flag = haggis6 }
     has_global_flag = LOUDBAGPIPES
 	ENL = { exists = yes }
+    NOT = { ENL = { is_vassal = yes } }
 	}
 	
 	mean_time_to_happen = { 
@@ -345,6 +346,7 @@ country_event = {
 	NOT = { has_country_flag = haggis7 }
     has_global_flag = LOUDBAGPIPES
     has_global_flag = ENL_help_SCO 
+	NOT = { ENL = { is_vassal = yes } }
 	}
 	
 	mean_time_to_happen = { 
@@ -630,6 +632,7 @@ country_event = {
     AND = {
     tag = ENL
     exists = yes
+	is_vassal = no
           }
        } 
     }	   
@@ -738,6 +741,7 @@ country_event = {
     AND = {
     tag = ENL
     exists = yes
+	is_vassal = no
           }
        } 
     }	   
