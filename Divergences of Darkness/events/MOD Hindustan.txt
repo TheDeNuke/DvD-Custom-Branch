@@ -1008,11 +1008,13 @@ country_event = {
 	   tag = HND
 	   has_global_flag = hindustan_conference
 	   sphere_owner = { capital_scope = { continent = europe } }  
+	   NOT = { has_country_modifier = colony_to_be_annexed }
+	   NOT = { has_country_flag = colony_to_be_annexed_flag }
 	   civilized = no   
 	}    
 
 	mean_time_to_happen = {
-		days = 1
+		days = 31
 	}	
 
 	option = {
@@ -1031,11 +1033,13 @@ country_event = {
 	   tag = DRA
 	   has_global_flag = hindustan_conference
 	   sphere_owner = { capital_scope = { continent = europe } }  
+	   NOT = { has_country_modifier = colony_to_be_annexed }
+	   NOT = { has_country_flag = colony_to_be_annexed_flag }
 	   civilized = no   
 	}    
 
 	mean_time_to_happen = {
-		days = 1
+		days = 31
 	}	
 
 	option = {

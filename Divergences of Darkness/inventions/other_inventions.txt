@@ -1224,6 +1224,7 @@ iron_artillery_production = {
 		}
 	}
 	effect = {
+	    activate_building = iron_artillery_factory
 		factory_goods_output = {
 			artillery = 0.1
 		}
