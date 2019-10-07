@@ -753,6 +753,10 @@ country_event = {
 				factor = 0
 				war_exhaustion = 25
 			}
+			modifier = {
+				factor = 0
+				DUA = { has_country_flag = global_revolt }
+			}
 		}
 		
 	}
@@ -1663,14 +1667,14 @@ country_event = {
 	owns = 549 
 	owns = 546 
 	NOT = { exists = NGF }
-	NOT = { owns = 369 }
+	#NOT = { owns = 369 }
 	war_with = SGF 
 	NOT = { has_country_flag = berlin_commune }
 	has_country_flag = german_unrest
 	}
 	
 	mean_time_to_happen = { 
-	months = 2
+	months = 1
 	}
 	
 	option = { 
@@ -1682,6 +1686,9 @@ country_event = {
 			}
 	secede_province = NGF 
 	}
+	NGF = { inherit = POM }
+	NGF = { inherit = HOL }
+	NGF = { inherit = BRN }
 	PRU_572 = { add_core = NGF } 	#Rhineland
 	HES_2560 = { add_core = NGF }	#Palatinate
 	PRU_575 = { add_core = NGF }	#Nordrhein
@@ -1740,14 +1747,14 @@ country_event = {
 	owns = 549 
 	owns = 546 
 	NGF = { exists = yes }
-	NOT = { owns = 369 }
+	#NOT = { owns = 369 }
 	war_with = SGF 
 	NOT = { has_country_flag = berlin_commune }
 	has_country_flag = german_unrest
 	}
 	
 	mean_time_to_happen = { 
-	months = 2
+	months = 1
 	}
 	
 	option = { 
@@ -1759,6 +1766,9 @@ country_event = {
 			}
 	secede_province = NGF 
 	}
+	NGF = { inherit = POM }
+	NGF = { inherit = HOL }
+	NGF = { inherit = BRN }
 	NGF = { 	
 	capital = 549
 	treasury = 10000
@@ -1868,13 +1878,25 @@ country_event = {
 	
 	trigger = { 
 	tag = BOH 
-	owns = 549 
-	owns = 546 
-	NOT = { owns = 369 }
+	OR = {
+	AND = {
+	      owns = 549 
+	      owns = 546
+          }  
+	AND = {
+	      NOT = { SCA = { owns = 549 } }
+	      NOT = { SCA = { owns = 546 } }
+          DUA = { has_country_flag = global_revolt }
+	      }
+	   }
 	}
 	
 	mean_time_to_happen = { 
 	months = 5 
+	modifier = { 
+	factor = 0.01
+	DUA = { has_country_flag = global_revolt }
+		}
 	}
 	
 	option = { 
@@ -2353,6 +2375,10 @@ country_event = {
 			modifier = {
 				factor = 0
 				NOT = { is_greater_power = yes }
+			}
+			modifier = {
+				factor = 0
+				DUA = { has_country_flag = global_revolt }
 			}
 			modifier = {
 				factor = 0.5

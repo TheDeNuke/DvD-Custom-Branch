@@ -1741,7 +1741,7 @@ silkworm_ranch = {
 spice_plantation = {
 	template = RGO_template_farmers
 	output_goods = spices 
-	value = 1.5
+	value = 0.75
 	farm = yes
 }
 

@@ -1242,6 +1242,7 @@ artillery_production = {
 		}
 	}
 	effect = {
+	    activate_building = artillery_factory
 		factory_goods_output = {
 			artillery = 0.1
 		}
