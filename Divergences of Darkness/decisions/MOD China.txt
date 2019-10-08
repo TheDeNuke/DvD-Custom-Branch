@@ -1352,9 +1352,8 @@ political_decisions = {
 		
 		allow = {
 			OR = {
-				year = 1895
-				civilization_progress = 0.5
 				civilized = yes
+			    year = 1900
 				AND = {
 					foreign_weapons = yes_foreign_weapons
 					foreign_training = yes_foreign_training
@@ -1536,19 +1535,13 @@ political_decisions = {
 			}
 			random_owned = {
 				limit = { owner = { civilized = no } }
-				owner = { military_reform = yes_naval_schools }
-			}
-			random_owned = {
-				limit = { owner = { civilized = no } }
 				owner = { military_reform = yes_naval_bases }
 			}
 			set_country_flag = fuzhou_aresenal_established 
-			activate_technology = alphabetic_flag_signaling
 			activate_technology = post_nelsonian_thought
 			activate_technology = clipper_design
 			KMT = { 
 				set_country_flag = fuzhou_aresenal_established 
-				activate_technology = alphabetic_flag_signaling
 				activate_technology = post_nelsonian_thought
 				activate_technology = clipper_design
 				activate_technology = steamers
@@ -1589,18 +1582,12 @@ political_decisions = {
 			treasury = -150000
 			set_country_flag = kiangnan_aresenal_established 
 			activate_technology = mechanized_mining
-			activate_technology = battleship_column_doctrine
-			random_owned = {
-				limit = { owner = { civilized = no } }
-				owner = { military_reform = naval_infrastructure }
-			}
 			random_owned = {
 				limit = { owner = { civilized = no } }
 				owner = { economic_reform = yes_industrial_construction }
 			}
 			KMT = { 
 				set_country_flag = kiangnan_aresenal_established 
-				activate_technology = battleship_column_doctrine
 				activate_technology = mechanized_mining
 			}
 			1538 = {
@@ -1661,23 +1648,19 @@ political_decisions = {
 		effect = {
 			treasury = -75000
 			set_country_flag = establish_the_peking_field_force 
-			activate_technology = military_staff_system
 			activate_technology = army_command_principle
 			random_owned = {
 				limit = { owner = { civilized = no } }
 				owner = {
 					military_reform = yes_foreign_weapons
-					military_reform = yes_foreign_training
 					military_reform = yes_foreign_officers
 				    activate_technology = flintlock_rifles
-				    activate_technology = military_staff_system
 				    activate_technology = army_command_principle
 				}
 			}
 			KMT = {
 				set_country_flag = establish_the_peking_field_force 
 				activate_technology = flintlock_rifles
-				activate_technology = military_staff_system
 				activate_technology = army_command_principle
 			}			
 		}
@@ -1795,15 +1778,14 @@ political_decisions = {
 			set_country_flag = hanyang_arsenal 
 			random_owned = { limit = { owner = { civilized = no } } owner = { military_reform = yes_foreign_weapons } }
 			random_owned = { limit = { owner = { civilized = no } } owner = { military_reform = modern_weapons } }
-			random_owned = { limit = { owner = { civilized = no } } owner = { economic_reform = yes_land_reform } }
             activate_technology = flintlock_rifles
             activate_technology = muzzle_loaded_rifles		 
 			activate_technology = breech_loaded_rifles
-			activate_technology = water_wheel_power
 			KMT = {
 				set_country_flag = hanyang_arsenal 
-				activate_technology = breech_loaded_rifles
-				activate_technology = water_wheel_power
+                activate_technology = flintlock_rifles
+                activate_technology = muzzle_loaded_rifles		 
+			    activate_technology = breech_loaded_rifles
 			}
 			1516 = { trade_goods = coal }
 		}

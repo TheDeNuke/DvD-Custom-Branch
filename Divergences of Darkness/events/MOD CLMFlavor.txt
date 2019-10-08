@@ -1894,6 +1894,10 @@ country_event = {
 		ai_chance = {
 			factor = 70
 			modifier = {
+				factor = 0
+				exists = no
+			}
+			modifier = {
 				factor = 0.5
 				is_disarmed = yes
 			}
@@ -1932,7 +1936,6 @@ country_event = {
 		FROM = {
 			country_event = 46486
 		}
-		annex_to = FROM
 		ai_chance = {
 			factor = 30
 			modifier = {
@@ -2010,6 +2013,7 @@ country_event = {
 	
 	option = {
 		name = "46486.A"
+		inherit = FROM
 		prestige = 5
 	}
 }

@@ -465,6 +465,7 @@ political_decisions = {
 		badboy = 15 
 		any_country = {
 			limit = {
+			exists = yes
 			OR = { 
 			tag = MEX
 			tag = JLS
@@ -789,6 +790,8 @@ political_decisions = {
 	effect = {
 	end_war = CLM
     inherit = CLM
+	end_war = QUI
+	end_war = ARE
 	any_country = {
 	limit = {
 	tag = QUI
@@ -796,7 +799,7 @@ political_decisions = {
 	ai = yes
 	}
 	SPA = { inherit = QUI }
-	}
+	}	
 	any_country = {
 	limit = {
 	tag = ARE
