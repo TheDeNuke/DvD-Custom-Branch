@@ -191,6 +191,10 @@ country_event = {
 	trigger = { 
 	tag = SPA
 	owns = 2172
+	NOT = { exists = LST }
+	NOT = { exists = MEX }
+	NOT = { exists = CLM }
+	NOT = { exists = UCA }
 	}
 
 	mean_time_to_happen = { 
@@ -202,7 +206,48 @@ country_event = {
 	prestige = 100 
 	money = 1000000
 	set_country_flag = spaCLM
+	clr_global_flag = partial_peace 
 	set_global_flag = spanish_vic
+	any_country = {
+	limit = {
+	tag = GRA
+	exists = yes
+	ai = yes
+	}
+	SPA = { inherit = GRA }
+	}
+	any_country = {
+	limit = {
+	tag = PNM
+	exists = yes
+	ai = yes
+	}
+	SPA = { inherit = PNM }
+	}
+	any_country = {
+	limit = {
+	tag = GUY
+	exists = yes
+	ai = yes
+	}
+	SPA = { inherit = GUY }
+	}
+	any_country = {
+	limit = {
+	tag = CAS
+	exists = yes
+	ai = yes
+	}
+	SPA = { inherit = CAS }
+	}
+	any_country = {
+	limit = {
+	tag = SAN
+	exists = yes
+	ai = yes
+	}
+	SPA = { inherit = SAN }
+	}
 	any_country = {
 	limit = {
 	tag = QUI
@@ -258,7 +303,7 @@ country_event = { ### Administration of the reconquered colonies
 	tag = SPA 
 	OR = { has_country_flag = cuzco NOT = { owns = 2302 } }
 	has_country_flag = spaCLM 
-	is_greater_power = yes 
+	#is_greater_power = yes 
 	war = no
 	} 
 
@@ -295,42 +340,42 @@ country_event = { ### Administration of the reconquered colonies
 		}
 	}
 	
-	option = { 
-	name = "46447.C"
-	clr_country_flag = spaCLM
-	set_global_flag = spaCLM_divided
-	release_vassal = LST 
-	diplomatic_influence = { who = LST value = 300 }
-	create_alliance = LST
-	release_vassal = JLS 
-	diplomatic_influence = { who = JLS value = 300 }
-	create_alliance = JLS
-	release_vassal = UCA
-	diplomatic_influence = { who = UCA value = 300 }
-	create_alliance = UCA
-	release_vassal = MEX 
-	diplomatic_influence = { who = MEX value = 300 }
-	create_alliance = MEX
-	release_vassal = GUY
-	diplomatic_influence = { who = GUY value = 300 }
-	create_alliance = GUY
-	release_vassal = CAS
-	diplomatic_influence = { who = CAS value = 300 }
-	create_alliance = CAS
-	release_vassal = SAN 
-	diplomatic_influence = { who = SAN value = 300 }
-	create_alliance = SAN
-	release_vassal = QUI
-	diplomatic_influence = { who = QUI value = 300 }
-	create_alliance = QUI
-	SAN = { capital = 2254 }
-	UCA = { capital = 2191 }
-	QUI = { capital = 2279 }
-	CAS = { capital = 2264 }
-	ai_chance = { 
-	factor = 30
-		}
-	}
+	#option = { 
+	#name = "46447.C"
+	#clr_country_flag = spaCLM
+	#set_global_flag = spaCLM_divided
+	#release_vassal = LST 
+	#diplomatic_influence = { who = LST value = 300 }
+	#create_alliance = LST
+	#release_vassal = JLS 
+	#diplomatic_influence = { who = JLS value = 300 }
+	#create_alliance = JLS
+	#release_vassal = UCA
+	#diplomatic_influence = { who = UCA value = 300 }
+	#create_alliance = UCA
+	#release_vassal = MEX 
+	#diplomatic_influence = { who = MEX value = 300 }
+	#create_alliance = MEX
+	#release_vassal = GUY
+	#diplomatic_influence = { who = GUY value = 300 }
+	#create_alliance = GUY
+	#release_vassal = CAS
+	#diplomatic_influence = { who = CAS value = 300 }
+	#create_alliance = CAS
+	#release_vassal = SAN 
+	#diplomatic_influence = { who = SAN value = 300 }
+	#create_alliance = SAN
+	#release_vassal = QUI
+	#diplomatic_influence = { who = QUI value = 300 }
+	#create_alliance = QUI
+	#SAN = { capital = 2254 }
+	#UCA = { capital = 2191 }
+	#QUI = { capital = 2279 }
+	#CAS = { capital = 2264 }
+	#ai_chance = { 
+	#factor = 30
+	#	}
+	#}
 	
 }
 
@@ -646,83 +691,103 @@ country_event = {
 	trigger = { 
 	tag = SPA 
 	has_global_flag = spanish_vic
+	OR = {	
 	revolution_n_counterrevolution = 1
+	has_global_flag = SCWARISHERE
+	}
 	NOT = { has_country_flag = Colombian_loss }
 	NOT = { has_country_flag = second_colonial_revoultion }
+	OR = {
     NOT = { is_secondary_power = yes }
+	has_global_flag = SCWARISHERE
+	   }
 	}
 
-	mean_time_to_happen = { months = 24 }
+	mean_time_to_happen = { 
+	months = 24 
+		modifier = {
+			factor = 0.1
+			has_global_flag = SCWARISHERE
+		}		
+	}
 	
 	option = { 
 	name = "46455.A"
 	set_country_flag = Colombian_loss
 	set_country_flag = second_colonial_revoultion
+	any_owned = {
+			limit = {
+				is_core = GRA
+			}
+			secede_province = GRA
+	}
+	any_owned = {
+			limit = {
+				is_core = LST
+			}
+			secede_province = LST
+	}
+	any_owned = {
+			limit = {
+				is_core = UCA
+			}
+			secede_province = UCA
+	}
+	any_owned = {
+			limit = {
+				is_core = MEX
+			}
+			secede_province = MEX
+	}
 	any_country = { 	
 	limit = { 
 		tag = GRA
 		exists = GRA
 		vassal_of = SPA
 		}
-		release_vassal = GRA
+		SPA = { release_vassal = GRA }
 		leave_alliance = SPA
 		diplomatic_influence = {
 			who = GRA
 			value = -200
 		}	
 		country_event = 46456
-	    }
+	}
 	any_country = { 	
 	limit = { 
 		tag = LST
 		exists = LST
 		vassal_of = SPA
 		}
-		release_vassal = LST
+		SPA = { release_vassal = LST }
 		leave_alliance = SPA
 		diplomatic_influence = {
 			who = LST
 			value = -200
 		}	
 		country_event = 46456
-	    }
-	any_country = { 
-	limit = { 
-		tag = JLS
-		exists = JLS
-		vassal_of = SPA
-		}
-		release_vassal = JLS
-		leave_alliance = SPA
-		diplomatic_influence = {
-			who = JLS
-			value = -200
-		}	
-		country_event = 46456
-	    }
-
+	}
 	any_country = { 
 	limit = { 
 		tag = UCA
 		exists = UCA
 		vassal_of = SPA 
 		}
-		release_vassal = UCA
+		SPA = { release_vassal = UCA }
 		leave_alliance = SPA
 		diplomatic_influence = {
 			who = UCA
 			value = -200
 		}	
          country_event = 46456
-	    }
-
+	}
 	any_country = { 
 	limit = { 
 		tag = MEX
 		exists = MEX
 		vassal_of = SPA 
 			}
-		release_vassal = MEX
+		SPA = { release_vassal = MEX }
 		leave_alliance = SPA
 		diplomatic_influence = {
 			who = MEX
@@ -730,204 +795,116 @@ country_event = {
 		}	
 		country_event = 46456
 	    }
-
-	any_country = { 
-	limit = { 
-		tag = GUY
-		exists = GUY
-		vassal_of = SPA 
-			}
-		release_vassal = GUY
-		leave_alliance = SPA
-		diplomatic_influence = {
-			who = GUY
-			value = -200
-		}	
-		country_event = 46456
-	    }
-	
-	any_country = { 
-	limit = { 
-		tag = CAS
-		exists = CAS
-		vassal_of = SPA 
-			}
-		release_vassal = GUY
-		leave_alliance = SPA
-		diplomatic_influence = {
-			who = GUY
-			value = -200
-		}	
-		country_event = 46456
-		}
-
-	any_country = { 
-	limit = { 
-		tag = SAN
-		exists = SAN
-		vassal_of = SPA 
-			}
-		release_vassal = SAN
-		leave_alliance = SPA
-		diplomatic_influence = {
-			who = SAN
-			value = -200
-		}	
-		country_event = 46456
-		}
-
-	any_country = { 
-	limit = { 
-		tag = QUI
-		exists = QUI
-		vassal_of = SPA 
-			}
-		release_vassal = QUI
-		leave_alliance = SPA
-		diplomatic_influence = {
-			who = QUI
-			value = -200
-		}	
-		country_event = 46456
-		}
 	}
 
 	option = { 
 	name = "46455.B"
 	set_country_flag = second_colonial_revoultion
 	set_country_flag = Colombian_loss     # AI is not winning this clusterfuck.	
+	any_owned = {
+			limit = {
+				is_core = GRA
+			}
+			secede_province = GRA
+	}
+	any_owned = {
+			limit = {
+				is_core = LST
+			}
+			secede_province = LST
+	}
+	any_owned = {
+			limit = {
+				is_core = UCA
+			}
+			secede_province = UCA
+	}
+	any_owned = {
+			limit = {
+				is_core = MEX
+			}
+			secede_province = MEX
+	}
 	any_country = { 	
 	limit = { 
 		tag = GRA
 		exists = GRA
 		vassal_of = SPA
 		}
-		release_vassal = GRA
+		SPA = { release_vassal = GRA }
 		leave_alliance = SPA
 		diplomatic_influence = {
 			who = GRA
 			value = -200
 		}	
-		country_event = 46457
-	    }
+	}
 	any_country = { 	
 	limit = { 
 		tag = LST
 		exists = LST
 		vassal_of = SPA
 		}
-		release_vassal = LST
+		SPA = { release_vassal = LST }
 		leave_alliance = SPA
 		diplomatic_influence = {
 			who = LST
 			value = -200
 		}	
-		country_event = 46457
-	    }
-	any_country = { 
-	limit = { 
-		tag = JLS
-		exists = JLS
-		vassal_of = SPA
-		}
-		release_vassal = JLS
-		leave_alliance = SPA
-		diplomatic_influence = {
-			who = JLS
-			value = -200
-		}	
-		country_event = 46457
-	    }
-
+	}
 	any_country = { 
 	limit = { 
 		tag = UCA
 		exists = UCA
 		vassal_of = SPA 
 		}
-		release_vassal = UCA
+		SPA = { release_vassal = UCA }
 		leave_alliance = SPA
 		diplomatic_influence = {
 			who = UCA
 			value = -200
 		}	
-         country_event = 46457
-	    }
-
+	}
 	any_country = { 
 	limit = { 
 		tag = MEX
 		exists = MEX
 		vassal_of = SPA 
 			}
-		release_vassal = MEX
+		SPA = { release_vassal = MEX }
 		leave_alliance = SPA
 		diplomatic_influence = {
 			who = MEX
 			value = -200
 		}	
+	}
+	any_country = { 
+	limit = { 
+		tag = MEX
+		exists = MEX
+			}	
+		country_event = 46457
+	}
+	any_country = { 
+	limit = { 
+		tag = UCA
+		exists = UCA
+			}	
+		country_event = 46457
+	}
+	any_country = { 
+	limit = { 
+		tag = LST
+		exists = LST
+			}	
+		country_event = 46457
+	}
+	any_country = { 
+	limit = { 
+		tag = GRA
+		exists = GRA
+			}	
 		country_event = 46457
 	    }
-
-	any_country = { 
-	limit = { 
-		tag = GUY
-		exists = GUY
-		vassal_of = SPA 
-			}
-		release_vassal = GUY
-		leave_alliance = SPA
-		diplomatic_influence = {
-			who = GUY
-			value = -200
-		}	
-		country_event = 46457
-	    }
-	
-	any_country = { 
-	limit = { 
-		tag = CAS
-		exists = CAS
-		vassal_of = SPA 
-			}
-		release_vassal = GUY
-		leave_alliance = SPA
-		diplomatic_influence = {
-			who = GUY
-			value = -200
-		}	
-		country_event = 46457
-		}
-
-	any_country = { 
-	limit = { 
-		tag = SAN
-		exists = SAN
-		vassal_of = SPA 
-			}
-		release_vassal = SAN
-		leave_alliance = SPA
-		diplomatic_influence = {
-			who = SAN
-			value = -200
-		}	
-		country_event = 46457
-		}
-
-	any_country = { 
-	limit = { 
-		tag = QUI
-		exists = QUI
-		vassal_of = SPA 
-			}
-		release_vassal = QUI
-		leave_alliance = SPA
-		diplomatic_influence = {
-			who = QUI
-			value = -200
-		}	
-		country_event = 46457
-		}
 	}
 }
 
@@ -974,7 +951,7 @@ country_event = {
 
 	war = { 
 		target = FROM
-		attacker_goal = {
+		    attacker_goal = {
 			casus_belli = status_quo
 			}
 			defender_goal = {
@@ -2760,5 +2737,238 @@ country_event = {
 	}
 }
 
+
+#### Viceroyality Implosion #####
+#### The Viceregal Governments are not as stable as they seem and instantly implode if they are given independence with the sheer exception of LST ###
 	
+country_event = { 
+	
+	id = 46519
+	title = "Collapse of Mexico"
+	desc = "We have successfully broken free from the shackles of Spain, but as our government is unable to create a stable democracy after the collapse of the Viceroyality. We are forced into total collapse!"
+	
+	picture = "mexican_castle"
+	
+	trigger = { 
+	tag = MEX 
+	has_global_flag = spaCLM_Vice_royalties
+	is_vassal = no
+	war = no
+	NOT = { has_global_flag = VRMexCollapse }
+	}
+	
+	mean_time_to_happen = { 
+	days = 7
+	}
+	
+	    option = { 
+	    name = "Some things never last"
+	    prestige = -50
+	    set_global_flag = VRMexCollapse
+	    any_owned = {
+		limit = {
+			is_core = YUC
+		}
+		secede_province = YUC
+	    }
+		any_owned = {
+			limit = {
+				is_core = ZAP
+			}
+			secede_province = ZAP
+		}
+		any_owned = {
+			limit = {
+				is_core = PUR
+			}
+			secede_province = PUR
+		}
+	    YUC = { country_event = 46423 }
+		ZAP = { country_event = 46423 }
+		PUR = { country_event = 46423 }
+
+		any_owned = {
+			limit = {
+				is_core = AZT
+			}
+			secede_province = AZT
+		}
+
+		AZT = { 
+		government = absolute_monarchy
+		political_reform = none_voting
+	    political_reform = party_appointed
+	    political_reform = no_meeting
+	    political_reform = state_press
+	    political_reform = no_trade_unions
+	    political_reform = first_past_the_post
+	    political_reform = underground_parties
+        }		
+		
+		change_tag = JLS
+		capital = 2161
+		country_event = 46423 
+
+		any_country = {
+			any_owned = {
+				limit = {
+					OR = {
+					is_core = MEX
+					is_core = LST 
+					is_core = UCA
+					}
+				}
+				remove_core = JLS			
+			   }
+		   }
+	   }
+}
+
+country_event = { 
+
+	id = 46520
+	title = "Collapse of Granada"
+	desc = "We have successfully broken free from the shackles of Spain, but as our government is unable to create a stable democracy after the collapse of the Viceroyality. We are forced into total collapse!"
+	
+	picture = "mexican_castle"
+	
+	trigger = { 
+	tag = GRA
+	has_global_flag = spaCLM_Vice_royalties
+	war = no
+	is_vassal = no
+	NOT = { has_global_flag = VRGraCollapse }
+	}
+	
+	mean_time_to_happen = { 
+	days = 7
+	}
+	
+	    option = { 
+	    name = "Some things never last"
+	    prestige = -50
+	    set_global_flag = VRGraCollapse	
+		any_owned = {
+			limit = {
+				is_core = GUY
+			}
+			secede_province = GUY
+		}
+		any_owned = {
+		limit = {
+			is_core = TAP
+		}
+		secede_province = TAP
+	    }	
+		any_owned = {
+			limit = {
+				is_core = CAS
+			}
+			secede_province = CAS
+		}
+		any_owned = {
+			limit = {
+				is_core = ARE
+			}
+			secede_province = INC
+		}
+		any_owned = {
+			limit = {
+				is_core = QUI
+			}
+			secede_province = QUI
+		}
+		GUY = { country_event = 46423 }
+		TAP = { country_event = 46423 }	
+	    CAS = { country_event = 46423 }
+		QUI = { country_event = 46424 }
+		
+		change_tag = SAN
+		capital = 2254
+		country_event = 46423 
+
+		any_country = {
+			any_owned = {
+				limit = {
+					OR = {
+					is_core = MEX
+					is_core = INC
+					is_core = GRA
+					is_core = LST 
+					is_core = UCA
+					}
+				}
+				remove_core = SAN			
+			   }
+		 }	   
+		 CAS = { all_core = { add_core = SAN } }	
+         GUY = { all_core = { remove_core = SAN } }			 
+	   }
+}
+
+country_event = { 
+	
+	id = 46521
+	title = "Collapse of Salvador"
+	desc = "We have successfully broken free from the shackles of Spain, but as our government is unable to create a stable democracy after the collapse of the Viceroyality. We are forced into total collapse!"
+	
+	picture = "mexican_castle"
+	
+	trigger = { 
+	tag = UCA 
+	has_global_flag = spaCLM_Vice_royalties
+	is_vassal = no
+	war = no
+	NOT = { has_global_flag = VRUCACollapse }
+	}
+	
+	mean_time_to_happen = { 
+	days = 7
+	}
+	
+	    option = { 
+	    name = "Some things never last"
+	    prestige = -50
+	    set_global_flag = VRUCACollapse
+	    any_owned = {
+		limit = {
+			is_core = YUC
+		}
+		secede_province = YUC
+	    }
+		any_owned = {
+			limit = {
+				is_core = NIC
+			}
+			secede_province = NIC
+		}
+		any_owned = {
+			limit = {
+				is_core = PNM
+			}
+			secede_province = PNM
+		}
+	    YUC = { country_event = 46423 }
+		NIC = { country_event = 46423 }
+		PNM = { country_event = 46423 }
+		
+		change_tag = ELS
+		capital = 2191
+		country_event = 46423 
+
+		any_country = {
+			any_owned = {
+				limit = {
+					OR = {
+					is_core = MEX
+					is_core = LST 
+					is_core = UCA
+					}
+				}
+				remove_core = ELS			
+			   }
+		   }
+       YUC = { all_core = { add_core = ELS } }			   	   
+	   }
+}
 
