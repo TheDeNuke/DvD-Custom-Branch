@@ -40,7 +40,7 @@ country_event = {
 				}
 			}
 			OR = {
-				NOT = { is_secondary_power = yes }
+				NOT = { OR = { is_secondary_power = yes is_greater_power = yes  } }
 				is_disarmed = yes
 				num_of_revolts = 20
 				lost_national = 0.2
@@ -79,11 +79,11 @@ country_event = {
 		}
 		modifier = {
 			factor = 2
-			TUR = { is_secondary_power = yes }
+			TUR = { OR = { is_secondary_power = yes is_greater_power = yes  } }
 		}
 		modifier = {
 			factor = 0.8
-			TUR = { NOT = { is_secondary_power = yes } }
+			TUR = { NOT = { OR = { is_secondary_power = yes is_greater_power = yes  } } }
 		}
 		modifier = {
 			factor = 0.5

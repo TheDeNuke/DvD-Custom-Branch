@@ -231,7 +231,7 @@ political_decisions = {
 			
 		allow = {
             all_core = { owned_by = THIS }
-			is_secondary_power = yes
+		    OR = { is_secondary_power = yes is_greater_power = yes }
 		    is_vassal = no
 		}
 			
@@ -614,7 +614,7 @@ political_decisions = {
 			
 		allow = { 
 		nationalism_n_imperialism = 1 
-		is_secondary_power = yes 
+		OR = { is_secondary_power = yes is_greater_power = yes }
 		OR = { 
 		all_core = { owned_by = THIS }
 		war_policy = jingoism
@@ -775,7 +775,7 @@ political_decisions = {
 		
 		allow = { 
 	        all_core = { owned_by = THIS }
-            is_secondary_power = yes
+		    OR = { is_secondary_power = yes is_greater_power = yes }
             war = no
 		}
 			
@@ -807,7 +807,7 @@ political_decisions = {
 		allow = { 
 		    NOT = { tag = CPL }
 	        all_core = { owned_by = THIS }
-            is_secondary_power = yes
+		    OR = { is_secondary_power = yes is_greater_power = yes }
             war = no
 		}
 			

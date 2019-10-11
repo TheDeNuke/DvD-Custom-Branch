@@ -2505,7 +2505,7 @@ political_decisions = {
 			owns = 2045
 			owns = 2038
 			owns = 2041
-            NOT = { is_secondary_power = yes }
+            NOT = { rank = 16 }
 			in_sphere = THIS 
             }
 		}

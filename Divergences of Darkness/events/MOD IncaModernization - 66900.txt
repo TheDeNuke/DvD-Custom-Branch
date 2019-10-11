@@ -146,7 +146,7 @@ country_event = {
 			factor = 50
 			modifier = {
 				factor = 0
-				is_secondary_power = yes
+				NOT = { OR = { is_secondary_power = yes is_greater_power = yes  } }
 			}
 		}
 		set_global_flag = inca_rebellion

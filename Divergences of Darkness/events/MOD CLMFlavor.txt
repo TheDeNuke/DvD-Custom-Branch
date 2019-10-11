@@ -191,7 +191,10 @@ country_event = {
 	trigger = { 
 	tag = SPA
 	owns = 2172
+	OR = {
 	NOT = { exists = LST }
+	NOT = { has_global_flag = partial_peace }
+	}
 	NOT = { exists = MEX }
 	NOT = { exists = CLM }
 	NOT = { exists = UCA }
@@ -333,6 +336,12 @@ country_event = { ### Administration of the reconquered colonies
 	diplomatic_influence = { who = MEX value = 300 }
 	release_vassal = GRA
 	diplomatic_influence = { who = GRA value = 300 }
+	any_owned = {
+	limit = {
+	is_core = DIN
+			}
+	secede_province = LST
+	}
 	GRA = { capital = 2254 }
 	UCA = { capital = 2191 }
 	ai_chance = { 
@@ -698,7 +707,7 @@ country_event = {
 	NOT = { has_country_flag = Colombian_loss }
 	NOT = { has_country_flag = second_colonial_revoultion }
 	OR = {
-    NOT = { is_secondary_power = yes }
+    NOT = { OR = { is_secondary_power = yes is_greater_power = yes  } }
 	has_global_flag = SCWARISHERE
 	   }
 	}
@@ -2537,7 +2546,7 @@ country_event = {
 	trigger = { 
 	tag = CLM 
     has_global_flag = congress_of_panama_over
-	NOT = { is_secondary_power = yes }
+	NOT = { OR = { is_secondary_power = yes is_greater_power = yes  } }
 	NOT = { has_global_flag = partial_peace }
 	NOT = { has_global_flag = columbian_unity }
 	NOT = { has_country_flag = dictatorshipgc }

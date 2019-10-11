@@ -1851,7 +1851,7 @@ country_event = {
 			}
 	modifier = { 
 	factor = 0.7
-	is_secondary_power = yes
+	OR = { is_secondary_power = yes is_greater_power = yes  }
 			}
 	modifier = { 
 	factor = 1.1 
@@ -2009,8 +2009,8 @@ country_event = {
 	is_greater_power = yes 
 	has_country_flag = nbg_manifest_destiny
 	NOT = { VIN = { has_country_flag = the_vinlandic_evacuation } }
-	NOT = { PLA = { is_secondary_power = yes } }
-    NOT = { VIN = { is_secondary_power = yes } }
+	NOT = { PLA = { OR = { is_secondary_power = yes is_greater_power = yes } } }
+    NOT = { VIN = { OR = { is_secondary_power = yes is_greater_power = yes } } }
 	war = no 
 	}
 	
@@ -2038,8 +2038,8 @@ country_event = {
 	year = 1890
 	is_greater_power = yes 
 	has_country_flag = vin_manifest_destiny
-	NOT = { PLA = { is_secondary_power = yes } }
-	NOT = { NBG = { is_secondary_power = yes } }
+    NOT = { PLA = { OR = { is_secondary_power = yes is_greater_power = yes } } }
+    NOT = { NBG = { OR = { is_secondary_power = yes is_greater_power = yes } } }
 	war = no 
 	}
 	
@@ -2068,9 +2068,9 @@ country_event = {
 	is_greater_power = yes 
 	has_country_flag = pla_manifest_destiny
 	NOT = { VIN = { has_country_flag = the_vinlandic_evacuation } }
-	NOT = { VIN = { is_secondary_power = yes } }
-	NOT = { NBG = { is_secondary_power = yes } }
-	NOT = { LST = { is_secondary_power = yes } }
+    NOT = { VIN = { OR = { is_secondary_power = yes is_greater_power = yes } } }
+    NOT = { NBG = { OR = { is_secondary_power = yes is_greater_power = yes } } }
+    NOT = { LST = { OR = { is_secondary_power = yes is_greater_power = yes } } }
 	war = no 
 	}
 	
@@ -2099,7 +2099,7 @@ country_event = {
 	year = 1890
 	is_greater_power = yes 
 	has_country_flag = nbg_manifest_destiny
-	NOT = { PLA = { is_secondary_power = yes } }
+    NOT = { PLA = { OR = { is_secondary_power = yes is_greater_power = yes } } }
     VIN = { has_country_flag = the_vinlandic_evacuation }
 	war = no 
 	}
@@ -2128,8 +2128,8 @@ country_event = {
 	is_greater_power = yes 
 	has_country_flag = pla_manifest_destiny
     VIN = { has_country_flag = the_vinlandic_evacuation }
-	NOT = { NBG = { is_secondary_power = yes } }
-	NOT = { LST = { is_secondary_power = yes } }
+    NOT = { NBG = { OR = { is_secondary_power = yes is_greater_power = yes } } }
+    NOT = { LST = { OR = { is_secondary_power = yes is_greater_power = yes } } }
 	war = no 
 	}
 	

@@ -8,7 +8,7 @@ political_decisions = {
 			NA_1 = { empty = yes }
 			NA_3 = { empty = yes }
 			NA_4 = { empty = yes }
-			NOT = { is_secondary_power = yes }
+			NOT = { rank = 16 }
 		}
 
 		allow = {
@@ -38,7 +38,7 @@ political_decisions = {
 			owns = 166
 			NA_2 = { empty = yes }
 			NA_7 = { empty = yes }
-			NOT = { is_secondary_power = yes }
+			NOT = { rank = 16 }
 		}
 
 		allow = {
@@ -66,7 +66,7 @@ political_decisions = {
 			tag = VIN
 			owns = 49
 			NA_36 = { empty = yes }
-			NOT = { is_secondary_power = yes }
+			NOT = { rank = 16 }
 		}
 
 		allow = {
@@ -91,7 +91,7 @@ political_decisions = {
 			tag = VIN
 			owns = 157
 			NA_8 = { empty = yes }
-			NOT = { is_secondary_power = yes }
+			NOT = { rank = 16 }
 		}
 
 		allow = {
@@ -119,7 +119,7 @@ political_decisions = {
 			owns = 43
 			NA_9 = { empty = yes }
 			NA_12 = { empty = yes }
-			NOT = { is_secondary_power = yes }
+			NOT = { rank = 16 }
 		}
 
 		allow = {
@@ -151,7 +151,7 @@ political_decisions = {
 			owns = 2423
 			SA_2 = { empty = yes }
 			SA_3 = { empty = yes }
-			NOT = { is_secondary_power = yes }
+			NOT = { rank = 16 }
 		}
 
 		allow = {
@@ -180,7 +180,7 @@ political_decisions = {
 			tag = LOT
 			owns = 2339
 			SA_5 = { empty = yes }
-			NOT = { is_secondary_power = yes }
+			NOT = { rank = 16 }
 		}
 
 		allow = {
@@ -207,12 +207,12 @@ political_decisions = {
 #			tag = NAN
 #			owns = 2355
 #			NAN_5 = { empty = yes }
-#			NOT = { is_secondary_power = yes }
+#			NOT = { rank = 16 }
 #			OR = {
 #				tag = HBE
 #				owns = 2355
 #				NAN_5 = { empty = yes }
-#				NOT = { is_secondary_power = yes }
+#				NOT = { rank = 16 }
 #			}
 #		}
 # 
@@ -240,7 +240,7 @@ political_decisions = {
 #			tag = INC
 #			owns = 2330
 #			SA_6 = { empty = yes }
-#			NOT = { is_secondary_power = yes }
+#			NOT = { rank = 16 }
 #		}
 #
 #		allow = {
@@ -267,18 +267,18 @@ political_decisions = {
 #			tag = INC
 #			owns = 2333
 #			SA_9 = { empty = yes }
-#			NOT = { is_secondary_power = yes }
+#			NOT = { rank = 16 }
 #			OR = {
 #				tag = NAN
 #				owns = 2399
 #				SA_9 = { empty = yes }
-#				NOT = { is_secondary_power = yes }
+#				NOT = { rank = 16 }
 #			}
 #			OR = {
 #				tag = HBE
 #				owns = 2399
 #				SA_9 = { empty = yes }
-#				NOT = { is_secondary_power = yes }
+#				NOT = { rank = 16 }
 #			}			
 #		}
 #
@@ -306,7 +306,7 @@ political_decisions = {
 			tag = GAN
 			owns = 2484
 			GAN_9 = { empty = yes }
-			NOT = { is_secondary_power = yes }
+			NOT = { rank = 16 }
 		}
 
 		allow = {
@@ -331,7 +331,7 @@ political_decisions = {
 			tag = GAN
 			owns = 2484
 			GAN_10 = { empty = yes }
-			NOT = { is_secondary_power = yes }
+			NOT = { rank = 16 }
 		}
 
 		allow = {
@@ -357,7 +357,7 @@ political_decisions = {
 			tag = GAN
 			owns = 2484
 			GAN_7 = { empty = yes }
-			NOT = { is_secondary_power = yes }
+			NOT = { rank = 16 }
 		}
 
 		allow = {
@@ -383,7 +383,7 @@ political_decisions = {
 			tag = GAN
 			owns = 2497
 			GAN_8 = { empty = yes }
-			NOT = { is_secondary_power = yes }
+			NOT = { rank = 16 }
 		}
 
 		allow = {
@@ -410,7 +410,7 @@ political_decisions = {
 			owns = 2602
 			owns = 2604
 			GAN_6 = { empty = yes }
-			NOT = { is_secondary_power = yes }
+			NOT = { rank = 16 }
 		}
 
 		allow = {
@@ -437,7 +437,7 @@ political_decisions = {
 			tag = GAN
 			owns = 2501
 			GAN_11 = { empty = yes }
-			NOT = { is_secondary_power = yes }
+			NOT = { rank = 16 }
 		}
 
 		allow = {
@@ -464,7 +464,7 @@ political_decisions = {
 			tag = AOT
 			owns = 2510
 			ENG_2513 = { empty = yes }
-			NOT = { is_secondary_power = yes }
+			NOT = { rank = 16 }
 		}
 
 		allow = {
@@ -490,7 +490,7 @@ political_decisions = {
 			tag = DNG
 			owns = 95
 			NA_6 = { empty = yes }
-			NOT = { is_secondary_power = yes }
+			NOT = { rank = 16 }
 		}
 
 		allow = {
@@ -516,7 +516,7 @@ political_decisions = {
 			tag = DNG
 			owns = 92
 			NA_15 = { empty = yes }
-			NOT = { is_secondary_power = yes }
+			NOT = { rank = 16 }
 		}
 
 		allow = {
@@ -542,7 +542,7 @@ political_decisions = {
 			tag = DNG
 			owns = 111
 			NA_5 = { empty = yes }
-			NOT = { is_secondary_power = yes }
+			NOT = { rank = 16 }
 		}
 
 		allow = {
@@ -568,7 +568,7 @@ political_decisions = {
 			tag = DNG
 			owns = 21
 			NA_14 = { empty = yes }
-			NOT = { is_secondary_power = yes }
+			NOT = { rank = 16 }
 		}
 
 		allow = {
@@ -594,7 +594,7 @@ political_decisions = {
 			tag = DNG
 			owns = 16
 			NA_13 = { empty = yes }
-			NOT = { is_secondary_power = yes }
+			NOT = { rank = 16 }
 		}
 
 		allow = {
@@ -622,7 +622,7 @@ political_decisions = {
 			tag = HHR
 			owns = 27
 			NA_14 = { empty = yes }
-			NOT = { is_secondary_power = yes }
+			NOT = { rank = 16 }
 		}
 
 		allow = {
@@ -647,7 +647,7 @@ political_decisions = {
 			tag = HHR
 			owns = 33
 			NA_8 = { empty = yes }
-			NOT = { is_secondary_power = yes }
+			NOT = { rank = 16 }
 		}
 
 		allow = {
@@ -672,7 +672,7 @@ political_decisions = {
 			tag = HHR
 			owns = 30
 			NA_9 = { empty = yes }
-			NOT = { is_secondary_power = yes }
+			NOT = { rank = 16 }
 		}
 
 		allow = {

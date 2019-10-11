@@ -155,7 +155,7 @@ country_event = {
 		}
 	modifier = { 
 	factor = 0.5
-	NOT = { is_secondary_power = yes }
+	NOT = { OR = { is_secondary_power = yes is_greater_power = yes  } }
 		}
 	}
 	
@@ -561,6 +561,12 @@ country_event = {
 	    } 
 	    any_owned = { 
 	    limit = { 
+	    region = PRU_695
+	    }
+	    secede_province = THIS
+	    } 
+	    any_owned = { 
+	    limit = { 
 	    province_id = 698
 	    }
 	    secede_province = THIS
@@ -752,10 +758,20 @@ country_event = {
 			NOT = { exists = HUN }
 			}
     country_event = 222399
-	}   	
+	} 
+	any_country = {
+			limit = { 
+			tag = CZH
+			NOT = { exists = BOH }
+			NOT = { exists = SLV }
+			owns = 636
+			}
+    country_event = 222399
+	}  	
 	any_country = {
 			limit = { 
 			tag = BOH
+			NOT = { exists = CZH }
 			NOT = { exists = CAE }
 			NOT = { exists = HLR }
 			OR = {
@@ -764,7 +780,7 @@ country_event = {
 			   }
 			}
     country_event = 222399
-	}  
+	}  	
 	any_country = {
 			limit = { 
 			tag = CAE

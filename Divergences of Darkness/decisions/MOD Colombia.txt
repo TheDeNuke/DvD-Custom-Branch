@@ -12,7 +12,7 @@ political_decisions = {
 				NOT = { has_global_flag = fall_of_all_the_colombia }
 			}
 			allow = {
-				is_secondary_power = yes
+		        OR = { is_secondary_power = yes is_greater_power = yes }
 				NOT = { war = yes }
 				CLM = {
 					all_core = {
@@ -733,7 +733,7 @@ political_decisions = {
 		
 		potential = { 
 		tag = CLM 
-		is_secondary_power = yes 
+		OR = { is_secondary_power = yes is_greater_power = yes }
 		NOT = { has_country_flag = university_MEX }
 		}
 		

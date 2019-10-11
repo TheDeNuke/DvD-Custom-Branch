@@ -29,8 +29,10 @@ country_event = {
 		}
 		modifier = {
 			factor = 3
+			AND = {
 			is_greater_power = no
-			NOT = { is_secondary_power = yes }
+			is_secondary_power = no
+			}
 		}
 	}
 	
@@ -64,8 +66,10 @@ country_event = {
 		}
 		modifier = {
 			factor = 3
+			AND = {
 			is_greater_power = no
-			NOT = { is_secondary_power = yes }
+			is_secondary_power = no
+			}
 		}
 	}
 	
@@ -1749,8 +1753,10 @@ country_event = {
 		random_owned = {
 			limit = {
 				owner = { 
+				    AND = {
 					is_greater_power = no
-					NOT = { is_secondary_power = yes }
+					is_secondary_power = no
+					}
 				}
 			}
 			owner = { prestige = -5 }

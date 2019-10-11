@@ -348,7 +348,7 @@ political_decisions = {
 		potential = {
 			exists = HAW
 			HAW = { ai = yes }
-			is_secondary_power = yes 
+		    OR = { is_secondary_power = yes is_greater_power = yes }
 			NOT = { has_country_flag = annexed_hawaii }
 			any_owned_province = { port = yes }
 			OR = {

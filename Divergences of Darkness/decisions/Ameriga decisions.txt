@@ -1225,8 +1225,8 @@ political_decisions = {
 		OR = { 
 		tag = NAN 
 		tag = HBE 
-			}
-		is_secondary_power = yes 
+			}	
+		OR = { is_secondary_power = yes is_greater_power = yes }
 		NOT = { has_country_flag = NAN_cone }
 		}
 		

@@ -166,7 +166,7 @@ political_decisions = {
 		allow = {
 			war = no
 			is_vassal = no
-            is_secondary_power = yes
+		    OR = { is_secondary_power = yes is_greater_power = yes }
 			prestige = 45
 		}
 
@@ -494,7 +494,7 @@ political_decisions = {
 		allow = {
 			war = no
 			prestige = 50
-            is_secondary_power = yes
+		    OR = { is_secondary_power = yes is_greater_power = yes }
 			OR = {
 			war_policy = jingoism
             rank = 12

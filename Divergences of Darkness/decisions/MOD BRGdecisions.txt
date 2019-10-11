@@ -645,7 +645,7 @@ political_decisions = {
 		}
 		
 		allow = { 
-		is_secondary_power = yes
+		OR = { is_secondary_power = yes is_greater_power = yes }
         revolution_n_counterrevolution = 1 		
 	    OR = {
 	      government = fascist_dictatorship
@@ -675,7 +675,7 @@ political_decisions = {
 		}
 		
 		allow = { 
-		is_secondary_power = yes
+		OR = { is_secondary_power = yes is_greater_power = yes }
 	    government = fascist_dictatorship
         NOT = { is_disarmed = yes }		
 		}

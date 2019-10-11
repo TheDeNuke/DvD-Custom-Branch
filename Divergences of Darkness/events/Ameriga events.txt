@@ -1773,7 +1773,7 @@ country_event = {
 			}
 	modifier = { 
 	factor = 1.2 
-	is_secondary_power = yes 
+	OR = { is_secondary_power = yes is_greater_power = yes }
 			}
 	modifier = { 
 	factor = 0.8 

@@ -12,6 +12,8 @@ country_event = {
 	option = {
 		name = "EVTOPTA598007"
 		set_country_flag = Savoysaviorofitaly
+		set_global_flag = saviorsofitalyunite
+		set_global_flag = MonarchistITAExists
 
 		465 = {
 			secede_province = FROM
@@ -49,9 +51,7 @@ country_event = {
 			add_core = FROM
 			add_core = GNV
 			}	
-		add_accepted_culture = south_italian
-		change_tag = ITA
-		set_global_flag = saviorsofitalyunite
+		add_accepted_culture = south_italian		
 		any_country = {
 			limit = {
 				OR = {
@@ -247,7 +247,6 @@ country_event = {
 	picture = "christian_religion"
 	
 	trigger = {
-    tag = ITA
 	VEN = { NOT = { has_country_flag = etruria_of_italy } }
     has_global_flag = saviorsofitalyunite
 	has_country_flag = Savoysaviorofitaly
@@ -278,6 +277,7 @@ country_event = {
 	option = {
 		name = "EVTOPTA598009" #Italy is almost unified.
 		prestige = 20
+		change_tag = ITA
 		clr_country_flag = Savoysaviorofitaly
 		clr_global_flag = saviorsofitalyunite
 		any_country = {
@@ -453,6 +453,7 @@ country_event = {
 		name = "EVTOPTA598012" #This is the final stand of Republicanism in Italy.
 		add_country_modifier = { name = taiping_draft duration = 1200 }
 		clr_global_flag = saviorsofitalyunite
+		clr_global_flag = MonarchistITAExists
         set_country_flag = unifier_of_italy
 		prestige = 20
 		any_country = {
@@ -463,7 +464,17 @@ country_event = {
 				}
 			}
 			annex_to = THIS
-		}
+		}	
+		any_country = {
+			limit = {
+				has_country_flag = Savoysaviorofitaly
+				NOT = {
+					tag = THIS
+				}
+			}
+			all_core = { add_core = THIS }	
+            change_tag = ITA			
+		}	
 		any_country = {
 			limit = {
 				has_country_flag = SAR_united_front
@@ -471,6 +482,7 @@ country_event = {
 					tag = THIS
 				}
 			}
+			all_core = { add_core = THIS }		
 			annex_to = ITA
 		}		
 		any_country = {
@@ -524,6 +536,7 @@ country_event = {
 		name = "EVTOPTA598013" #This is the final stand of Republicanism in Italy.
 		add_country_modifier = { name = taiping_draft duration = 1200 }
         clr_global_flag = saviorsofitalyunite
+		clr_global_flag = MonarchistITAExists
 		set_country_flag = unifier_of_italy
 		prestige = 20
 		any_country = {
@@ -537,13 +550,24 @@ country_event = {
 		}
 		any_country = {
 			limit = {
+				has_country_flag = Savoysaviorofitaly
+				NOT = {
+					tag = THIS
+				}
+			}
+			all_core = { add_core = THIS }	
+            change_tag = ITA			
+		}	
+		any_country = {
+			limit = {
 				has_country_flag = SAR_united_front
 				NOT = {
 					tag = THIS
 				}
 			}
+			all_core = { add_core = THIS }		
 			annex_to = ITA
-		}		
+		}
 		any_country = {
 			limit = {
 				has_country_flag = neutrality_is_bad
@@ -606,6 +630,7 @@ country_event = {
 		name = "EVTOPTA598013" #This is the final stand of Republicanism in Italy.
 		add_country_modifier = { name = taiping_draft duration = 1200 }
         clr_global_flag = saviorsofitalyunite
+		clr_global_flag = MonarchistITAExists
 		set_country_flag = unifier_of_italy
 		prestige = 20
 		any_country = {
@@ -619,13 +644,24 @@ country_event = {
 		}
 		any_country = {
 			limit = {
+				has_country_flag = Savoysaviorofitaly
+				NOT = {
+					tag = THIS
+				}
+			}
+			all_core = { add_core = THIS }	
+            change_tag = ITA			
+		}	
+		any_country = {
+			limit = {
 				has_country_flag = SAR_united_front
 				NOT = {
 					tag = THIS
 				}
 			}
+			all_core = { add_core = THIS }		
 			annex_to = ITA
-		}		
+		}			
 		any_country = {
 			limit = {
 				has_country_flag = neutrality_is_bad
@@ -660,14 +696,14 @@ country_event = {
 	tag = TUS
 	tag = SIC
 	tag = VEN
-	}
+	}	
 	has_country_flag = etruria_of_italy	
-	ITA = { NOT = { has_country_flag = Savoysaviorofitaly } }
 	NOT = { exists = ITA }
+	NOT = {	has_global_flag = MonarchistITAExists }
 	}
 	
 	mean_time_to_happen =  {
-		days = 7
+		days = 31
 	}
 	
 	option = {
@@ -693,7 +729,7 @@ country_event = {
 		name = "EVTOPTA598014" #This crown shall unite italy.
 		prestige = 20
 	    set_country_flag = Savoysaviorofitaly
-		change_tag = ITA
+		set_global_flag = MonarchistITAExists
 	}
 }
 

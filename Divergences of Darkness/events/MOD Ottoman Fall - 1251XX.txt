@@ -1778,7 +1778,7 @@ country_event = {
 		year = 1900
 		}
 		NOT = { has_country_flag = ottomans_to_turks }
-		NOT = { is_secondary_power = yes }
+		NOT = { OR = { is_secondary_power = yes is_greater_power = yes  } }
 		NOT = { war = yes }
 	}
 	

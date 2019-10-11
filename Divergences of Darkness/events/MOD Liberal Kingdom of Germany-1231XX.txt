@@ -1044,17 +1044,18 @@ country_event = {
 	relation = { who = BOH value = 200 }
 	badboy = -5 
 	ai_chance = { 
-	factor = 40
+	factor = 29
 		}
 	}
 	
 	option = { 
 	name = "1231110.B"
 	badboy = 5 
+	PRU = { all_core = { add_core = THIS }}
 	682 = { add_core = THIS  }
 	683 = { add_core = THIS  }
 	ai_chance = { 
-	factor = 40
+	factor = 50
 		}
 	}
 	
@@ -1062,6 +1063,7 @@ country_event = {
 	name = "1231110.C"
 	badboy = 12
 	SIL = { all_core = { add_core = THIS }}
+	PRU = { all_core = { add_core = THIS }}
 	ai_chance = { 
 	factor = 20
 		}
@@ -1071,11 +1073,14 @@ country_event = {
 	name = "1231110.E"
 	badboy = 50
 	set_country_flag = hitlersfriend
+	FRA_412 = { all_core = { add_core = GER }}
+	PRU = { all_core = { add_core = GER }}
+	SWI = { all_core = { add_core = GER }}
 	BOH = { all_core = { add_core = THIS }}
     CZH = { all_core = { add_core = THIS }}
 	SLV = { all_core = { remove_core = THIS }}
 	ai_chance = { 
-	factor = 0
+	factor = 1
 		}
 	}
 }
@@ -2669,6 +2674,7 @@ country_event = {
 	option = { 
 	name = "GER29.A"
 	change_tag = GER 
+	
 	prestige = 20
 	add_accepted_culture = rheinish 
 	add_accepted_culture = south_german 

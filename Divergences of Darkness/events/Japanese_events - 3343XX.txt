@@ -304,7 +304,7 @@ country_event = {
 	factor = 50 
 	modifier = { 
 	factor = 1.5 
-	NOT = { is_secondary_power = yes }
+	NOT = { is_secondary_power = yes is_greater_power = yes }
 			}
 		}
 	}

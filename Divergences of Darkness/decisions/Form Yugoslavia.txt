@@ -174,7 +174,7 @@ political_decisions = {
 	}
 	
 	allow = { 
-	is_secondary_power = yes 
+	OR = { is_secondary_power = yes is_greater_power = yes }
 	OR = { 
 	year = 1850 
 	780 = { owned_by = THIS }
