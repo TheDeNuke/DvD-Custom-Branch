@@ -479,7 +479,7 @@ political_decisions = {
 				is_colonial = yes
 			}
 			NOT = { JAM = { exists = yes } }
-			NOT = { has_country_flag = jamaica_purchase }
+			NOT = { has_global_flag = jamaica_purchase }
 		}
 		
 		allow = {
@@ -495,7 +495,7 @@ political_decisions = {
 		}
 		
 		effect = {
-			set_country_flag = jamaica_purchase
+			set_global_flag = jamaica_purchase
 			2217 = {
 				owner = { country_event = 135630 }
 			}

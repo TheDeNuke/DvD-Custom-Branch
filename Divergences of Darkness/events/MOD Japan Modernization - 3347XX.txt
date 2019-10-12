@@ -398,7 +398,15 @@ country_event = {
 	add_country_modifier = {
 				name = taiping_draft
 				duration = 1000
-			}	
+	}
+	add_country_modifier = {
+				name = preparing_for_war
+				duration = 31
+	}			
+	add_country_modifier = {
+				name = no_more_war
+				duration = 31
+	}
 
 	any_owned = { 
 	limit = { 
@@ -442,7 +450,29 @@ country_event = {
 #		}
 #	secede_province = KOR
 #	}
-	KOR = { country_event = { id = 334705 days = 3 } }
+
+	KOR = {
+	treasury = 10000
+	ammunition = 1000
+	small_arms = 1000
+	artillery = 1000
+	canned_food = 1000
+	regular_clothes = 1000
+	add_country_modifier = {
+				name = taiping_draft
+				duration = 1000
+	}
+	add_country_modifier = {
+				name = preparing_for_war
+				duration = 31
+	}		
+	add_country_modifier = {
+				name = no_more_war
+				duration = 31
+		}
+	}
+
+	KOR = { country_event = { id = 334705 days = 31 } }
 	}
 }
     
@@ -480,6 +510,14 @@ country_event = {
 				name = taiping_draft
 				duration = 1000
 			}
+	add_country_modifier = {
+				name = preparing_for_war
+				duration = 31
+			}
+	add_country_modifier = {
+				name = no_more_war
+				duration = 31
+		}
 	
 	any_owned = { 
 	limit = { 
@@ -529,7 +567,29 @@ country_event = {
 #		}
 #	secede_province = KOR
 #	}
-	KOR = { country_event = { id = 334705 days = 3 } }
+	
+	KOR = {
+	treasury = 10000
+	ammunition = 1000
+	small_arms = 1000
+	artillery = 1000
+	canned_food = 1000
+	regular_clothes = 1000
+	add_country_modifier = {
+				name = taiping_draft
+				duration = 1000
+	}
+	add_country_modifier = {
+				name = preparing_for_war
+				duration = 31
+	}		
+	add_country_modifier = {
+				name = no_more_war
+				duration = 31
+		}
+	}
+
+	KOR = { country_event = { id = 334705 days = 31 } }
 	}
 }
 
@@ -546,6 +606,10 @@ country_event = {
 	
 	option = {
 	name = "EVTOPTB334705"
+	relation = {
+			who = JAP
+			value = -400
+	}
 	remove_country_modifier = japan_debuff
     change_tag = TKG
     set_country_flag = koreaisjapanese  
@@ -559,11 +623,6 @@ country_event = {
 			add_core = THIS
 			       }				 
           }
-	
-	add_country_modifier = {
-				name = taiping_draft
-				duration = 1000
-			}
 
 	war = {
 			target = JAP

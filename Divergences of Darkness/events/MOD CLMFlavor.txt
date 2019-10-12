@@ -193,6 +193,7 @@ country_event = {
 	owns = 2172
 	OR = {
 	NOT = { exists = LST }
+	LST = { vassal_of = SPA }
 	NOT = { has_global_flag = partial_peace }
 	}
 	NOT = { exists = MEX }
@@ -271,8 +272,17 @@ country_event = {
 	limit = {
 	tag = LST
 	exists = yes
+	NOT = { vassal_of = SPA }
 	}
 	SPA = { set_country_flag = LSTSPAThreat }
+	}
+    any_country = {
+	limit = {
+	tag = LST
+	exists = yes
+	vassal_of = SPA
+	}
+	SPA = { inherit = LST }
 	}
 	any_owned = {
 				limit = {

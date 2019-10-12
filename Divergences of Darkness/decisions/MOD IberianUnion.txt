@@ -1,5 +1,6 @@
 political_decisions = {
 form_iberia = {
+picture = create_iberia
 		potential = {
 			tag = SPA
 			NOT = {
@@ -69,23 +70,21 @@ form_iberia = {
 	}
 	
 	integrate_navarra = { 
+    picture = create_iberia
 	potential = {
-			tag = SPA
-			OR = { 
-			exists = NAV
-			owns = 492
-			}
-			has_country_flag = iberian_union
-			NOT = { has_country_flag = basqueland }
+		tag = SPA
+		OR = { 
+		exists = NAV
+		owns = 492
 		}
+		has_country_flag = iberian_union
+		NOT = { has_country_flag = basqueland }
+	}
 		
 	allow = { 
 	OR = { 
-			NAV = {
-					exists = yes
-					in_sphere = THIS
-					}
-			owns = 492
+	NAV = {	in_sphere = THIS }
+	owns = 492
 		}
 	}
 		
@@ -97,6 +96,7 @@ form_iberia = {
 	}
 	
 	integrate_catalans = {
+	picture = french_catalonia
 		potential = {
 			tag = SPA
 			has_country_flag = iberian_union
@@ -138,6 +138,9 @@ form_iberia = {
 	}
 	
 	reintegrate_portugese = {
+	
+	picture = "spain_reconquest"
+	
 		potential = {
 			tag = SPA
 			has_global_flag = SPA_CWENDED
@@ -174,6 +177,9 @@ form_iberia = {
 	}
 	
 	reintegrate_castilian = {
+	
+	picture = "spanish_restoration"
+	
 		potential = {
 			tag = SPA
 			has_global_flag = SPA_CWENDED
@@ -211,7 +217,7 @@ form_iberia = {
 	
 	reform_spain = {
 	
-	picture = "spain_reconquest"	
+	picture = "emperor_of_india"	
 	
 		potential = {
 			OR = {
@@ -251,6 +257,7 @@ form_iberia = {
 						tag = CST
 						tag = POR
 						tag = GAL
+						tag = CAT
 						}
 						OR = { 
 						vassal_of = THIS

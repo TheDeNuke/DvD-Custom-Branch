@@ -422,6 +422,7 @@ political_decisions = {
 		LST = { exists = yes }
 		CLM = { NOT = { exists = yes } }
 		UCA = { NOT = { exists = yes } }
+		NOT = { LST = { vassal_of = SPA } }
 		}
 		
 		allow = { 
@@ -430,6 +431,7 @@ political_decisions = {
 		}
 		
 		effect = { 
+		clr_country_flag = LSTSPAThreat
 		any_country = {
 			limit = {
 			tag = LST
