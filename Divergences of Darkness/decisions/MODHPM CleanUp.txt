@@ -1802,6 +1802,16 @@ political_decisions = {
 									is_core = KAN
 								}
 							}
+							#Cameroon
+							AND = {
+								is_core = CMR
+								OR = {
+									is_core = SOK
+									is_core = ADW
+									is_core = NRI
+									is_core = KAN
+								}
+							}
 							#Central African Republic
 							AND = {
 								is_core = CAR
@@ -1810,6 +1820,8 @@ political_decisions = {
 									is_core = ADW
 									is_core = WTT
 									is_core = AZA
+									is_core = MNG
+									is_core = LBA
 								}
 							}
 							#Ivory Coast
@@ -1842,7 +1854,10 @@ political_decisions = {
 							}
 							#Zaire/Congo
 							AND = {
+							    OR = {
 								is_core = CNG
+								is_core = CGO
+								}
 								OR = {
 									is_core = LBA
 									is_core = MNG
@@ -1952,6 +1967,7 @@ political_decisions = {
 							AND = {
 								is_core = ZAM
 								is_core = KZB
+								is_core = LUN
 							}
 							
 							#Dahomey/Benin
@@ -2010,18 +2026,44 @@ political_decisions = {
 				}
 				any_owned = {
 					limit = {
+						is_core = CMR
+						OR = {
+							is_core = SOK
+							is_core = ADW
+							is_core = NRI
+							is_core = KAN
+						}
+					}
+					remove_core = SOK
+					remove_core = ADW
+					remove_core = NRI
+					remove_core = KAN
+				}
+			}
+			
+			any_neighbor_country = {
+				limit = {
+					civilized = yes
+					capital_scope = { NOT = { continent = africa } }
+				}
+				any_owned = {
+					limit = {
 						is_core = CAR
 						OR = {
 							is_core = KAN
 							is_core = ADW
 							is_core = WTT
 							is_core = AZA
+							is_core = LBA
+							is_core = MNG
 						}
 					}
 					remove_core = KAN
 					remove_core = ADW
 					remove_core = WTT
 					remove_core = AZA
+					remove_core = LBA
+				    remove_core = MNG					
 				}
 			}
 			
@@ -2120,7 +2162,10 @@ political_decisions = {
 				}
 				any_owned = {
 					limit = {
+					    OR = {
 						is_core = CNG
+						is_core = CGO
+						}
 						OR = {
 							is_core = LBA
 							is_core = LOA
@@ -2273,9 +2318,13 @@ political_decisions = {
 				any_owned = {
 					limit = {
 						is_core = ZAM
+						OR = {
 						is_core = KZB
+						is_core = LUN
+						     }
 						}
 		            remove_core = KZB
+					remove_core = LUN
 				}
 			}
 			

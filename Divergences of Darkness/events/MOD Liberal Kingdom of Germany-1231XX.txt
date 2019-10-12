@@ -789,12 +789,16 @@ country_event = {
 	trigger = {
 	    tag = SGF
 		exists = yes
+		NOT = { has_country_flag = dismantling_treaty }
+		BOH = { exists = yes }
+		BRG = { exists = yes }
 		OR = { 
 		has_global_flag = BRG_break_SGF 
 		has_global_flag = BOH_break_SGF
 		has_global_flag = SGF_crisis
 		}
         is_disarmed = yes
+		
 	}
 			
 	mean_time_to_happen = { 

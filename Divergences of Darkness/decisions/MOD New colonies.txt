@@ -2242,6 +2242,7 @@ political_decisions = {
 					OR = {
 						region = POR_2053
 						region = POR_2060
+						province_id = 2581
 					}
 				}
 				add_core = MOZ

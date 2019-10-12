@@ -3,8 +3,14 @@ political_decisions = {
 	call_geneva_convention = {
 		picture = call_geneva_convention
 		potential = {
+		    OR = {
 			tag = SWI
+			tag = GNV
+			}
+			OR = {
 			has_country_flag = SWI_neutral
+			tag = GNV
+			}
 			owns = 604
 			NOT = {
 				has_global_flag = geneva_convention_held

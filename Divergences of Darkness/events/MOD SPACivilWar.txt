@@ -832,6 +832,10 @@ country_event = {
 		}
 	secede_province = ZAN
 	}
+	2045 = { add_core = ZAN }
+	2047 = { add_core = ZAN }
+	2041 = { add_core = ZAN }
+	2040 = { add_core = ZAN }
 	ZAN = { 
     government = absolute_monarchy
 	political_reform = none_voting
@@ -1079,7 +1083,7 @@ country_event = {
 
 	trigger = {
 	tag = SPA
-	NOT = { has_global_flag = SCWARPORINDIE }
+	#NOT = { has_global_flag = SCWARPORINDIE }
 	NOT = { has_global_flag = SPA_CWENDED }
     has_global_flag = SCWARISHERE
 	war = no

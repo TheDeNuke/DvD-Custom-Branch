@@ -846,7 +846,10 @@ province_event = {
 	desc = "EVTDESC98800"
 	
 	trigger = {
+	    OR = {
 		region = ENG_1960
+		region = FRA_1816
+		}
 		owned_by = THIS
 		controlled_by = THIS
 		any_neighbor_province = {
@@ -1094,6 +1097,69 @@ province_event = {
 				remove_core = FJA
 				any_pop = { militancy = -3 }
 			}
+		}
+	}
+}
+
+province_event = {
+	id = 988060
+	title = "EVTNAME98800"
+	desc = "EVTDESC98806"
+	
+	trigger = {
+		region = FRA_1801
+		owned_by = THIS
+		controlled_by = THIS
+		any_neighbor_province = {
+			is_core = GMB
+		}
+		owner = {
+			civilized = yes
+			NOT = { capital_scope = { continent = africa } }
+		}
+		OR = {
+			AND = {
+				owner = { owns = 1785 }
+				GMB = { exists = no }
+			}
+			GMB = {
+				vassal_of = THIS
+				is_culture_group = THIS
+			}
+		}
+		NOT = {
+			is_core = GMB
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 120
+	    modifier = {
+			factor = 0.5
+			year = 1900
+		}
+	    modifier = {
+			factor = 0.1
+			year = 1925
+		}
+	}
+	
+	option = {
+		name = "An excellent development!"
+		state_scope = {
+			any_owned = {
+				limit = {
+					NOT = { is_core = GMB }
+				}
+				add_core = GMB
+				remove_core = FJA
+				remove_core = TOU
+				any_pop = { militancy = -3 }
+			}
+		}
+		GMB = {
+			add_accepted_culture = bambara
+			add_accepted_culture = fulbe
 		}
 	}
 }
@@ -1586,8 +1652,72 @@ province_event = {
 				add_core = SNG
 				remove_core = GMB
 				remove_core = FJA
+				remove_core = TOU
 				any_pop = { militancy = -3 }
 			}
+		}
+	}
+}
+
+province_event = {
+	id = 988210
+	title = "EVTNAME98800"
+	desc = "EVTDESC98820"
+	
+	trigger = {
+		region = FRA_1801
+		owned_by = THIS
+		controlled_by = THIS
+		any_neighbor_province = {
+			is_core = SNG
+		}
+		owner = {
+			civilized = yes
+			NOT = { capital_scope = { continent = africa } }
+		}
+		OR = {
+			AND = {
+				owner = { owns = 1783 }
+				SNG = { exists = no }
+			}
+			SNG = {
+				vassal_of = THIS
+				is_culture_group = THIS
+			}
+		}
+		NOT = {
+			is_core = SNG
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 120
+	    modifier = {
+			factor = 0.5
+			year = 1900
+		}
+	    modifier = {
+			factor = 0.1
+			year = 1925
+		}
+	}
+	
+	option = {
+		name = "An excellent development!"
+		state_scope = {
+			any_owned = {
+				limit = {
+					NOT = { is_core = SNG }
+				}
+				add_core = SNG
+				remove_core = FJA
+				remove_core = TOU
+				any_pop = { militancy = -3 }
+			}
+		}
+		SNG = {
+			add_accepted_culture = bambara
+			add_accepted_culture = fulbe
 		}
 	}
 }
@@ -2203,7 +2333,10 @@ province_event = {
 	desc = "EVTDESC98835"
 	
 	trigger = {
+	    OR = {
 		region = FRA_1937
+		region = FRA_1816
+		}
 		owned_by = THIS
 		controlled_by = THIS
 		any_neighbor_province = {
@@ -3298,7 +3431,10 @@ province_event = {
 	desc = "EVTDESC98852"
 	
 	trigger = {
+	    OR = {
 		region = FRA_1937
+		region = FRA_1816
+		}
 		owned_by = THIS
 		controlled_by = THIS
 		any_neighbor_province = {

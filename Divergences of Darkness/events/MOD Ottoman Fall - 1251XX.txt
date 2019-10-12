@@ -1680,6 +1680,8 @@ country_event = {
 		911 = { remove_core = TUR }
 		
 		910 = { remove_core = TUR }
+		
+		931 = { remove_core = TUR }
 
 		any_country = {
 			limit = {
@@ -1806,6 +1808,8 @@ country_event = {
 		911 = { remove_core = TUR }
 		
 		910 = { remove_core = TUR }
+		
+		931 = { remove_core = TUR }
 
 		any_country = {
 			limit = {

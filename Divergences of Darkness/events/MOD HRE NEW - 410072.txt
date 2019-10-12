@@ -152,6 +152,8 @@ country_event = {
 	}	
 }
 
+### Death of CAE due to Dismantlement ###
+
 country_event = { 
 	id = 410075
 	title = "HRE75.T"
@@ -183,6 +185,152 @@ country_event = {
 		}
 	secede_province = BRN
 	    }
+	}
+}
+
+### The Death of the SGF - New SGF released instantly collapses ###
+
+country_event = { 
+	id = 4100750
+	title = "The False Federation"
+	desc = "This government has very little legitimacy and has collapsed as soon as it had been created."
+	
+	trigger = { 
+	tag = SGF
+	exists = yes
+	has_country_flag = newly_released_nation
+	}
+	
+	mean_time_to_happen = { 
+	days = 1
+	}
+	
+	option = { 
+	name = "I love maintenance events"
+	clr_country_flag = newly_released_nation
+	inherit = BAV
+	capital = 599
+    any_owned = { 
+	limit = { 
+	is_core = HUA
+	    }
+	secede_province = HUA
+	}
+    any_owned = { 
+	limit = { 
+	is_core = BAD
+    }
+	secede_province = BAD
+	}
+    any_owned = { 
+	limit = { 
+	is_core = SAL
+    }
+	secede_province = SAL
+	}
+    any_owned = { 
+	limit = { 
+	is_core = AUS
+	}
+	secede_province = AUS
+	}
+    any_owned = { 
+    limit = { 
+	is_core = TIR
+    }
+	secede_province = TIR
+	}
+    any_owned = { 
+	limit = { 
+	is_core = SWI
+	}
+	secede_province = SWI
+	    }
+	change_tag = BAV
+	any_country = {
+		any_owned = {
+			limit = {
+				is_core = BAV
+			}
+			remove_core = BAV
+		  }
+	   }
+	}
+}
+
+### The Death of the NGF - New NGF released instantly collapses ###
+
+country_event = { 
+	id = 4100751
+	title = "The False League"
+	desc = "This government has very little legitimacy and has collapsed as soon as it had been created."
+	
+	trigger = { 
+	tag = NGF
+	exists = yes
+	has_country_flag = newly_released_nation
+	}
+	
+	mean_time_to_happen = { 
+	days = 1
+	}
+	
+	option = { 
+	name = "I love maintenance events"
+	clr_country_flag = newly_released_nation
+	inherit = BRN
+	capital = 549
+	any_owned = {
+	limit = {
+	is_core = PML
+	}
+	secede_province = PML
+	}
+	any_owned = {
+	limit = {
+	is_core = KRL
+	}
+	secede_province = KRL
+	}
+	any_owned = {
+	limit = {
+	is_core = PRU
+	}
+	secede_province = PRU
+	}
+	any_owned = {
+	limit = {
+	is_core = POM
+	}
+	secede_province = POM
+	}
+	any_owned = {
+	limit = {
+	is_core = SAX
+	}
+	secede_province = SAX
+	}
+	any_owned = {
+	limit = {
+	is_core = THU
+	}
+	secede_province = THU
+	}	
+	any_owned = {
+	limit = {
+	is_core = OLD
+	}
+	secede_province = OLD
+	}
+	change_tag = BRN
+	any_country = {
+		any_owned = {
+			limit = {
+				is_core = BRN
+			}
+			remove_core = BRN
+		  }
+	   }
 	}
 }
 
