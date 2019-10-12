@@ -538,7 +538,7 @@ political_decisions = {
 	
 	effect = { 
 	set_country_flag = Manchukuo
-	JAP = {
+	THIS = {
 			war = {
 				target = MCH
 				attacker_goal = {
