@@ -1785,6 +1785,7 @@ political_decisions = {
 			any_neighbor_country = {
 				civilized = yes
 				capital_scope = { NOT = { continent = africa } }
+				capital_scope = { NOT = { continent = asia } }			
 				any_owned_province = {
 						OR = {
 							#Nigeria
@@ -1966,8 +1967,10 @@ political_decisions = {
 							#Zambia
 							AND = {
 								is_core = ZAM
+								OR = {
 								is_core = KZB
 								is_core = LUN
+								}
 							}
 							
 							#Dahomey/Benin
@@ -1977,10 +1980,63 @@ political_decisions = {
 									is_core = TOU
 									is_core = MAS
 								}
-							}							
+							}
+							#Tranvacore
+							AND = {
+								is_core = TRA
+								NOT = { is_core = PRF }
+								OR = {
+									is_core = MYS
+									is_core = MDR
+									is_core = ADR
+									is_core = HYD
+									}
+							}
+							#Pakistan
+							AND = {
+								is_core = PAK
+								OR = {
+									is_core = SIN
+									is_core = KAS
+									is_core = JOD
+									is_core = MEW
+									is_core = JAI
+									is_core = JAS
+									is_core = BIK
+									
+								}
+							}	
+							#Mughalistan
+							AND = {
+								is_core = MUG
+								NOT = { is_core = PRF }
+								OR = {
+									is_core = KAS
+									is_core = BUN
+									is_core = AWA
+									is_core = BIH
+									is_core = GWA
+									is_core = ORI
+									is_core = NAG
+								}
+							}
+							
+							#The Raj
+							AND = {
+								is_core = RAJ
+								NOT = { is_core = PRF }
+								OR = {
+									is_core = JOD
+									is_core = MEW
+									is_core = JAI
+									is_core = JAS
+									is_core = BIK
+									is_core = BER
+								}
+							}
+                        }							
 					}
 				}
-			}
 		}
 	
 		allow = {
@@ -2383,6 +2439,106 @@ political_decisions = {
 					}
 					remove_core = TOU
 					remove_core = MAS
+				}
+			}
+			any_neighbor_country = {
+				limit = {
+					civilized = yes
+					capital_scope = { NOT = { continent = asia } }
+				}
+				any_owned = {
+					limit = {
+						is_core = TRA
+						OR = {
+							is_core = MYS
+							is_core = MDR
+							is_core = ADR
+							is_core = HYD
+							}
+						}
+					remove_core = MYS
+					remove_core = MDR
+					remove_core = ADR
+					remove_core = HYD
+				}
+			}	
+			any_neighbor_country = {
+				limit = {
+					civilized = yes
+					capital_scope = { NOT = { continent = asia } }
+				}
+				any_owned = {
+					limit = {
+						is_core = PAK
+						OR = {
+							is_core = SIN
+							is_core = KAS
+							is_core = JOD
+							is_core = MEW
+							is_core = JAI
+							is_core = JAS
+							is_core = BIK				
+							}
+						}
+					remove_core = SIN
+					remove_core = KAS
+					remove_core = JOD
+					remove_core = MEW
+					remove_core = JAI
+					remove_core = JAS
+					remove_core = BIK
+				}
+			}
+			any_neighbor_country = {
+				limit = {
+					civilized = yes
+					capital_scope = { NOT = { continent = asia } }
+				}
+				any_owned = {
+					limit = {
+						is_core = MUG
+						OR = {
+							is_core = KAS
+							is_core = BUN
+							is_core = AWA
+							is_core = BIH
+							is_core = GWA
+							is_core = ORI
+							is_core = NAG
+						}
+					}
+					remove_core = KAS
+					remove_core = BUN
+					remove_core = AWA
+					remove_core = BIH
+					remove_core = GWA
+					remove_core = ORI
+					remove_core = NAG
+				}
+			}	
+			any_neighbor_country = {
+				limit = {
+					civilized = yes
+					capital_scope = { NOT = { continent = asia } }
+				}
+				any_owned = {
+					limit = {
+						is_core = RAJ
+						OR = {
+							is_core = JOD
+							is_core = MEW
+							is_core = JAI
+							is_core = JAS
+							is_core = BIK
+							is_core = BER
+						}
+					}
+					remove_core = JOD
+					remove_core = MEW
+					remove_core = JAI
+					remove_core = JAS
+					remove_core = BIK
+					remove_core = BER
 				}
 			}			
 		}

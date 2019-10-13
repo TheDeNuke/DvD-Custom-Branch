@@ -300,6 +300,8 @@ political_decisions = {
 			all_core = { remove_core = THIS }
 			change_tag = RAJ
 			ENG_1264 = { add_core = RAJ }
+			ENG_1264 = { remove_core = PAK }
+			ENG_1264 = { remove_core = PRF }
 			random_country = {
 				limit = {
 					tag = BIK
@@ -653,6 +655,7 @@ political_decisions = {
 			NOT = { OR = {
 			tag = HND
 			tag = PRF
+			tag = PAK
 			tag = MUG
 			tag = DRA
 			tag = BHA
@@ -719,6 +722,8 @@ political_decisions = {
 			}
 			prestige = 5
 			ENG_1264 = { add_core = RAJ }
+			ENG_1264 = { remove_core = PAK }
+			ENG_1264 = { remove_core = PRF }			
 			any_owned = {
 				limit = {
 					region = ENG_1264
@@ -845,6 +850,8 @@ political_decisions = {
 		
 		effect = {
 		    RAJ = { capital = 1266 }
+			ENG_1264 = { remove_core = PAK }
+			ENG_1264 = { remove_core = PRF }	
 			prestige = 3
 			any_country = {
 				limit = { has_country_flag = rajputana_master }
@@ -884,6 +891,7 @@ political_decisions = {
 			set_country_flag = pakistan_master
 			KAL_1221 = { add_core = PAK }
 			SIN_1288 = { add_core = PAK }
+			ENG_1264 = { add_core = PAK }
 			1231 = { add_core = PAK }
 			1228 = { add_core = PAK }
 			PAK = { all_core = { remove_core = HND } }
@@ -968,6 +976,7 @@ political_decisions = {
 			set_country_flag = mughalstan_master
 			HND = { all_core = { remove_core = MUG } }
 			ENG_1236 = { add_core = MUG }
+			ENG_1236 = { remove_core = PNJ }
 			ENG_1247 = { add_core = MUG }
 			MUG_1 = { add_core = MUG }
 			MUG_2 = { add_core = MUG }

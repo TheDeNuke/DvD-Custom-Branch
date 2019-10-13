@@ -1339,6 +1339,7 @@ country_event = {
 	   ENG_1297 = { add_core = PRF }
 	   HYD_1283 = { add_core = PRF }
 	   ## Removable ###
+	   ENG_1264 = { add_core = PRF }
 	   ENG_1261 = { add_core = PRF }
 	   NAG_1277 = { add_core = PRF }
 	   ENG_1275 = { add_core = PRF }
@@ -1562,6 +1563,71 @@ province_event = {
 		PRF = { remove_accepted_culture = kanauji }
 	}
 }
+
+#### Kashmir ####
+
+province_event = {
+	id = 891035
+	title = "HND24.T"
+	desc = "HND26.D"
+	
+	trigger = {
+		region = PAN_1224
+		owned_by = THIS
+		controlled_by = THIS
+		any_neighbor_province = {
+			is_core = MUG
+		}
+		owner = {
+			civilized = yes
+			NOT = { capital_scope = { continent = asia } }
+		}
+		OR = {
+			AND = {
+				owner = { owns = 1236 }
+				MUG = { exists = no }
+			}
+			MUG = {
+				vassal_of = THIS
+			}
+		}
+		NOT = {
+			is_core = MUG
+			MUG = {
+				vassal_of = THIS
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 120
+	    modifier = {
+			factor = 0.5
+			year = 1870
+		}
+	    modifier = {
+			factor = 0.1
+			year = 1880
+		}
+	}
+	
+	option = {
+		name = "An excellent development!"
+		state_scope = {
+			any_owned = {
+				limit = {
+					NOT = { is_core = MUG }
+				}
+				add_core = MUG
+				remove_core = AFG
+				remove_core = PNJ
+				remove_core = DUR
+				any_pop = { militancy = -3 }
+			}
+		}
+		MUG = { add_accepted_culture = kashmiri }
+	}
+}	
 
 ## Nagpur ##
 
@@ -1807,6 +1873,7 @@ province_event = {
 				add_core = PAK
 				remove_core = HND
 				remove_core = AFG
+				remove_core = DUR
 				any_pop = { militancy = -3 }
 			}
 		}
@@ -1869,6 +1936,7 @@ province_event = {
 				add_core = PAK
 				remove_core = HND
 				remove_core = AFG
+				remove_core = DUR
 				any_pop = { militancy = -3 }
 			}
 		}
@@ -1930,6 +1998,8 @@ province_event = {
 				}
 				add_core = PAK
 				remove_core = AFG
+				remove_core = DUR
+				remove_core = PNJ
 				any_pop = { militancy = -3 }
 			}
 		}
