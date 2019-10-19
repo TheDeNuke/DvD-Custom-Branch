@@ -436,6 +436,8 @@ reunification_of_china_KMT = {
 		
 		effect = {
 			clr_global_flag = warlord_era_has_begun
+			set_global_flag = reconquest_of_china	
+            set_country_flag = your_winner_china	
 			set_country_flag = CHI_reunion
 			capital = 1612
 			prestige = 20
@@ -509,8 +511,7 @@ reunification_of_china_KMT = {
 					NOT = { tag = THIS }
 				}
 				country_event = 44165			
-			}
-			set_global_flag = reconquest_of_china			
+			}		
 		}
 		
 		ai_will_do = {
@@ -560,6 +561,7 @@ reunification_of_china_communist = {
 		effect = {
 			clr_global_flag = warlord_era_has_begun
 			set_global_flag = reconquest_of_china
+            set_country_flag = your_winner_china	
 			set_country_flag = CHI_reunion
 			prestige = 20
 			capital = 1612
@@ -710,6 +712,7 @@ reunification_of_china = {
 		effect = {
 			clr_global_flag = warlord_era_has_begun
 			set_global_flag = reconquest_of_china
+            set_country_flag = your_winner_china
 			set_country_flag = CHI_reunion
 			prestige = 20
 			capital = 1612

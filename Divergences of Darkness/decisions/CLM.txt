@@ -315,19 +315,16 @@ political_decisions = {
 	
 	secure_south_granada = { 
 	potential = { 
-	OR = { 
-	tag = GRA 
-	tag = CLM 
-		}
+	tag = GRA
 	all_core = { owned_by = THIS }
 	NOT = { has_global_flag = Hispanic_Andes }
-		}
+	}
 		
 	allow = { 
 	is_greater_power = yes 
 	INC = { in_sphere = THIS }
 	nationalism_n_imperialism = 1 
-		}
+	}
 		
 	effect = { 
 	relation = { who = INC value = -200 }

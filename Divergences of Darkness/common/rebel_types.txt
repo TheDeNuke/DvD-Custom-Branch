@@ -5267,7 +5267,7 @@ colonial_rebels = {
 	}
 	
 	defection = culture
-	independence = none
+	independence = culture 
 	defect_delay = 12
 	
 	ideology = liberal

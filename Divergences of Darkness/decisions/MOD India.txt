@@ -642,6 +642,87 @@ political_decisions = {
 	PRF = { inherit = THIS }
 	}
 }
+	
+	central_PRF_federation = {
+	
+	picture = map_india
+		
+	potential = { 
+	tag = PRF
+	year = 1900
+	has_global_flag = PRF_formed
+	has_global_flag = PRF_is_formal
+    has_global_flag = berlin_conference
+	NOT = { has_country_flag = central_PRF }
+	
+	}
+	
+	allow = { 
+	all_core = { owned_by = THIS }
+	NOT = { is_substate = yes }
+	NOT = { is_vassal = yes }
+	}
+	
+	effect = { 
+	set_country_flag = central_PRF
+	prestige = 10
+	PRF = { all_core = { remove_core = MYS } }
+	PRF = { all_core = { remove_core = MDR } }
+ 	PRF = { all_core = { remove_core = ORI } }
+ 	PRF = { all_core = { remove_core = ADR } }
+ 	PRF = { all_core = { remove_core = HYD } }
+ 	PRF = { all_core = { remove_core = KAS } }
+ 	PRF = { all_core = { remove_core = JOD } }
+ 	PRF = { all_core = { remove_core = MEW } }
+ 	PRF = { all_core = { remove_core = JAI } }
+ 	PRF = { all_core = { remove_core = JAS } }
+ 	PRF = { all_core = { remove_core = BIK } }	
+ 	PRF = { all_core = { remove_core = AWA } }
+ 	PRF = { all_core = { remove_core = BIH } }
+ 	PRF = { all_core = { remove_core = GWA } }	
+ 	PRF = { all_core = { remove_core = ORI } }
+ 	PRF = { all_core = { remove_core = NAG } }	
+ 	PRF = { all_core = { remove_core = BHO } }
+ 	PRF = { all_core = { remove_core = VIJ } }		
+	}
+}
+
+	claim_PRF_federation = {
+	
+	picture = map_india
+		
+	potential = { 
+	tag = PRF
+	year = 1900
+	has_country_flag = central_PRF
+	has_global_flag = PRF_formed
+	has_global_flag = PRF_is_formal
+    has_global_flag = berlin_conference
+	NOT = { has_country_flag = united_PRF }
+	}
+	
+	allow = { 
+	all_core = { owned_by = THIS }
+	OR = { is_secondary_power = yes is_greater_power = yes }
+	NOT = { is_substate = yes }
+	NOT = { is_vassal = yes }
+	}
+	
+	effect = { 
+	set_country_flag = united_PRF
+	prestige = 25
+	ENG_1264 = { add_core = PRF }
+	ENG_1261 = { add_core = PRF }
+	NAG_1277 = { add_core = PRF }
+	ENG_1275 = { add_core = PRF }
+	MUG_3 = { add_core = PRF }
+	ENG_1291 = { add_core = PRF }
+	ENG_1305 = { add_core = PRF }	
+	add_accepted_culture = oriya # Can be removed
+	add_accepted_culture = kanauji # Can be removed
+	add_accepted_culture = gujarati # Can be removed
+	}
+}
 
 
 ############################ The Indian Colonial States ########################################

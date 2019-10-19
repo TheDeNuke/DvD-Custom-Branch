@@ -379,7 +379,7 @@ country_event = {
 	RAP = {
 			change_variable = {
 				which = colombian_unity
-				value = 1
+				value = 2
 			}
 		}
 	ai_chance = { 

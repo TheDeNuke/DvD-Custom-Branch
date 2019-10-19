@@ -126,7 +126,7 @@ GER45.T;The Compromise of Frankfurt;;;;;;;;;;;;;
 GER45.D;The two German states have unified today, bringing much of Germany under their power. German unification will surely be completed soon.;;;;;;;;;;;;;
 123145.A;Deutschland von Tyrol zum Belt!;;;;;;;;;;;;;
 CLM67.T;The Northern Rebellion;;;;;;;;;;;;;;x,,,,,,,,,,,,,,,,,,,,
-CLM67.D;Our unmistakable unity is only broken in two regions: one is in the Portuguese Colonies of Lusitania and the other is the Native Amerigan Nations of the South. This war has raged on since 1832 and Lusitania has finally given up being friendly towards our cause and declared a separate independence in the hope that if they defeat us then they shall not be annexed by Spain again. Already there are rumours in the South of another potential revolt...;;;;;;;;;;;;;;x,,,,,,,,,,,,,,,,,,,,
+CLM67.D;Our unmistakable unity is only broken in two regions: one is in the Portuguese Colonies of Lusitania and the other is the Native Amerigan Nations of the South. The present and most bloody stage of this war has raged on since Eighteen-Forty-Two and Lusitania has finally given up being friendly towards our cause and declared a separate republic in the hope that if they defeat us then they shall not be annexed by Spain again. Already there are rumours in the south of another potential revolt...;;;;;;;;;;;;;;x,,,,,,,,,,,,,,,,,,,,
 465160.A;We will fight this rebellion and crush it.;;;;;;;;;;;;;;x,,,,,,,,,,,,,,,,,,,,
 465160.B;We cannot fight this right now. Make a deal.;;;;;;;;;;;;;;x,,,,,,,,,,,,,,,,,,,,
 CLM68.T;The Southern Rebellion;;;;;;;;;;;;;;x,,,,,,,,,,,,,,,,,,,,
@@ -148,6 +148,35 @@ EVTOPTB333041;$FROMCOUNTRY$ can go to hell.;;;;;;;;;;;;x,,,,,,,,,,,,,,,,,,,,
 EVTNAME11003;Regency Council Dissolved;;;;;;;;;;;;x,,,,,,,,,,,,,,,,,,,,
 EVTDESC11003;$COUNTRY$ still had a active regency council due to a inability of the new government to dissolve it for a short period of time. However, a small effort has been put forward by the new government to dissolve this regency council and now $COUNTRY$ does not have to deal with it any more.;;;;;;;;;;;;x,,,,,,,,,,,,,,,,,,,,
 EVTOPTA11003;$COUNTRY$ is now free from the Regency.;;;;;;;;;;;;x,,,,,,,,,,,,,,,,,,,,
+##### The New Columbian Conquests ####;;;;;;;;;;;;;;x,,,,,,,,
+the_northern_expansion_title;The Northern Expansion;;;;;;;;;;;;;
+the_northern_expansion_desc;With our choice to maintain our capital in Mexico City, we have set in motion our intent to conquer territories that are north of our present borders.;;;;;;;;;;;;;
+the_southern_expansion_title;The Southern Expansion;;;;;;;;;;;;;
+the_southern_expansion_desc;With our choice to move our capital to Liberia, we have set in motion our intent to conquer territories that are south of our present borders.;;;;;;;;;;;;;
+expand_california_title;Expand California;;;;;;;;;;;;;
+expand_california_desc;When Spanish explorers had first discovered the coastline of what is know known as Qingqiu, they had claimed that a large amount of territory to the north of the Lusitanian colonies would be known as California. Unfortunately- as the Qingqiuian settlers had moved south they had done the same and made a bold claim that all territory to the south would be known as Shangu Siwang. After our previous wars and our proof that the Arcadian continent would not be exclusively the realm of the Arcadians, we have finally remedied this issue and can now claim that the land shall be forever more known as California!;;;;;;;;;;;;;
+destroy_incan_empire_title;Destroy the Incan Empire;;;;;;;;;;;;;
+destroy_incan_empire_desc;The greatest failure of the Spanish Empire was when it had failed to successfully conquer the Incan Empire. After deals brokered with Beornia to conquer the south of the empire and our total invasion of the north, we have finally avenged the failures of the Spanish Empire and have destroyed the Inca menace!;;;;;;;;;;;;;
+granada_returns_title;Restoration of Granada;;;;;;;;;;;;;
+granada_returns_desc;With the completion of our glorious conquest and having secured our place as a great power, we can finally take the actions that are needed to restore the Republic of Granada away from its present military occupation.;;;;;;;;;;;;;
+lst_returns_title;Restoration of Lusitania;;;;;;;;;;;;;
+lst_returns_desc;With the completion of our glorious conquest and having secured our place as a great power, we can finally take the actions that are needed to restore the Republic of Lusitania away from its present military occupation.;;;;;;;;;;;;;
+CLM71.T;The Capital Debate;;;;;;;;;;;;;;x,,,,,,,,,,,,,,,,,,,,
+CLM71.D;As Gran Columbia nears its fiftieth anniversary, a fiery debate has started in our government regarding if Gran Columbia should move its capital or not. Granadan nationalists attending have stated that the capital should be moved to a far more appropriate location (in this case the city of Liberia) rather then remain in Mexico City and Lusitanian nationalists have stated that they will not tolerate any attempt to move the capital away from Mexico City..;;;;;;;;;;;;;;x,,,,,,,,,,,,,,,,,,,,
+465165.A;We had plans for this anniversary, you know?;;;;;;;;;;;;;;x,,,,,,,,,,,,,,,,,,,,
+CLM72.T;The 50th Anniversary of Gran Columbia;;;;;;;;;;;;;;x,,,,,,,,,,,,,,,,,,,,
+CLM72.D;It has been fifty years since the foundation of the Tetrarchy that had reorganized the Columbian Alliance into a single unified nation. This nation had prevailed against both Spain and its own instabilities to become the single unified power it that it is today. However, there is now a critical concern that as the century continues our power is starting to decline and that the Inca and Arcadian powers will eventually surpass us. We must also be concerned at the growing nationalist movements in both Lusitania and Granada are threatening to tear our nation to pieces with the implicit agenda of deciding where our capital shall be located regardless of any potential compromise. We must choose where we stand on the idea of the capital moving and what our intent is regarding future expansion IMMEDIATLY or risk our potential collapse!;;;;;;;;;;;;;;x,,,,,,,,,,,,,,,,,,,,
+465166.A;Keep the capital in Mexico City;;;;;;;;;;;;;;x,,,,,,,,,,,,,,,,,,,,
+465166.B;Move the capital to Liberia;;;;;;;;;;;;;;x,,,,,,,,,,,,,,,,,,,,
+CLM73.T;The Granadan Betrayal;;;;;;;;;;;;;;x,,,,,,,,,,,,,,,,,,,,
+CLM73.D;The Republic of Granada had been taken over by nationalist forces today with the implicit desire of succession. The Columbian Military had proceeded with a operation to prevent this succession but this had effectively resulted in the collapse of the Republic of Granada and reduced our status in the region to nothing more then a military occupation. We may be eventually able to restore the Republic of Granada as a federal state but we will have to finish our plans in the north before attempting such a task.;;;;;;;;;;;;;;x,,,,,,,,,,,,,,,,,,,,
+465167.A;What a shame;;;;;;;;;;;;;;x,,,,,,,,,,,,,,,,,,,,
+CLM74.T;The Lusitanian Betrayal;;;;;;;;;;;;;;x,,,,,,,,,,,,,,,,,,,,
+CLM74.D;The Republic of Lusitania had been taken over by nationalist forces today with the implicit desire of succession. The Columbian Military had proceeded with a operation to prevent this succession but this had effectively resulted in the collapse of the Republic of Lusitania and reduced our status in the region to nothing more then a military occupation. We may be eventually able to restore order in Republic of Lusitania as a federal state but we will have to finish our plans in the north before attempting such a task.;;;;;;;;;;;;;;x,,,,,,,,,,,,,,,,,,,,
+465168.A;What a shame;;;;;;;;;;;;;;x,,,,,,,,,,,,,,,,,,,,
+CLM75.T;Gran Columbia moves south!;;;;;;;;;;;;;;x,,,,,,,,,,,,,,,,,,,,
+CLM75.D;Gran Columbia has declared that it wishes to eliminate the Incan Empire and freely invites us to involve ourselves in this endeavour. We are free to take any land below the line designated as their claims.;;;;;;;;;;;;;;x,,,,,,,,,,,,,,,,,,,,
+465169.A;Beornia shall grow stronger!;;;;;;;;;;;;;;x,,,,,,,,,,,,,,,,,,,,
 ##### New Ottoman Localization ####;;;;;;;;;;;;;;x,,,,,,,,
 janissary_rule;Phanariote Rule;;;;;;;;;;;;;
 janissary_rule_desc;The Phanariote Society has seized power over the state and installed a brutal dictatorship.;;;;;;;;;;;;;
@@ -1533,6 +1562,10 @@ formalize_PRF_federation_title;Formalize the Confederation;;;;;;;;;;;x;;;
 formalize_PRF_federation_desc;With European interests in this region in decline as they move on to conquer the dark continent and our own complete independence from our previous colonial overlords, we should embark on a program to formalize the CIIC and make it a official nation state in Central India.;;;;;;;;;;;x;;;
 join_PRF_federation_title;Join the Confederation;;;;;;;;;;;x;;;
 join_PRF_federation_desc;As we are a member of the CIIC that has been recently granted (either by treaty or by force) independence from our colonial overlords. We should immediately join the Princely Confederation to further protect ourselves from foreign influences.;;;;;;;;;;;x;;;
+central_PRF_federation_title;Centralize the Confederation;;;;;;;;;;;x;;;
+central_PRF_federation_desc;We have finished in the unification of the territories that are considered ours by right and we can now reorganize our states in a way that will ensure future stability of this Confederation.;;;;;;;;;;;x;;;
+claim_PRF_federation_title;The Congress Territory;;;;;;;;;;;x;;;
+claim_PRF_federation_desc;When various Indian princes gathered in Europe to announce the creation of the Princely Confederation, we were ultimately betrayed by Europe as they created false Indian states which deliberately excluded our influence. With the centralization of our confederation complete and our rise to power in India. It is now time to reclaim what is rightfully ours!;;;;;;;;;;;x;;;
 organize_pakistan_title;Organize Pakistan;;;;;;;;;;;;;
 organize_pakistan_desc;We should organize the Pakistani colonies to better reflect both a local structure, as well as set up the possibility for autonomous islamic rule-- dominated by our benevolent colonial administrators, of course.;;;;;;;;;;;;;
 reorganize_pakistan_title;Claim Pakistan;;;;;;;;;;;;;

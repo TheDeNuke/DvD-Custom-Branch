@@ -24,6 +24,29 @@ country_event = {
 			country_event = 19042
 		}
 	}
+		
+	option = {
+		name = "Deny all further excavation requests!"	
+        set_global_flag = the_player_decrees_egypt		
+		FROM = {
+			country_event = 19042
+		}
+		any_country = {
+		limit = {
+		OR = {
+		is_greater_power = yes
+		is_secondary_power = yes
+		     }
+	    }
+		relation = {
+			who = THIS
+			value = -25
+		    }
+		}
+		ai_chance = {
+			factor = 0
+		}
+	}
 }
 
 #Egypt Allows
@@ -362,6 +385,30 @@ country_event = {
 			country_event = 190421
 		}
 	}
+	
+	option = {
+		name = "Deny all further excavation requests!"	
+        set_global_flag = the_player_decrees_mycenaean	
+		FROM = {
+			country_event = 190421
+		}
+		any_country = {
+		limit = {
+		OR = {
+		is_greater_power = yes
+		is_secondary_power = yes
+		     }
+	    }
+		relation = {
+			who = THIS
+			value = -25
+		    }
+		}
+		
+		ai_chance = {
+			factor = 0
+		}
+	}
 }
 
 #Greece Allows
@@ -609,6 +656,30 @@ country_event = {
 		name = "1904012.B"
 		FROM = {
 			country_event = 1904212
+		}
+	}
+	
+	option = {
+		name = "Deny all further excavation requests!"	
+        set_global_flag = the_player_decrees_minoan		
+		FROM = {
+			country_event = 1904212
+		}
+		any_country = {
+		limit = {
+		OR = {
+		is_greater_power = yes
+		is_secondary_power = yes
+		     }
+	    }
+		relation = {
+			who = THIS
+			value = -25
+		    }
+		}
+		
+		ai_chance = {
+			factor = 0
 		}
 	}
 }
@@ -1065,6 +1136,29 @@ country_event = {
 			country_event = 201006
 		}
 	}
+	
+	option = {
+		name = "Deny all further excavation requests!"	
+        set_global_flag = the_player_decrees_maya		
+		FROM = {
+			country_event = 201006
+		}
+		any_country = {
+		limit = {
+		OR = {
+		is_greater_power = yes
+		is_secondary_power = yes
+		     }
+	    }
+		relation = {
+			who = THIS
+			value = -25
+		    }
+		}
+		ai_chance = {
+			factor = 0
+		}
+	}
 }
 
 ### Guatemala gives access
@@ -1138,6 +1232,29 @@ country_event = {
 		prestige = 1
 		FROM = {
 			country_event = 201012
+		}
+	}
+	
+	option = {
+		name = "Deny all further excavation requests!"	
+        set_global_flag = the_player_decrees_mesopotamian		
+		FROM = {
+			country_event = 201012
+		}
+		any_country = {
+		limit = {
+		OR = {
+		is_greater_power = yes
+		is_secondary_power = yes
+		     }
+	    }
+		relation = {
+			who = THIS
+			value = -25
+		    }
+		}
+		ai_chance = {
+			factor = 0
 		}
 	}
 }

@@ -1389,8 +1389,8 @@ country_event = {
 	option = {
 		name = "46470.A"
 		random_list = {
-			15 = { country_event = 46471 }
-			65 = { country_event = 46472 }
+			40 = { country_event = 46471 }
+			40 = { country_event = 46472 }
 			20 = { country_event = 46473 }
 		}
 	}
@@ -1421,6 +1421,8 @@ country_event = { ######Federation is legitime
 		}
 		add_accepted_culture = lusitanian
 		add_accepted_culture = central_american
+		set_country_flag = GRA_not_federation
+		set_global_flag = columbian_unity
 		prestige = 25	
 	}
 }

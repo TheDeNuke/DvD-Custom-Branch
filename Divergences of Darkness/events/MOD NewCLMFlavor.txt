@@ -1,3 +1,7 @@
+
+
+############## THE COLUMBIAN WAR REVOLTS ################
+
 country_event = { 
 
 	id = 465160
@@ -424,5 +428,162 @@ country_event = {
 				value = 1
 			}
 		}
+	}
+}
+
+############## THE 50TH ANNIVERSARY OF GRAN COLUMBIA ################
+
+country_event = {
+
+	id = 465165
+
+	title = "CLM71.T"
+	desc = "CLM71.D"
+	picture = "troubles_in_streets"
+	
+	trigger = { 
+	tag = CLM 
+	year = 1881
+	NOT = { year = 1889 }
+	has_global_flag = columbian_unity	
+	NOT = { has_global_flag = the_columbian_capital }
+	NOT = { has_country_flag = 50th_CLM_begins }
+	}
+	
+	
+	mean_time_to_happen = { 
+	months = 3
+	}
+	
+	option = { 
+	name = "465165.A"
+	set_country_flag = 50th_CLM_begins
+	set_country_flag = a_fair_warning_CLM
+	}
+}
+
+country_event = {
+
+	id = 465166
+
+	title = "CLM72.T"
+	desc = "CLM72.D"
+	picture = "?"
+	
+	major = yes
+	
+	trigger = { 
+	tag = CLM 
+	year = 1882
+	NOT = { year = 1890 }
+	has_global_flag = columbian_unity
+	NOT = { has_global_flag = the_columbian_capital }
+	has_country_flag = a_fair_warning_CLM
+	}
+	
+	
+	mean_time_to_happen = { 
+	months = 6
+	}
+	
+	option = { 
+	name = "465166.A"
+	clr_country_flag = 50th_CLM_begins 
+	clr_country_flag = a_fair_warning_CLM
+	set_global_flag = the_columbian_capital
+	set_country_flag = the_northern_capital_CLM
+	LST = { all_core = { add_core = CLM } }
+	AZT = { all_core = { remove_core = AZT } }
+	JLS = { all_core = { remove_core = JLS } }
+    MEX = { all_core = { remove_core = UCA } }
+	MEX_2162 = { add_core = AZT }
+	}
+	
+	option = { 
+	name = "465166.B"
+	clr_country_flag = 50th_CLM_begins 
+	clr_country_flag = a_fair_warning_CLM
+	set_global_flag = the_columbian_capital
+	set_country_flag = the_southern_capital_CLM
+	capital = 2202
+	primary_culture = central_american
+	GRA = { all_core = { add_core = CLM } }
+	SAN = { all_core = { remove_core = SAN } }
+	NIC = { all_core = { remove_core = NIC } }
+	PNM = { all_core = { remove_core = PNM } }
+    UCA = { all_core = { remove_core = MEX } }
+	}
+}
+
+country_event = {
+
+	id = 465167
+
+	title = "CLM73.T"
+	desc = "CLM73.D"
+	picture = "nationalists"
+	
+	trigger = { 
+	tag = CLM 
+	has_country_flag = the_northern_capital_CLM
+	NOT = { has_country_flag = CLM_can_now_expand }
+	}
+	
+	
+	mean_time_to_happen = { 
+	months = 1
+	}
+	
+	option = { 
+	name = "465167.A"
+	prestige = -5
+    remove_accepted_culture = granadan
+	GRA = { all_core = { remove_core = CLM } }
+	set_country_flag = CLM_can_now_expand
+	}
+}
+
+country_event = {
+
+	id = 465168
+
+	title = "CLM74.T"
+	desc = "CLM74.D"
+	picture = "nationalists"
+	
+	trigger = { 
+	tag = CLM 
+	has_country_flag = the_southern_capital_CLM
+	NOT = { has_country_flag = CLM_can_now_expand }
+	}
+	
+	
+	mean_time_to_happen = { 
+	months = 1
+	}
+	
+	option = { 
+	name = "465168.A"
+	prestige = -5
+    remove_accepted_culture = lusitanian
+	LST = { all_core = { remove_core = CLM } }
+	set_country_flag = CLM_can_now_expand
+	}
+}
+
+country_event = {
+
+	id = 465169
+
+	title = "CLM75.T"
+	desc = "CLM75.D"
+	picture = "ARC_WEST"
+	
+	is_triggered_only = yes
+
+	option = { 
+	name = "465169.A"
+	prestige = 10
+	set_country_flag = CLM_NAN_expansion 
 	}
 }

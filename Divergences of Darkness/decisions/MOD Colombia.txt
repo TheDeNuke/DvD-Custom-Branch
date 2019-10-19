@@ -812,4 +812,223 @@ political_decisions = {
 	      }
 	   }
 	}
+	
+	############## THE GREAT COLUMBIAN EXPANSION ###############
+	
+	the_northern_expansion = { 
+		picture = Manifest_Destiny_ARC
+		
+		potential = { 
+		tag = CLM 
+	    has_country_flag = CLM_can_now_expand
+		has_country_flag = the_northern_capital_CLM
+		NOT = { has_country_flag = the_northern_expansion_CLM }
+		}
+		
+		allow = { 
+		nationalism_n_imperialism = 1 
+		all_core = { owned_by = THIS }
+		OR = { is_secondary_power = yes is_greater_power = yes }
+		}
+		
+		effect = { 
+		set_country_flag = the_northern_expansion_CLM
+		DNG_88 = { add_core = CLM }
+		DNG_2 = { add_core = CLM }
+		NA_6 = { add_core = CLM }
+		NA_5 = { add_core = CLM }
+		NA_109 = { add_core = CLM }
+		NA_4 = { add_core = CLM }
+		PLA_1 = { add_core = CLM }			
+		}
+	}
+	
+	the_southern_expansion = { 
+		picture = Manifest_Destiny_ARC
+		
+		potential = { 
+		tag = CLM 
+	    has_country_flag = CLM_can_now_expand
+		has_country_flag = the_southern_capital_CLM
+		NOT = { has_country_flag = the_southern_expansion_CLM }
+		}
+		
+		allow = { 
+		nationalism_n_imperialism = 1 
+		all_core = { owned_by = THIS }
+		OR = { is_secondary_power = yes is_greater_power = yes }
+		}
+		
+		effect = { 
+		set_country_flag = the_southern_expansion_CLM
+		INC = { all_core = { add_core = NAN } }
+		INC = { all_core = { add_core = ARU } }
+		NAN = { country_event = 465169 }
+		### Arequipia States ###
+		PEU_2297 = { add_core = CLM }
+		PEU_2303 = { add_core = CLM }
+		PEU_2297 = { add_core = ARE }
+		PEU_2303 = { add_core = ARE }
+		PEU_2297 = { add_core = GRA }
+		PEU_2303 = { add_core = GRA }	
+        ### Bolivia States ###		
+		BOL_2321 = { add_core = CLM }
+		BOL_2305 = { add_core = CLM }
+		INC_2308 = { add_core = CLM }
+		ARG_2368 = { add_core = CLM }
+		CLM = { all_core = { remove_core = ARU } }
+		CLM = { all_core = { remove_core = NAN } }
+		GRA = { all_core = { remove_core = ARU } }
+		GRA = { all_core = { remove_core = NAN } }
+		ARE = { all_core = { remove_core = ARU } }
+		ARE = { all_core = { remove_core = NAN } }
+		any_country = {
+		limit = {
+		tag = AZL
+		exists = yes
+		owns = 2348
+		NOT = { exists = NAN }
+		}
+		NAN = { all_core = { add_core = AZL } }
+		     }	
+		}
+	}
+
+	############## CORE REORGINIZATION DECISIONS ###############
+	
+	expand_california = { 
+		picture = Manifest_Destiny_ARC
+		
+		potential = { 
+		tag = CLM 
+	    has_country_flag = the_northern_expansion_CLM
+		has_country_flag = the_northern_capital_CLM
+		NOT = { has_country_flag = california_dreaming_CLM }
+		}
+		
+		allow = { 
+		all_core = { owned_by = THIS }
+		OR = { is_secondary_power = yes is_greater_power = yes }
+		}
+		
+		effect = { 
+		set_country_flag = california_dreaming_CLM
+		prestige = 25
+		89 = {
+		add_core = LST
+		remove_core = DNG
+		change_province_name = "Los Angeles"
+		add_province_modifier = {
+		name = gold_rush
+		duration = 3650
+		}
+		state_scope = {
+		  change_region_name = "Northern California"
+		    }
+		 }
+		 87 = { 
+		 add_core = LST
+		 change_province_name = "San Simeon"
+		 }
+		 88 = { 
+		 add_core = LST
+		 change_province_name = "Tulare"
+		 }
+		 96 = { 
+		 add_core = LST
+		 change_province_name = "Las Vegas"
+		 }
+		 95 = { 
+		 add_core = LST
+		 }
+		 94 = { 
+		 add_core = LST
+		    }	
+		}
+	}
+
+	destroy_incan_empire = { 
+		picture = search_for_machu_picchu
+		
+		potential = { 
+		tag = CLM 
+	    has_country_flag = the_southern_expansion_CLM
+		has_country_flag = the_southern_capital_CLM
+		NOT = { has_country_flag = death_of_inca_CLM }
+		}
+		
+		allow = { 
+		all_core = { owned_by = THIS }
+		NOT = { exists = INC }
+		OR = { is_secondary_power = yes is_greater_power = yes }
+		}
+		
+		effect = { 
+		set_country_flag = death_of_inca_CLM
+		prestige = 25
+		ARE = { add_accepted_culture = aimara }
+		ARE = { add_accepted_culture = quechua }
+		INC = { all_core = { remove_core = INC } }
+		BOL_2321 = { add_core = ARE }
+		BOL_2305 = { add_core = ARE }
+		INC_2308 = { add_core = ARE }
+		ARG_2368 = { add_core = ARE }		
+		}
+	}	
+	
+	############## CULTURE AND CORE RESTORATION DECISIONS ###############
+	
+	granada_returns = { 
+		picture = Panarcadianism
+		
+		potential = { 
+		tag = CLM 
+	    has_country_flag = the_northern_expansion_CLM
+		has_country_flag = the_northern_capital_CLM
+		has_country_flag = california_dreaming_CLM
+		any_owned_province = { is_core = GRA }
+		NOT = { has_country_flag = the_north_is_completed_CLM }
+		}
+		
+		allow = { 
+		is_greater_power = yes
+		all_core = { owned_by = THIS }
+		vote_franschise = universal_voting
+		minorities_reform = protected
+		}
+		
+		effect = { 
+		set_country_flag = the_north_is_completed_CLM
+		prestige = 10
+		add_accepted_culture = granadan
+		GRA = { all_core = { add_core = CLM } }		
+		}
+	}	
+
+	lst_returns = { 
+		picture = Panarcadianism
+		
+		potential = { 
+		tag = CLM 
+	    has_country_flag = the_southern_expansion_CLM
+		has_country_flag = the_southern_capital_CLM
+		has_country_flag = death_of_inca_CLM
+		any_owned_province = { is_core = LST }
+		NOT = { has_country_flag = the_south_is_completed_CLM }
+		}
+		
+		allow = { 
+		is_greater_power = yes
+		all_core = { owned_by = THIS }
+		vote_franschise = universal_voting
+		minorities_reform = protected
+		}
+		
+		effect = { 
+		set_country_flag = the_south_is_completed_CLM
+		prestige = 10
+		add_accepted_culture = lusitanian
+		LST = { all_core = { add_core = CLM } }		
+		}
+	}	
 }

@@ -186,10 +186,32 @@ province_event = {
 	}
 	
 	mean_time_to_happen = {
-		months = 80
+		months = 100
 		modifier = {
 			factor = 2
 			NOT = { culture = beifaren }
+		}
+		modifier = {
+			factor = 0.4
+			OR = {
+			region = CHI_2062
+			region = CHI_1513
+			region = CHI_4
+			region = CHI_3
+			region = CHI_1516
+			region = CHI_1529
+			region = CHI_1576
+			region = CHI_1618
+			region = CHI_1614
+			region = CHI_2
+			region = CHI_1563
+			region = CHI_1476
+			region = MIN_1
+			region = CHI_1539
+			region = MIN_2
+			region = MIN_4
+			region = CHI_1611	
+			}
 		}
 		modifier = {
 			factor = 0.8
@@ -328,7 +350,7 @@ province_event = {
 	}
 	
 	mean_time_to_happen = {
-		months = 100
+		months = 80
 		modifier = {
 			factor = 0.8
 			year = 1900

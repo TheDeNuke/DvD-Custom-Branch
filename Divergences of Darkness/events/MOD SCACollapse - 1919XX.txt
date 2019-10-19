@@ -134,22 +134,28 @@ country_event = {
 	
 	trigger = {
 		tag = SCA
-		NOT = { is_greater_power = yes }
-		NOT = { has_global_flag = endGNBW }
-		NOT = { has_global_flag = endLWT }
-		NOT = { has_global_flag = gustav }
-		NOT = { has_global_flag = gustav_ii }
-		NOT = { has_global_flag = livonianshateyou }
-		NOT = { has_global_flag = livonianwartwo }
-		NOT = { has_global_flag = gustav_aldof }
-        NOT = { any_owned_province = { is_core = GER } }
-        NOT = { any_owned_province = { is_core = SCO } }		
-        NOT = { any_owned_province = { is_core = PRU } }
-        NOT = { any_owned_province = { is_core = NTL } }
+	    NOT = { 
+	    OR = {
+	    government = fascist_dictatorship
+        government = proletarian_dictatorship
+        is_greater_power = yes
+		has_global_flag = endGNBW
+		has_global_flag = endSLW
+		has_global_flag = gustav
+		has_global_flag = gustav_ii
+		has_global_flag = livonianshateyou
+		has_global_flag = livonianwartwo
+		has_global_flag = gustav_aldof
+		any_owned_province = { is_core = GER }
+		any_owned_province = { is_core = SCO }
+		any_owned_province = { is_core = PRU }
+		any_owned_province = { is_core = NTL }
+	        }
+		}
     }
 	
 	mean_time_to_happen = {
-		months = 1
+		months = 12
 	}
 
 	title = "EVTNAME191901"

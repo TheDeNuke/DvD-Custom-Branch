@@ -1226,15 +1226,19 @@ political_decisions = {
 		tag = NAN 
 		tag = HBE 
 			}	
-		OR = { is_secondary_power = yes is_greater_power = yes }
 		NOT = { has_country_flag = NAN_cone }
 		}
 		
 		allow = { 
+		OR = { 
+		has_country_flag = CLM_NAN_expansion 
+		AND = {
 		INC = { is_greater_power = no }
 		rank = 12
 		war_policy = jingoism
-		}
+		        }
+		    }
+	    }
 		
 		effect = { 
 		set_country_flag = NAN_cone 
@@ -1246,10 +1250,9 @@ political_decisions = {
 		INC_2389 = { add_core = THIS }
 		ARG_2387 = { add_core = THIS }
 		relation = { who = INC value = -150 }
-		}
-	
-	}
-	
+		   }
+	   }	
+   }
 }
 
 

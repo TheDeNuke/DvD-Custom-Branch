@@ -57,6 +57,7 @@ political_decisions = {
 				NOT = { has_global_flag = Hispanic_Andes }
 			}
 			allow = {
+			    OR = { is_secondary_power = yes is_greater_power = yes }
 				NOT = { war = yes }
 				INC = {
 					all_core = {

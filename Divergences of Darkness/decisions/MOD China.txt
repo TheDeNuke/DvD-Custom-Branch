@@ -1479,7 +1479,14 @@ political_decisions = {
 			}
 			year = 1885
 			has_country_flag = self_strengthening_movement
-			NOT = { has_country_flag = hundred_days_reform }
+			NOT = {
+		    OR = {	
+		    has_country_flag = your_winner_china
+            has_global_flag = reconquest_of_china
+			has_global_flag = warlord_era_has_begun
+			has_country_flag = hundred_days_reform 
+		       }
+			}
 		}
 		
 		allow = { war = no }
@@ -1504,7 +1511,14 @@ political_decisions = {
 		potential = {
 			tag = CHI
 			has_country_flag = self_strengthening_movement
-			NOT = { has_country_flag = fuzhou_aresenal_established }
+			NOT = {
+		    OR = {	
+		    has_country_flag = your_winner_china
+            has_global_flag = reconquest_of_china
+			has_global_flag = warlord_era_has_begun
+			has_country_flag = fuzhou_aresenal_established
+		       }
+			}
 		}
 		
 		allow = {
@@ -1560,7 +1574,14 @@ political_decisions = {
 			}
 			has_country_flag = fuzhou_aresenal_established 
 			has_country_flag = self_strengthening_movement
-			NOT = { has_country_flag = kiangnan_aresenal_established }
+			NOT = {
+		    OR = {	
+		    has_country_flag = your_winner_china
+            has_global_flag = reconquest_of_china
+			has_global_flag = warlord_era_has_begun
+			has_country_flag = kiangnan_aresenal_established
+		       }
+			}
 		}
 		
 		allow = {
@@ -1609,7 +1630,14 @@ political_decisions = {
 				has_country_flag = self_strengthening_movement
 				civilized = yes
 			}
-			NOT = { has_country_modifier = maritime_customs_service }
+			NOT = {
+		    OR = {	
+		    has_country_flag = your_winner_china
+            has_global_flag = reconquest_of_china
+			has_global_flag = warlord_era_has_begun
+			has_country_flag = maritime_customs_service
+		       }
+			}
 		}
 		
 		allow = { war = no }
@@ -1637,7 +1665,14 @@ political_decisions = {
 		potential = {
 			tag = CHI
 			has_country_flag = self_strengthening_movement
-			NOT = { has_country_flag = establish_the_peking_field_force }
+			NOT = {
+		    OR = {	
+		    has_country_flag = your_winner_china
+            has_global_flag = reconquest_of_china
+			has_global_flag = warlord_era_has_begun
+			has_country_flag = establish_the_peking_field_force
+		       }
+			}
 		}
 		
 		allow = {
@@ -1689,7 +1724,14 @@ political_decisions = {
 				civilized = yes
 			}
 			has_country_flag = self_strengthening_movement
-			NOT = { has_country_flag = new_policies }
+			NOT = {
+		    OR = {	
+		    has_country_flag = your_winner_china
+            has_global_flag = reconquest_of_china
+			has_global_flag = warlord_era_has_begun
+			has_country_flag = new_policies 
+		       }
+			}
 		}
 		
 		allow = { war = no }
@@ -1759,7 +1801,14 @@ political_decisions = {
 			}
 			has_country_flag = self_strengthening_movement
 			owns = 1516
-			NOT = { has_country_flag = hanyang_arsenal }
+			NOT = {
+		    OR = {	
+		    has_country_flag = your_winner_china
+            has_global_flag = reconquest_of_china
+			has_global_flag = warlord_era_has_begun
+			has_country_flag = hanyang_arsenal
+		       }
+			}
 		}
 		
 		allow = {
@@ -1806,7 +1855,14 @@ political_decisions = {
 				}
 				civilized = yes
 			}
-			NOT = { has_country_flag = establish_china_merchants_group }
+			NOT = {
+		    OR = {	
+		    has_country_flag = your_winner_china
+            has_global_flag = reconquest_of_china
+			has_global_flag = warlord_era_has_begun
+			has_country_flag = establish_china_merchants_group
+		       }
+			}
 		}
 		
 		allow = {
@@ -1848,7 +1904,14 @@ political_decisions = {
 				}
 				civilized = yes
 			}
-			NOT = { has_country_flag = abolish_the_imperial_examinations }
+			NOT = {
+		    OR = {	
+		    has_country_flag = your_winner_china
+            has_global_flag = reconquest_of_china
+			has_global_flag = warlord_era_has_begun
+			has_country_flag = abolish_the_imperial_examinations
+		       }
+			}
 		}
 		
 		allow = {
@@ -1897,6 +1960,8 @@ political_decisions = {
   		    }
 		has_global_flag = the_conquest_of_the_west
 		NOT = { has_global_flag = reconquest_of_china }
+		NOT = { has_global_flag = warlord_era_has_begun }
+		NOT = { has_country_flag = your_winner_china }
         NOT = { has_country_flag = the_conquest_of_the_west_partone }
 		}
   		
@@ -1931,6 +1996,8 @@ political_decisions = {
 		has_global_flag = the_conquest_of_the_west
         has_country_flag = the_conquest_of_the_west_partone
 		NOT = { has_global_flag = reconquest_of_china }
+		NOT = { has_global_flag = warlord_era_has_begun }
+		NOT = { has_country_flag = your_winner_china }
         NOT = { has_country_flag = the_conquest_of_the_west_parttwo }
 		}
   		
@@ -1965,6 +2032,8 @@ political_decisions = {
 		has_global_flag = the_conquest_of_the_west
         has_country_flag = the_conquest_of_the_west_parttwo
 		NOT = { has_global_flag = reconquest_of_china }
+		NOT = { has_global_flag = warlord_era_has_begun }
+		NOT = { has_country_flag = your_winner_china }
         NOT = { has_country_flag  = the_conquest_of_the_west_partthree }
 		}
   		
@@ -1999,6 +2068,8 @@ conquest_of_mongolia = {
   		    }
         has_country_flag = westernchinesearehere
 		NOT = { has_global_flag = reconquest_of_china }
+		NOT = { has_country_flag = your_winner_china }
+		NOT = { has_global_flag = warlord_era_has_begun }
         NOT = { has_global_flag  = themongoliantrap }
 		}
   		
@@ -2028,7 +2099,10 @@ reconquest_of_tibet = {
   			tag = CHI
             tag = KMT		
   		    }
+		OR = {	
+		has_country_flag = your_winner_china
         has_global_flag = reconquest_of_china
+		}
         NOT = { has_country_flag  = tibet_reconquest }
 		}
   		
@@ -2054,7 +2128,10 @@ reconquest_of_mongolia = {
   			tag = CHI
             tag = KMT			
   		    }
+		OR = {	
+		has_country_flag = your_winner_china
         has_global_flag = reconquest_of_china
+		}
         NOT = { has_country_flag  = mongolian_reconquest }
 		}
   		
