@@ -3,6 +3,7 @@ political_decisions = {
 		potential = {
 			NOT = { part_of_sphere = yes }
 			NOT = { exists = UCA }
+			NOT = { tag = CLM }
 			primary_culture = central_american
 		}	
 		allow = {

@@ -508,7 +508,7 @@ country_event = {
 	capital = 2202
 	primary_culture = central_american
 	GRA = { all_core = { add_core = CLM } }
-	SAN = { all_core = { remove_core = SAN } }
+	ELS = { all_core = { remove_core = ELS } }
 	NIC = { all_core = { remove_core = NIC } }
 	PNM = { all_core = { remove_core = PNM } }
     UCA = { all_core = { remove_core = MEX } }
