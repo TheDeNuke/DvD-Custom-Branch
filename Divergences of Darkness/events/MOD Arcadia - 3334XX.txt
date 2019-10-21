@@ -2462,6 +2462,10 @@ country_event = {
 	}
 }	
 
+########################################################### The Septiman Revolt and the collapse of the Arcadian Treaty ###############################################################
+######################################## 1870 is a very bad year for everyone expect for Belgium #####################################################################################
+ 
+
 ########################################################### The Arcadian Dream is Dead ###############################################################
 ######################################## ARC that has received a core removal event triggers this event chain if it loses democracy ################# 
 

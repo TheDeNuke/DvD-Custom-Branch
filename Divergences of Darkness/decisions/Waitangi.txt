@@ -52,6 +52,18 @@ political_decisions = {
 		effect = {
 			set_global_flag = nzl_organized
 			prestige = 5
+			set_country_flag = nzl_master
+			random_owned = { limit = { owner = { capital_scope = { pop_majority_religion = catholic } } } NZL = { religion = catholic } }
+			random_owned = { limit = { owner = { capital_scope = { pop_majority_religion = protestant } } } NZL = { religion = protestant } }
+			random_owned = { limit = { owner = { capital_scope = { pop_majority_religion = orthodox } } } NZL = { religion = orthodox } }
+			random_owned = { limit = { owner = { capital_scope = { pop_majority_religion = sunni } } } NZL = { religion = sunni } }
+			random_owned = { limit = { owner = { capital_scope = { pop_majority_religion = shiite } } } NZL = { religion = shiite } }
+			any_pop = {
+				limit = {
+					location = { is_core = NZL }
+				}
+				militancy = -3
+			}
 			AOT = { all_core = { 
 			add_core = NZL
 				add_province_modifier = {
@@ -90,6 +102,16 @@ political_decisions = {
 		
 		effect = {
 			prestige = 5
+			any_country = {
+				limit = { has_country_flag = nzl_master }
+				clr_country_flag = nzl_master
+			}
+			set_country_flag = nzl_master
+			random_owned = { limit = { owner = { capital_scope = { pop_majority_religion = catholic } } } NZL = { religion = catholic } }
+			random_owned = { limit = { owner = { capital_scope = { pop_majority_religion = protestant } } } NZL = { religion = protestant } }
+			random_owned = { limit = { owner = { capital_scope = { pop_majority_religion = orthodox } } } NZL = { religion = orthodox } }
+			random_owned = { limit = { owner = { capital_scope = { pop_majority_religion = sunni } } } NZL = { religion = sunni } }
+			random_owned = { limit = { owner = { capital_scope = { pop_majority_religion = shiite } } } NZL = { religion = shiite } }
 			NZL = {
 				primary_culture = THIS
 			}

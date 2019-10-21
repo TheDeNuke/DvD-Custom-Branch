@@ -181,7 +181,7 @@ political_decisions = {
 					is_core = ROM
 				}
 				remove_core = ROM
-			}
+			}	
 			release_vassal = ROM
 			create_alliance = ROM
 			diplomatic_influence = {
@@ -189,6 +189,24 @@ political_decisions = {
 				value = 300
 			}
 			ROM = { prestige = -400 }
+			any_owned = {
+		    limit = {
+			is_core = ROM
+			NOT = { is_core = THIS }
+			}
+			secede_province = ROM
+		    }
+			any_country = {
+				limit = {
+					in_sphere = THIS
+				}
+			    any_owned = {
+				limit = {
+					is_core = ROM
+				}				
+				secede_province = ROM
+			    }
+		   }		
 			any_country = {
 				limit = {
 					OR = {
