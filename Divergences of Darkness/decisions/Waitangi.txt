@@ -36,10 +36,10 @@ political_decisions = {
 	organize_new_zealand = {
 		potential = {
 			civilized = yes
-			continent = europe
 			NOT = {
 				exists = NZL
 				exists = AOT
+				capital_scope = { continent = oceania }
 				has_global_flag = nzl_organized
 			}
 			state_n_government = 1
@@ -94,7 +94,7 @@ political_decisions = {
 				NOT = { is_culture_group = THIS }
 			}
 			AOT = { exists = no }
-			continent = europe
+			NOT = { capital_scope = { continent = oceania } }
 		}
 		
 		allow = {
