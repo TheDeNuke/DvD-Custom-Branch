@@ -434,6 +434,7 @@ TAP		= "countries/Tapajos.txt"		#Amazonian Native
 
 #Australasia
 NZL		= "countries/New Zealand.txt"
+AST		= "countries/Australia.txt" #ADDED IN MODIFICATIONS
 GAN		= "countries/Gan Guo.txt"
 TUI		= "countries/Tui Tonga.txt"
 PPU		= "countries/Papua.txt"

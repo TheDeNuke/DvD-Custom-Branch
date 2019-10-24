@@ -1425,7 +1425,15 @@ recruitment_drive = {
 ### American Events ###
 the_statue_of_liberty = {
 	prestige = 0.01
-	global_immigrant_attract = 0.5	#100%
+	global_immigrant_attract = 0.5	#50%
+	global_assimilation_rate = 0.5
+	icon = 15
+}
+
+### Post Septiman Revolt Modifier - 10 Years###
+septiman_revolutionary_fever = {
+	prestige = 0.05
+	global_immigrant_attract = 1.5	#150%
 	global_assimilation_rate = 0.5
 	icon = 15
 }

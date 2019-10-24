@@ -3,7 +3,10 @@ political_decisions = {
 	treaty_of_waitangiDVG = {
 	
 		potential = {
+		    OR = {
 			is_greater_power = yes
+			is_secondary_power = yes
+			}
 			owns = 2515
 			AOT = { 	
 				civilized = no

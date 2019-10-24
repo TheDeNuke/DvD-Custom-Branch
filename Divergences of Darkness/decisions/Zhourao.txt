@@ -53,7 +53,10 @@ political_decisions = {
 	accept_aborigine = { 
 	picture = aborigine
 		potential = { 
+		OR = {
 		tag = GAN
+		tag = AST
+		}
 		NOT = { has_country_flag = assimilate_tributaries } 
 		NOT = { has_country_flag = aborigine_acc }
 		}
@@ -211,4 +214,132 @@ political_decisions = {
 		set_country_flag = bornean_acc
 		}
 	}
+	
+	conquest_of_zuharra = { 
+	
+		picture = zuharra
+		
+		potential = { 
+        has_global_flag = AST_organized
+		has_country_flag = AST_master
+		NOT = { capital_scope = { continent = oceania } }
+		GAN = { exists = yes }
+		NOT = { tag = AST }
+		NOT = { has_country_flag = GAN_glorious_conquest }
+		}
+		
+		allow = {
+        rank = 12
+		nationalism_n_imperialism = 1 
+        GAN = { NOT = { OR = {
+		is_secondary_power = yes
+		is_greater_power = yes
+		government = democracy
+		} } }          
+		any_neighbor_province = {
+		owner = { 
+		tag = GAN
+		        }
+		    }
+		}
+		
+		effect = { 
+		badboy = 5
+		GAN = { country_event = { id = 95629 days = 3 } }
+		set_country_flag = GAN_glorious_conquest
+		}
+	}
+	
+	
+	organize_australia = {
+		picture = zuharra
+		potential = {
+			civilized = yes
+			NOT = {
+				has_global_flag = AST_organized
+				capital_scope = { continent = oceania }
+			}
+			owns = 2497
+		}
+		
+		allow = {
+			war = no
+			state_n_government = 1
+			owns = 2497
+		}
+		
+		effect = {
+			set_global_flag = AST_organized
+			set_country_flag = AST_master
+			prestige = 3
+			random_owned = { limit = { owner = { capital_scope = { pop_majority_religion = catholic } } } AST = { religion = catholic } }
+			random_owned = { limit = { owner = { capital_scope = { pop_majority_religion = protestant } } } AST = { religion = protestant } }
+			random_owned = { limit = { owner = { capital_scope = { pop_majority_religion = orthodox } } } AST = { religion = orthodox } }
+			random_owned = { limit = { owner = { capital_scope = { pop_majority_religion = sunni } } } AST = { religion = sunni } }
+			random_owned = { limit = { owner = { capital_scope = { pop_majority_religion = shiite } } } AST = { religion = shiite } }
+			GAN_1 = { add_core = AST }
+			GAN_2 = { add_core = AST }
+			GAN_3 = { add_core = AST }
+			GAN_4 = { add_core = AST }
+			GAN_5 = { add_core = AST }
+			GAN_6 = { add_core = AST }
+			GAN_7 = { add_core = AST }
+			GAN_8 = { add_core = AST }
+			GAN_9 = { add_core = AST }
+			GAN_10 = { add_core = AST }
+			GAN_11 = { add_core = AST }			
+			AST = {
+			    capital = 2497
+				primary_culture = THIS
+				#set_country_flag = civilize_after_release
+				tech_school = developing_tech_school
+			}
+		}
+	}
+	
+	reorganize_australia = {
+		picture = zuharra
+		potential = {
+		    NOT = { has_country_flag = post_colonial_era }
+			civilized = yes
+			has_global_flag = AST_organized
+			owns = 2497
+			AST = {
+				exists = no
+				NOT = { is_culture_group = THIS }
+			}
+			NOT = {
+				capital_scope = { continent = oceania }
+			}
+		}
+		
+		allow = {
+			war = no
+			state_n_government = 1
+			owns = 2497
+		}
+		
+		effect = {
+			any_country = {
+				limit = { has_country_flag = AST_master }
+				clr_country_flag = AST_master
+			}
+			set_country_flag = AST_master
+			prestige = 3
+			random_owned = { limit = { owner = { capital_scope = { pop_majority_religion = catholic } } } AST = { religion = catholic } }
+			random_owned = { limit = { owner = { capital_scope = { pop_majority_religion = protestant } } } AST = { religion = protestant } }
+			random_owned = { limit = { owner = { capital_scope = { pop_majority_religion = orthodox } } } AST = { religion = orthodox } }
+			random_owned = { limit = { owner = { capital_scope = { pop_majority_religion = sunni } } } AST = { religion = sunni } }
+			random_owned = { limit = { owner = { capital_scope = { pop_majority_religion = shiite } } } AST = { religion = shiite } }
+			any_pop = {
+				limit = {
+					location = { is_core = AST }
+				}
+				militancy = -3
+			}
+			AST = {
+				primary_culture = THIS
+			}
+		}	
+	}	
 }

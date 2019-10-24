@@ -1409,7 +1409,7 @@ PER4.D;The Kingdom of Afganistan was once a minor title under that of the Afshar
 PER4.A;This is the end of the Afsharid Dynasty;;;;;;;;;;;;;;x,,,,,,,,
 PER5.T;Intervention in Persia?;;;;;;;;;;;;;;x,,,,,,,,
 PER5.D;We have a opportunity to finally destroy the Persian Dynastic States once and for all as they have decided to take up arms against one another and allow our easy intervention in this conflict to take out both at the same time. It is likely that this conflict will be long and bloody and perhaps even cause conflict with our Sikh holdings but this is a opportunity that we cannot ignore because we will quite simply never have one again, this is our last chance to take Persia for ourselves!;;;;;;;;;;;;;;x,,,,,,,,
-##### Arcadia Conference #####;;;;;;;;;;;;;;x,,,,,,,,
+##### Arcadia Conference  #####;;;;;;;;;;;;;;x,,,,,,,,
 form_arcadia_septiman_noVIN_title;Proclaim the Unification of Arcadia;;;;;;;;;;;;;
 form_arcadia_septiman_noVIN_desc;With Southern Arcadia doubtlessly dominated by our country, we can now establish a country with a more fitting name.;;;;;;;;;;;;;
 form_arcadia_plantagenia_noVIN_title;Proclaim the Unification of Arcadia;;;;;;;;;;;;;
@@ -1454,12 +1454,12 @@ form_arcadia_plantagenia_noVIN_desc;With Southern Arcadia doubtlessly dominated 
 333521.D;TMissing Localization, will be added in the future.;;;;;;;;;;;;;;x,,,,,,,,
 333524.T;Manifest Destiny Denied;;;;;;;;;;;;;;x,,,,,,,,
 333524.D;A Claim has been made by either the Confederacy or us that goes against the concept of a separate Vinlandic State. As such, these claims have been automatically redacted for the convenience of both parties.;;;;;;;;;;;;;;x,,,,,,,,
-333524.A;How strange.;;;;;;;;;;;;;;x,,,,,,,,
-333525.T;The Vinlandic Evacuation;;;;;;;;;;;;;;x,,,,,,,,
-333525.D;We have lost all our disputed territories to the Belgian Confederacy and have been rendered utterly irrelevant in Arcadia. However, we still have one card left in our desk and it involves the fact that unlike Plantagenia, we are of a culture that is utterly unrelated to the Confederacy and can sacrifice our ability to form an Arcadian Union on the alter of maintaining our independence. A simple proclamation that we prioritise the Vinlandic identity and it should render it effectively impossible for the the Belgian Confederacy to conquer us..;;;;;;;;;;;;;;x,,,,,,,,
+333524.A;How strange.;;;;;;;;;;;;;;x,,,,,,,,we still have one card left in our desk and it involves the fact that unlike Plantagenia, we are of a culture that is utterly unrelated to the Confederacy and can sacrifice our ability to form an Arcadian Union on the alter of maintaining our independence. A simple proclamation that we prioritise the Vinlandic identity and it should render it effectively impossible for the the Belgian Confederacy to conquer us..;;;;;;;;;;;;;;x,,,,,,,,
 333525.A;The Arcadian Banner shall not fly over our lands!;;;;;;;;;;;;;;x,,,,,,,,
 333525.B;We shall strive towards a Arcaidan Union still.;;;;;;;;;;;;;;x,,,,,,,,
 333526.T;Vinland denies the Arcadian Dream!;;;;;;;;;;;;;;x,,,,,,,,
+333525.T;The Vinlandic Evacuation;;;;;;;;;;;;;;x,,,,,,,,
+333525.D;We have lost all our disputed territories to the Belgian Confederacy and have been rendered utterly irrelevant in Arcadia. However, 
 333526.D;Vinland has proclaimed that is no longer has any intent to peruse the Arcadian dream and has proclaimed its full independence from anyone attempting to do so. Unfortunately, we must acknowledge this claim under international law and until such time that our government has no intent on following international law: they will not be joining any potential Arcadian union. We could hand them back their historical cultural land in return for them permanently revoking their claims over Septiman territory as well, or we could just permit them to keep their claims and give them nothing. .;;;;;;;;;;;;;;x,,,,,,,,
 333526.A;Hand it back!;;;;;;;;;;;;;;x,,,,,,,,
 333526.B;Dammit! Vinlandic Traitors!;;;;;;;;;;;;;;x,,,,,,,,
@@ -1467,6 +1467,9 @@ form_arcadia_plantagenia_noVIN_desc;With Southern Arcadia doubtlessly dominated 
 333527.D;The Confederacy is offering all territories of Vinlandic Culture in return for a permanent revocation of all claims we have over Septiman Territory. It would be rather idiotic not to take this offer as this practically guarantees us free territory, but the revocation of our claims also prevents future expansion into the Confederacy.;;;;;;;;;;;;;;x,,,,,,,,
 333527.A;Sure;;;;;;;;;;;;;;x,,,,,,,,
 333527.B;We will get back our claims!;;;;;;;;;;;;;;x,,,,,,,,
+##### Septiman Revolt  #####;;;;;;;;;;;;;;x,,,,,,,,
+septiman_revolutionary_fever;The Glory of Septimania;;;;;;;;;;;;;;;;;;;x,,,,,
+septiman_revolutionary_fever_desc;We have done the impossible and effectively reversed our decline though a glorious revolution. The Confederation is now seen as a beacon of liberty for Arcadia and the population of the old world now flood into our ports. Huzzah!;;;;;;;;;;;;x,,,,,,,,,,,,,,,,,,,,,,
 ##### Mughal Collapse #####;;;;;;;;;;;;;;x,,,,,,,,
 HND01.T;The Lost Province;;;;;;;;;;;;;;x,,,,,,,,
 HND01.D;The Mughal Empire had been left in a period of instability many decades ago and as a result the Nazims of Bengal had declared their independence. We have been avoiding a confrontation with the east for many years because of the potentially destabilizing effect it could have on our Hindu subjects but now it seems that the situation has changed. There has been a incident on the border between our men and theirs and many inside the Durbar are already calling for blood. At this point it seems that war is inevitable and utterly unavoidable.;;;;;;;;;;;;;;x,,,,,,,,
@@ -1591,6 +1594,27 @@ HND25.D;With the arrival of the $COUNTRY_ADJ$ colonial governor into $PROVINCENA
 HND27.D;With the arrival of the $COUNTRY_ADJ$ colonial governor into $PROVINCENAME$, an effort has begun to incorporate $COUNTRY_ADJ$ $STATENAME$ into the larger Raj colony.;;;;;;;;;;;;;
 HND26.D;With the arrival of the $COUNTRY_ADJ$ colonial governor into $PROVINCENAME$, an effort has begun to incorporate $COUNTRY_ADJ$ $STATENAME$ into the larger Mughal colony.;;;;;;;;;;;;;
 HND28.D;With the arrival of the $COUNTRY_ADJ$ colonial governor into $PROVINCENAME$, an effort has begun to incorporate $COUNTRY_ADJ$ $STATENAME$ into the larger Pakistani colony.;;;;;;;;;;;;;
+##### Terra Australis ###########;;;;;;;;;;;;;;x,,,,,,,,
+AST;Terra Australis;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+AST_ADJ;Australian;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+organize_australia_title;Organize Terra Australis;;;;;;;;;;;;;
+organize_australia_desc;We should organize the Australian colonies to better reflect both a local structure, as well as set up the possibility for autonomous rule-- dominated by our benevolent colonial administrators, of course.;;;;;;;;;;;;;
+reorganize_australia_title;Claim Terra Australis;;;;;;;;;;;;;
+reorganize_australia_desc;Now that we have taken possession of the Australian colony, we should reorganize its structure to make it truly part of our greater colonial administration.;;;;;;;;;;;;;
+conquest_of_zuharra_title;Conquest of Eastern Terra Australis;;;;;;;;;;;;;
+conquest_of_zuharra_desc;The Colony of Terra Australis has been created but lacks the far more wealthy east- which is controlled by the notorious Chinese colonial nation known as Zhouaro. As this nation has failed to prove itself as any more then a petty kingdom and a laughing stock of the whole world- we must immediately invade it and install our own benevolent government.;;;;;;;;;;;;;
+ZHO1.T;The Conquest of Terra Australis;;;;;;;;;;;;;
+ZHO1.D;Terra Australis still evades Europa, as the saying goes. We now understand the existence of the Chinese colonial state of Zhourao which occupies the east coast of Terra Australis but it is obvious that the west remains absolutely empty. Should we send a colonial expedition to this side of the continent with the hope that we may find something useful?;;;;;;;;;;;;;
+ZHO2.T;We have found nothing!;;;;;;;;;;;;;
+ZHO2.D;Our explorers have completely failed in finding anything that resembles fertile land in the western part of Terra Australis. We will have to call off our expedition and hope that nobody else finds anything.;;;;;;;;;;;;;
+ZHO3.T;Colonization is possible!;;;;;;;;;;;;;
+ZHO3.D;Our expedition has found fertile land in the southernmost part of the southern continent. This has evaded both European and Chinese explorers for centuries but it is clear that with our modern technology it has become possible to navigate the continent in a way that has allowed this discovery to be made. All that's left to do now is send the colonial fleet and this territory shall be ours!;;;;;;;;;;;;;
+ZHO4.T;The Europeans have arrived;;;;;;;;;;;;;
+ZHO4.D;There has already been word of a colonial fleet arriving on the westernmost part of the continent which contains thousands of Europeans that are clearly ready to take over the whole continent- just as they did what is now known as Arcadia. They have already declared that this continent be named "Terra Australis" and not Zuharra! ;;;;;;;;;;;;;
+ZHO5.T;The Last Bastion of Humanity;;;;;;;;;;;;;
+ZHO5.D;There is one remaining place that eludes Europa, and that is the island that is to the east of Zhourao that is without a name to speak of. The various Burgundian and Dutch traders from Indonesia have called it: "New Zealand" but have not taken any effort to colonize the island due to fears of the natives that occupy it. As the main continent has been effectively occupied by another colonial power in the west, this remains the sole remaining place in this part of the world that we should be able to colonize. Shall we do so?;;;;;;;;;;;;;
+ZHO6.T;The Death of Zhourao;;;;;;;;;;;;;
+ZHO6.D;We have been given a ultimatum from the colonial overlord of Terra Australis that it is time for the nation of Zhourao to cease existing and that total occupation from Terra Australis must occur. We may have a technological advantage here, but it is unlikely that we will be able to beat the combined armies of the colonial empire. Should we fight as honour demands us to do so, or surrender in the hopes that Zhourao will rise another day?;;;;;;;;;;;;;
 ##### Indochina Stuff #####;;;;;;;;;;;;;;x,,,,,,,,
 concession_of_champa_title;Concession of Central Champa;;;;;;;;;;;;;;x,,,,,,,,
 concession_of_champa_desc;With our focus returned to Indochina after the Hindustan Conference and its aftermath had concluded. We feel that it is necessary to claim the Region of Champa to further secure our position in Dai Nam beyond that of Cocinchina.;;;;;;;;;;;;;x,,,,,,,,

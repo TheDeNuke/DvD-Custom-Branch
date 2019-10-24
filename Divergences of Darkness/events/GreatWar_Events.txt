@@ -3007,6 +3007,15 @@ country_event = {
 		random_country = {
 			limit = {
 				NOT = { tag = THIS }
+				THIS = { any_owned_province = { is_core = AST } }
+				has_country_flag = AST_master
+			}
+			country_event = 961000
+		}
+		
+		random_country = {
+			limit = {
+				NOT = { tag = THIS }
 				THIS = { any_owned_province = { is_core = BEN } }
 				has_country_flag = bangladesh_master
 			}
@@ -3759,6 +3768,15 @@ country_event = {
 				NOT = { tag = THIS }
 				THIS = { any_owned_province = { is_core = NZL } }
 				has_country_flag = nzl_master
+			}
+			country_event = 961000
+		}
+		
+		random_country = {
+			limit = {
+				NOT = { tag = THIS }
+				THIS = { any_owned_province = { is_core = AST } }
+				has_country_flag = AST_master
 			}
 			country_event = 961000
 		}
@@ -4521,6 +4539,15 @@ country_event = {
 		random_country = {
 			limit = {
 				NOT = { tag = THIS }
+				THIS = { any_owned_province = { is_core = AST } }
+				has_country_flag = AST_master
+			}
+			country_event = 961000
+		}
+		
+		random_country = {
+			limit = {
+				NOT = { tag = THIS }
 				THIS = { any_owned_province = { is_core = BEN } }
 				has_country_flag = bangladesh_master
 			}
@@ -5231,6 +5258,15 @@ country_event = {
 				NOT = { tag = THIS }
 				THIS = { any_owned_province = { is_core = NZL } }
 				has_country_flag = nzl_master
+			}
+			country_event = 961000
+		}
+		
+		random_country = {
+			limit = {
+				NOT = { tag = THIS }
+				THIS = { any_owned_province = { is_core = AST } }
+				has_country_flag = AST_master
 			}
 			country_event = 961000
 		}
@@ -5950,6 +5986,15 @@ country_event = {
 				NOT = { tag = THIS }
 				THIS = { any_owned_province = { is_core = NZL } }
 				has_country_flag = nzl_master
+			}
+			country_event = 961000
+		}
+		
+		random_country = {
+			limit = {
+				NOT = { tag = THIS }
+				THIS = { any_owned_province = { is_core = AST } }
+				has_country_flag = AST_master
 			}
 			country_event = 961000
 		}
@@ -6869,6 +6914,15 @@ country_event = {
 		random_country = {
 			limit = {
 				NOT = { tag = THIS }
+				THIS = { any_owned_province = { is_core = AST } }
+				has_country_flag = AST_master
+			}
+			country_event = 961000
+		}
+		
+		random_country = {
+			limit = {
+				NOT = { tag = THIS }
 				THIS = { any_owned_province = { is_core = BEN } }
 				has_country_flag = bangladesh_master
 			}
@@ -7652,6 +7706,15 @@ country_event = {
 				NOT = { tag = THIS }
 				THIS = { any_owned_province = { is_core = NZL } }
 				has_country_flag = nzl_master
+			}
+			country_event = 961000
+		}
+		
+		random_country = {
+			limit = {
+				NOT = { tag = THIS }
+				THIS = { any_owned_province = { is_core = AST } }
+				has_country_flag = AST_master
 			}
 			country_event = 961000
 		}
@@ -9975,6 +10038,18 @@ country_event = {
 			}
 			any_owned = {
 				limit = { is_core = NZL }
+				secede_province = THIS
+			}
+		}
+		
+		random_country = {
+			limit = {
+				THIS = { has_country_flag = AST_master }
+				tag = FROM
+				any_owned_province = { is_core = AST }
+			}
+			any_owned = {
+				limit = { is_core = AST }
 				secede_province = THIS
 			}
 		}

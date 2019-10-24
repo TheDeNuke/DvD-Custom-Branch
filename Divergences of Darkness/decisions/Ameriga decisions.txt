@@ -1250,9 +1250,8 @@ political_decisions = {
 		INC_2389 = { add_core = THIS }
 		ARG_2387 = { add_core = THIS }
 		relation = { who = INC value = -150 }
-		   }
-	   }	
-   }
+		}
+	}	
 }
 
 
