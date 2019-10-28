@@ -199,6 +199,9 @@ political_decisions = {
 			     }
 			}
 			NOT = { has_country_flag = savoy_of_italy }
+			ITA = {
+				exists = no
+			}
 			ARI = {
 				exists = no
 			}
@@ -320,10 +323,6 @@ political_decisions = {
 			year = 1890
 			}
 			NOT = { has_country_flag = etruria_of_italy }
-			ARI = {
-				exists = no
-			}
-
 		}
 		
 		allow = {
@@ -335,6 +334,9 @@ political_decisions = {
 			government = democracy
 			rank = 30
 			ITA = {
+				exists = no
+			}
+			ARI = {
 				exists = no
 			}
 			ARA = {
@@ -428,6 +430,9 @@ political_decisions = {
 			ITA = {
 				exists = no
 			}
+			ARI = {
+				exists = no
+			}
 			ARA = {
 				is_greater_power = no
 			}	
@@ -518,6 +523,9 @@ political_decisions = {
 			government = merchant_republic
 			}
 			ITA = {
+				exists = no
+			}
+			ARI = {
 				exists = no
 			}
 		}

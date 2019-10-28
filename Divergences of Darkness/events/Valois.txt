@@ -4,14 +4,17 @@ country_event = {
 	id = 110601
 	title = "VAL1.T"
 	desc = "VAL1.D"
+	picture = "conscription_marching"
 
 	fire_only_once = yes
 
 	trigger = {
 		tag = PRV
+		NOT = { year = 1850 }
 		NOT = { war = yes }
 		TUS = { exists = yes }
 		TUS = { government = democracy }
+		NOT = { has_country_flag = the_only_chance_TUS }
 		OR = {
 			government = absolute_monarchy
 			government = prussian_constitutionalism
@@ -20,12 +23,54 @@ country_event = {
 	}
 
 	mean_time_to_happen = {
-		months = 20
+		months = 1000	
+			modifier = {
+				factor = 10000
+				ai = no
+			}
+			modifier = {
+				factor = 10
+				NOT = { has_country_flag = ant_parma }
+			}
+			modifier = {
+				factor = 0.0001
+				has_country_flag = tus_crusade_begins 
+			}
+			modifier = {
+				factor = 0.2
+				AND = {
+				year = 1840
+				ai = yes
+				}
+			}
+			modifier = {
+				factor = 0.1
+				AND = {
+				year = 1842
+				ai = yes
+				}
+			}
+			modifier = {
+				factor = 0.1
+				AND = {
+				year = 1844
+				ai = yes
+				}
+			}
+			modifier = {
+				factor = 0.01
+				AND = {
+				year = 1845
+				ai = yes
+				}
+			}
 	}
 
 	option = {
 		name = "110601.A"
 		badboy = 10
+		set_country_flag = the_only_chance_TUS
+		remove_country_modifier = valois_modifier
 		relation = { who = ARA value = -150 }
 		TUS = { country_event = 36756 }
 		war = {
@@ -38,14 +83,19 @@ country_event = {
 				}
 		}
 		ai_chance = {
-			factor = 10
+			factor = 100
 		}
 	}
 
 	option = {
 		name = "110601.B"
 		prestige = -5
+		set_country_flag = the_only_chance_TUS
+		remove_country_modifier = valois_modifier
 		relation = { who = ARA value = 100 }
+		ai_chance = {
+			factor = 0
+		}
 	}
 }
 

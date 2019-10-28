@@ -1,4 +1,4 @@
-##################################################################################################
+y##################################################################################################
 # scriptable and usable for event-system below.
 ##################################################################################################
 
@@ -2546,6 +2546,19 @@ the_last_democracy = {
 	education_efficiency_modifier = 0.5
 	global_pop_consciousness_modifier = 0.2
 	icon = 19
+}
+
+valois_modifier = {
+	ruling_party_support = 2
+	global_pop_consciousness_modifier = -0.1
+	global_pop_militancy_modifier = -0.05
+    tax_efficiency = 0.5
+	leadership_modifier = 0.5
+	min_military_spending = 0.25
+	min_tariff = 0.75
+	tariff_efficiency_modifier = 0.25
+	land_unit_start_experience = 5
+	icon = 15
 }
 
 #### ChinaStuff ####

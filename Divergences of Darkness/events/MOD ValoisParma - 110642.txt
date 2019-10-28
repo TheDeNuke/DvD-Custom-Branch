@@ -359,6 +359,11 @@ country_event = {
 		tag = ITA
 		}
 		has_global_flag = the_road_to_emperor
+		OR = { 
+	    has_country_flag = ant_parma
+	    has_country_flag = farnese_emperor
+	    has_country_flag = farnese_primeminister
+		}
 	    NOT = { has_country_flag = farnese_dead }			
 	    NOT = {
 		  OR = {

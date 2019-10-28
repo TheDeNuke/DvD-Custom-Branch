@@ -1,4 +1,34 @@
 political_decisions = {
+	begin_the_crusade_TUS = {
+	picture = valois_italy
+		potential = {
+			tag = PRV
+			NOT = { exists = ITA }
+			NOT = { exists = ARI }
+		    TUS = { exists = yes }
+		    TUS = { government = democracy }
+		    NOT = { has_country_flag = valois_rulez }
+			NOT = { has_country_flag = the_only_chance_TUS }
+			NOT = { has_country_flag = tus_crusade_begins  }
+			ai = no
+		}	
+
+		allow = {
+        NOT = { year = 1850 }
+		ai = no
+		}
+		
+		effect = {
+			prestige = 10
+			set_country_flag = tus_crusade_begins 
+		}
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+
 	restore_valois_italy = {
 	picture = valois_italy
 		potential = {
@@ -450,8 +480,12 @@ political_decisions = {
 	factor = 1 
 	modifier = { 
 		factor = 0 
-		NOT = { year = 1846 }
-			}
+		NOT = { year = 1848 }
+		    }
+	modifier = { 
+		factor = 0 
+		NOT = { total_amount_of_divisions = 9 }
+		    }
 		}
 	}
 }

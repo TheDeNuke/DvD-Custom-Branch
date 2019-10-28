@@ -61,6 +61,8 @@ political_decisions = {
 			
 			TUS = { country_event = 36720 }
 			
+			
+			
 			### Silver Mines ###
 			
 			2322 = { trade_goods = precious_metal add_province_modifier = { name = silver_mine duration = -1 } }
@@ -85,6 +87,7 @@ political_decisions = {
             add_country_modifier = { name = neutrality duration = -1 } 
             }
 			
+			UKR = { any_owned = { add_core = UKR } }
 	        2045 = { add_core = ZAN }
 	        2047 = { add_core = ZAN }
 	        2041 = { add_core = ZAN }
@@ -485,6 +488,18 @@ political_decisions = {
 			#################Great German War######################			
 			#################Turkish Civil War######################	
 			TUR = { war_exhaustion = 20 }
+			#################Turkish Civil War######################
+			#################PRV War Chest######################	
+			PRV = { add_country_modifier = { name = valois_modifier duration = 5110 
+			        }
+	                treasury = 100000
+	                ammunition = 1000
+	                small_arms = 1000
+	                artillery = 1000
+	                canned_food = 1000
+	                regular_clothes = 1000			
+		    }
+			#################PRV War Chest######################	
 			#################Turkish Civil War######################
             #################Uncivs  Pops Setup######################
 			NEJ = {
