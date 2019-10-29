@@ -1,6 +1,19 @@
 # DvD-Custom-Branch
 This is a radically different branch of the Divergences of Darkness mod that stems off from the final version of PDM's DvD. However any systems from that version would likely be utterly unreconizable due to a rework of practically every single file in the entire mod. Feel free to reccomend any changes.
 
+
+Credits:
+
+The Original Mod: Listed Below
+
+Divide by Zero: The base of the current economy and systems prior to HPM changes.
+
+HPM: A rather large amount of replacement code to solve various PDM related issues.
+
+HFM: A few bits and pieces, mostly in regards to China.
+
+
+
 Original Github Link: https://github.com/Pergame35/Divergences
 
 Original Readme:
