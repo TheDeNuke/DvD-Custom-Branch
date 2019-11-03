@@ -479,7 +479,10 @@ political_decisions = {
 			NOT = { has_global_flag = lublin_new_begin }	
 			NOT = { has_country_flag = lublin_new }
 			NOT = { has_country_flag = lublin_failure }
+			OR = {
 			LIT = { substate_of = PLC }		
+			LIT = { vassal_of = PLC }
+            }			
 			war = no 
 		    }
 		
@@ -520,9 +523,13 @@ political_decisions = {
 			NOT = { has_country_flag = lublin_failure }
 			OR = {
 				LIT = { substate_of = PLC }
+				LIT = { vassal_of = PLC }
 				BLR = { substate_of = PLC }
+				BLR = { vassal_of = PLC }
 				UKR = { substate_of = PLC }
+				UKR = { vassal_of = PLC }
 				PRU = { substate_of = PLC }
+				PRU = { vassal_of = PLC }	
 			}
 		}
 	
@@ -538,6 +545,7 @@ political_decisions = {
 				}
 			}
 			OR = {
+			    LIT = { vassal_of = PLC }
 				LIT = { substate_of = PLC }
 				BLR = { substate_of = PLC }
 			    BLR = { vassal_of = PLC }
@@ -547,6 +555,7 @@ political_decisions = {
 			    PRU = { vassal_of = PLC }				
 			}
 			OR = {
+			    LIT = { vassal_of = PLC }
 				LIT = { substate_of = PLC }
 				LIT = { exists = no }
 			}
@@ -574,11 +583,12 @@ political_decisions = {
 			badboy = 5
 			any_country = {
 				limit = {
+				    exists = yes
 					OR = {
-						tag = LIT
-						tag = BLR
-						tag = UKR
-						tag = PRU
+					tag = LIT
+					tag = BLR
+					tag = UKR
+					tag = PRU
 					}
 				}
 				country_event = 222406
@@ -598,7 +608,7 @@ political_decisions = {
 			relation = { who = BOH value = -200 }
 			relation = { who = CAE value = -200 }
 			relation = { who = HLR value = -200 }
-			set_country_flag = lublin_new_begin
+			set_global_flag = lublin_new_begin
 		}
 	
 		ai_will_do = {
