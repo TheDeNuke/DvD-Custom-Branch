@@ -236,11 +236,7 @@ political_decisions = {
 		is_greater_power = yes
 		government = democracy
 		} } }          
-		any_neighbor_province = {
-		owner = { 
-		tag = GAN
-		        }
-		    }
+		any_neighbor_country = { tag = GAN }
 		}
 		
 		effect = { 
