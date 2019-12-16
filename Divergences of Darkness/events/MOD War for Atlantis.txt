@@ -4,8 +4,8 @@
 
 country_event = { 
 	id = 775427
-	title = "LOT1.T"
-	desc = "LOT1.D"
+	title = "LOT2.T"
+	desc = "LOT2.D"
 	picture = "frc_costa_rica"
 
 	trigger = {
@@ -18,7 +18,7 @@ country_event = {
 	}
 	
 	option = {
-	name = "LOT1.A"
+	name = "LOT2.A"
 	prestige = -1
 	set_country_flag = LOTBegins
 	add_country_modifier = { name = initial_amerigan_immigration duration = -1 }
@@ -29,8 +29,8 @@ country_event = {
 
 country_event = { 
 	id = 775428
-	title = "LOT2.T"
-	desc = "LOT2.D"
+	title = "LOT1.T"
+	desc = "LOT1.D"
 	picture = "confederation"
 
 	trigger = {
@@ -43,7 +43,7 @@ country_event = {
 	}
 	
 	option = {
-	name = "LOT2.A"
+	name = "LOT1.A"
 	ATL = { all_core = { remove_core = LOT } }
 	end_war = LOT
 	prestige = -1
